@@ -1,0 +1,144 @@
+{
+  "name": "Anime Comfort: Dragon Ball",
+  "type": "dark",
+  "semanticHighlighting": true,
+  "semanticTokenColors": {
+    "class": "#59C7F5",
+    "class.defaultLibrary": "#F3A251",
+    "type": "#59C7F5",
+    "type.defaultLibrary": "#F3A251",
+    "interface": "#8DD8F7"
+  },
+  "colors": {
+    "editor.background": "#0E1320",
+    "editor.foreground": "#E2E9F5",
+    "editorLineNumber.foreground": "#667A9D",
+    "editorLineNumber.activeForeground": "#9CB3D8",
+    "editorCursor.foreground": "#F3A251",
+    "editor.selectionBackground": "#283953",
+    "editor.selectionHighlightBackground": "#1F2E45",
+    "editor.wordHighlightBackground": "#2C5B8F8A",
+    "editor.wordHighlightStrongBackground": "#3A79BCB0",
+    "editor.findMatchBackground": "#B86F2F80",
+    "editor.findMatchHighlightBackground": "#75594166",
+    "editorIndentGuide.background1": "#223249",
+    "editorIndentGuide.activeBackground1": "#365274",
+    "editorBracketMatch.background": "#2B476A80",
+    "editorBracketMatch.border": "#60B6F088",
+    "activityBar.background": "#090F1A",
+    "activityBar.foreground": "#CBD8EE",
+    "sideBar.background": "#0C1320",
+    "sideBar.foreground": "#B4C7E4",
+    "titleBar.activeBackground": "#070D16",
+    "statusBar.background": "#070D16",
+    "statusBar.foreground": "#C0D0EA",
+    "panel.background": "#101928",
+    "terminal.background": "#0E1624"
+  },
+  "tokenColors": [
+    {
+      "scope": [
+        "support.type.property-name.json",
+        "meta.structure.dictionary.json > string.quoted.json"
+      ],
+      "settings": {
+        "foreground": "#F3A251"
+      }
+    },
+    {
+      "scope": [
+        "meta.structure.dictionary.value.json string.quoted.double.json",
+        "meta.structure.array.json string.quoted.double.json"
+      ],
+      "settings": {
+        "foreground": "#7FD7F7"
+      }
+    },
+    {
+      "scope": [
+        "constant.numeric.json",
+        "constant.language.boolean.json",
+        "constant.language.null.json"
+      ],
+      "settings": {
+        "foreground": "#F8C66E"
+      }
+    },
+    {
+      "scope": [
+        "punctuation.separator.dictionary.key-value.json",
+        "punctuation.separator.array.json"
+      ],
+      "settings": {
+        "foreground": "#6FA4D4"
+      }
+    },
+    {
+      "scope": ["comment", "punctuation.definition.comment"],
+      "settings": {
+        "foreground": "#7A8FB2",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": ["keyword", "storage", "keyword.control"],
+      "settings": {
+        "foreground": "#F29A49"
+      }
+    },
+    {
+      "scope": ["entity.name.function", "support.function"],
+      "settings": {
+        "foreground": "#59C7F5"
+      }
+    },
+    {
+      "scope": [
+        "entity.name.tag",
+        "entity.name.tag.js",
+        "entity.name.tag.jsx",
+        "entity.name.tag.tsx",
+        "entity.name.type.jsx",
+        "entity.name.type.tsx",
+        "meta.tag.custom.jsx entity.name.type.jsx",
+        "meta.tag.custom.tsx entity.name.type.tsx",
+        "support.class.component",
+        "support.class.component.jsx",
+        "support.class.component.tsx"
+      ],
+      "settings": {
+        "foreground": "#F3A251"
+      }
+    },
+    {
+      "scope": ["variable", "meta.definition.variable.name"],
+      "settings": {
+        "foreground": "#E9F0FC"
+      }
+    },
+    {
+      "scope": ["string", "constant.other.symbol"],
+      "settings": {
+        "foreground": "#8EDBB5"
+      }
+    },
+    {
+      "scope": ["constant.numeric", "constant.language"],
+      "settings": {
+        "foreground": "#F8C66E"
+      }
+    },
+    {
+      "scope": ["entity.name.type", "support.type"],
+      "settings": {
+        "foreground": "#8DD8F7"
+      }
+    },
+    {
+      "scope": ["punctuation", "meta.brace"],
+      "settings": {
+        "foreground": "#91A6C7"
+      }
+    }
+  ]
+}

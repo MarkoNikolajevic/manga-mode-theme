@@ -1,0 +1,144 @@
+{
+  "name": "Anime Comfort: Demon Slayer",
+  "type": "dark",
+  "semanticHighlighting": true,
+  "semanticTokenColors": {
+    "class": "#70CEC1",
+    "class.defaultLibrary": "#E06B74",
+    "type": "#70CEC1",
+    "type.defaultLibrary": "#E06B74",
+    "interface": "#9FD3C8"
+  },
+  "colors": {
+    "editor.background": "#0F1312",
+    "editor.foreground": "#DEE5E2",
+    "editorLineNumber.foreground": "#6B817B",
+    "editorLineNumber.activeForeground": "#A5BCB5",
+    "editorCursor.foreground": "#DB6A72",
+    "editor.selectionBackground": "#233432",
+    "editor.selectionHighlightBackground": "#1B2927",
+    "editor.wordHighlightBackground": "#2E5B538A",
+    "editor.wordHighlightStrongBackground": "#3E8377B0",
+    "editor.findMatchBackground": "#9E455280",
+    "editor.findMatchHighlightBackground": "#66474B66",
+    "editorIndentGuide.background1": "#22332F",
+    "editorIndentGuide.activeBackground1": "#346053",
+    "editorBracketMatch.background": "#2A4F4780",
+    "editorBracketMatch.border": "#65B1A188",
+    "activityBar.background": "#0A0E0D",
+    "activityBar.foreground": "#CCD6D2",
+    "sideBar.background": "#0D1110",
+    "sideBar.foreground": "#B4C4BE",
+    "titleBar.activeBackground": "#080A0A",
+    "statusBar.background": "#080A0A",
+    "statusBar.foreground": "#C2CEC9",
+    "panel.background": "#111716",
+    "terminal.background": "#0F1514"
+  },
+  "tokenColors": [
+    {
+      "scope": [
+        "support.type.property-name.json",
+        "meta.structure.dictionary.json > string.quoted.json"
+      ],
+      "settings": {
+        "foreground": "#E06B74"
+      }
+    },
+    {
+      "scope": [
+        "meta.structure.dictionary.value.json string.quoted.double.json",
+        "meta.structure.array.json string.quoted.double.json"
+      ],
+      "settings": {
+        "foreground": "#74CFC2"
+      }
+    },
+    {
+      "scope": [
+        "constant.numeric.json",
+        "constant.language.boolean.json",
+        "constant.language.null.json"
+      ],
+      "settings": {
+        "foreground": "#F2A1A8"
+      }
+    },
+    {
+      "scope": [
+        "punctuation.separator.dictionary.key-value.json",
+        "punctuation.separator.array.json"
+      ],
+      "settings": {
+        "foreground": "#77B8AE"
+      }
+    },
+    {
+      "scope": ["comment", "punctuation.definition.comment"],
+      "settings": {
+        "foreground": "#7F9790",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": ["keyword", "storage", "keyword.control"],
+      "settings": {
+        "foreground": "#E06B74"
+      }
+    },
+    {
+      "scope": ["entity.name.function", "support.function"],
+      "settings": {
+        "foreground": "#70CEC1"
+      }
+    },
+    {
+      "scope": [
+        "entity.name.tag",
+        "entity.name.tag.js",
+        "entity.name.tag.jsx",
+        "entity.name.tag.tsx",
+        "entity.name.type.jsx",
+        "entity.name.type.tsx",
+        "meta.tag.custom.jsx entity.name.type.jsx",
+        "meta.tag.custom.tsx entity.name.type.tsx",
+        "support.class.component",
+        "support.class.component.jsx",
+        "support.class.component.tsx"
+      ],
+      "settings": {
+        "foreground": "#E06B74"
+      }
+    },
+    {
+      "scope": ["variable", "meta.definition.variable.name"],
+      "settings": {
+        "foreground": "#E8EFEC"
+      }
+    },
+    {
+      "scope": ["string", "constant.other.symbol"],
+      "settings": {
+        "foreground": "#9ED8A6"
+      }
+    },
+    {
+      "scope": ["constant.numeric", "constant.language"],
+      "settings": {
+        "foreground": "#F197A0"
+      }
+    },
+    {
+      "scope": ["entity.name.type", "support.type"],
+      "settings": {
+        "foreground": "#9FD3C8"
+      }
+    },
+    {
+      "scope": ["punctuation", "meta.brace"],
+      "settings": {
+        "foreground": "#96AAA4"
+      }
+    }
+  ]
+}

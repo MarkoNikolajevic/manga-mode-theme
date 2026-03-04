@@ -1,0 +1,63 @@
+{
+  "name": "anime-manga-eye-comfort-theme-pack",
+  "displayName": "Anime & Manga Eye-Comfort Theme Pack",
+  "description": "A VS Code theme pack with five eye-comfort anime/manga-inspired variants.",
+  "version": "1.0.0",
+  "publisher": "local",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "anime",
+    "manga",
+    "one-piece",
+    "pokemon",
+    "dragon-ball",
+    "demon-slayer",
+    "jujutsu-kaisen",
+    "eye-strain"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Anime Comfort: One Piece",
+        "uiTheme": "vs-dark",
+        "path": "./themes/one-piece-color-theme.json"
+      },
+      {
+        "label": "Anime Comfort: Pokemon",
+        "uiTheme": "vs-dark",
+        "path": "./themes/pokemon-color-theme.json"
+      },
+      {
+        "label": "Anime Comfort: Dragon Ball",
+        "uiTheme": "vs-dark",
+        "path": "./themes/dragon-ball-color-theme.json"
+      },
+      {
+        "label": "Anime Comfort: Demon Slayer",
+        "uiTheme": "vs-dark",
+        "path": "./themes/demon-slayer-color-theme.json"
+      },
+      {
+        "label": "Anime Comfort: Jujutsu Kaisen",
+        "uiTheme": "vs-dark",
+        "path": "./themes/jujutsu-kaisen-color-theme.json"
+      }
+    ]
+  },
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 4000 --strictPort",
+    "build": "vite build",
+    "preview": "vite preview --port 4000 --strictPort",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "vite": "^7.1.7",
+    "@vscode/vsce": "^3.7.1"
+  }
+}

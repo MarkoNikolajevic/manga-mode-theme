@@ -1,0 +1,107 @@
+{
+  "name": "Anime Comfort: One Piece",
+  "type": "dark",
+  "semanticHighlighting": true,
+  "semanticTokenColors": {
+    "class": "#67B7EA",
+    "class.defaultLibrary": "#7BC4F2",
+    "type": "#67B7EA",
+    "type.defaultLibrary": "#7BC4F2",
+    "interface": "#9CCCED"
+  },
+  "colors": {
+    "editor.background": "#0C1A2B",
+    "editor.foreground": "#DCE9F7",
+    "editorLineNumber.foreground": "#5A7694",
+    "editorLineNumber.activeForeground": "#95B5D8",
+    "editorCursor.foreground": "#E1B35C",
+    "editor.selectionBackground": "#21415E",
+    "editor.selectionHighlightBackground": "#1A3249",
+    "editor.wordHighlightBackground": "#2F6D9A8A",
+    "editor.wordHighlightStrongBackground": "#3B8CC4B0",
+    "editor.findMatchBackground": "#9D6D2F80",
+    "editor.findMatchHighlightBackground": "#6D5A3B66",
+    "editorIndentGuide.background1": "#1D344B",
+    "editorIndentGuide.activeBackground1": "#316084",
+    "editorBracketMatch.background": "#2A557855",
+    "editorBracketMatch.border": "#6DB3E188",
+    "activityBar.background": "#081320",
+    "activityBar.foreground": "#C7DBF2",
+    "sideBar.background": "#0B1725",
+    "sideBar.foreground": "#AFC9E3",
+    "titleBar.activeBackground": "#070F1A",
+    "statusBar.background": "#070F1A",
+    "statusBar.foreground": "#BCD3EB",
+    "panel.background": "#0E1C2D",
+    "terminal.background": "#0C1827"
+  },
+  "tokenColors": [
+    {
+      "scope": ["comment", "punctuation.definition.comment"],
+      "settings": {
+        "foreground": "#6E8EAE",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": ["keyword", "storage", "keyword.control"],
+      "settings": {
+        "foreground": "#D3A14D"
+      }
+    },
+    {
+      "scope": ["entity.name.function", "support.function"],
+      "settings": {
+        "foreground": "#67B7EA"
+      }
+    },
+    {
+      "scope": [
+        "entity.name.tag",
+        "entity.name.tag.js",
+        "entity.name.tag.jsx",
+        "entity.name.tag.tsx",
+        "entity.name.type.jsx",
+        "entity.name.type.tsx",
+        "meta.tag.custom.jsx entity.name.type.jsx",
+        "meta.tag.custom.tsx entity.name.type.tsx",
+        "support.class.component",
+        "support.class.component.jsx",
+        "support.class.component.tsx"
+      ],
+      "settings": {
+        "foreground": "#7BC4F2"
+      }
+    },
+    {
+      "scope": ["variable", "meta.definition.variable.name"],
+      "settings": {
+        "foreground": "#E5EFFB"
+      }
+    },
+    {
+      "scope": ["string", "constant.other.symbol"],
+      "settings": {
+        "foreground": "#87C9A6"
+      }
+    },
+    {
+      "scope": ["constant.numeric", "constant.language"],
+      "settings": {
+        "foreground": "#EDC372"
+      }
+    },
+    {
+      "scope": ["entity.name.type", "support.type"],
+      "settings": {
+        "foreground": "#9CCCED"
+      }
+    },
+    {
+      "scope": ["punctuation", "meta.brace"],
+      "settings": {
+        "foreground": "#90ABC6"
+      }
+    }
+  ]
+}

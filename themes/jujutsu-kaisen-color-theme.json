@@ -1,0 +1,107 @@
+{
+  "name": "Anime Comfort: Jujutsu Kaisen",
+  "type": "dark",
+  "semanticHighlighting": true,
+  "semanticTokenColors": {
+    "class": "#7ECDF4",
+    "class.defaultLibrary": "#B186FF",
+    "type": "#7ECDF4",
+    "type.defaultLibrary": "#B186FF",
+    "interface": "#BAAFE8"
+  },
+  "colors": {
+    "editor.background": "#0F0E18",
+    "editor.foreground": "#E5E2F2",
+    "editorLineNumber.foreground": "#7D7895",
+    "editorLineNumber.activeForeground": "#BBB5D3",
+    "editorCursor.foreground": "#78D0E3",
+    "editor.selectionBackground": "#332A4B",
+    "editor.selectionHighlightBackground": "#271F3B",
+    "editor.wordHighlightBackground": "#4E3B7B8A",
+    "editor.wordHighlightStrongBackground": "#6B4EB5B0",
+    "editor.findMatchBackground": "#6852A180",
+    "editor.findMatchHighlightBackground": "#564B7066",
+    "editorIndentGuide.background1": "#2A2340",
+    "editorIndentGuide.activeBackground1": "#463873",
+    "editorBracketMatch.background": "#3A306080",
+    "editorBracketMatch.border": "#9E89E388",
+    "activityBar.background": "#090812",
+    "activityBar.foreground": "#D4D0E5",
+    "sideBar.background": "#0D0C17",
+    "sideBar.foreground": "#C2BDD8",
+    "titleBar.activeBackground": "#070710",
+    "statusBar.background": "#070710",
+    "statusBar.foreground": "#CBC6DF",
+    "panel.background": "#141224",
+    "terminal.background": "#110F20"
+  },
+  "tokenColors": [
+    {
+      "scope": ["comment", "punctuation.definition.comment"],
+      "settings": {
+        "foreground": "#8C87A7",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": ["keyword", "storage", "keyword.control"],
+      "settings": {
+        "foreground": "#B186FF"
+      }
+    },
+    {
+      "scope": ["entity.name.function", "support.function"],
+      "settings": {
+        "foreground": "#7ECDF4"
+      }
+    },
+    {
+      "scope": [
+        "entity.name.tag",
+        "entity.name.tag.js",
+        "entity.name.tag.jsx",
+        "entity.name.tag.tsx",
+        "entity.name.type.jsx",
+        "entity.name.type.tsx",
+        "meta.tag.custom.jsx entity.name.type.jsx",
+        "meta.tag.custom.tsx entity.name.type.tsx",
+        "support.class.component",
+        "support.class.component.jsx",
+        "support.class.component.tsx"
+      ],
+      "settings": {
+        "foreground": "#B186FF"
+      }
+    },
+    {
+      "scope": ["variable", "meta.definition.variable.name"],
+      "settings": {
+        "foreground": "#ECE9F8"
+      }
+    },
+    {
+      "scope": ["string", "constant.other.symbol"],
+      "settings": {
+        "foreground": "#96D6DF"
+      }
+    },
+    {
+      "scope": ["constant.numeric", "constant.language"],
+      "settings": {
+        "foreground": "#D2B3FF"
+      }
+    },
+    {
+      "scope": ["entity.name.type", "support.type"],
+      "settings": {
+        "foreground": "#BAAFE8"
+      }
+    },
+    {
+      "scope": ["punctuation", "meta.brace"],
+      "settings": {
+        "foreground": "#A59FC2"
+      }
+    }
+  ]
+}
