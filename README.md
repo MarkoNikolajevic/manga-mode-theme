@@ -30,6 +30,28 @@ A VS Code theme extension with six anime/manga-inspired dark variants designed f
 2. Run **Preferences: Color Theme**
 3. Select any `Anime Comfort: ...` variant
 
+## Suggested Settings for Eye Strain & Eye Health
+
+Pair this theme with these VS Code settings to reduce eye fatigue during long coding sessions. Merge these keys into your `settings.json` (File → Preferences → Open User Settings (JSON)):
+
+```json
+{
+  "editor.fontSize": 15,
+  "editor.fontFamily": "'Fira Code', 'JetBrains Mono', 'Cascadia Code', monospace",
+  "editor.fontLigatures": true,
+  "editor.lineHeight": 1.6,
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.smoothScrolling": true,
+  "editor.minimap.enabled": true,
+  "editor.minimap.scale": 1,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true
+}
+```
+
+**Tip:** Take regular breaks (e.g. 20-20-20 rule: every 20 minutes, look at something 20 feet away for 20 seconds).
+
 ## Building
 
 To create a `.vsix` package for distribution:
