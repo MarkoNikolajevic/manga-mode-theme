@@ -7,6 +7,7 @@
   "engines": {
     "vscode": "^1.85.0"
   },
+  "license": "MIT",
   "categories": [
     "Themes"
   ],
@@ -47,6 +48,11 @@
         "label": "Anime Comfort: Jujutsu Kaisen",
         "uiTheme": "vs-dark",
         "path": "./themes/jujutsu-kaisen-color-theme.json"
+      },
+      {
+        "label": "Anime Comfort: DanDaDan",
+        "uiTheme": "vs-dark",
+        "path": "./themes/dandadan-color-theme.json"
       }
     ]
   },
