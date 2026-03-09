@@ -3,18 +3,18 @@
   "type": "dark",
   "semanticHighlighting": true,
   "semanticTokenColors": {
-    "class": "#7ECDF4",
-    "class.defaultLibrary": "#B186FF",
-    "type": "#7ECDF4",
-    "type.defaultLibrary": "#B186FF",
-    "interface": "#BAAFE8"
+    "class": "#6FE8FF",
+    "class.defaultLibrary": "#A97CFF",
+    "type": "#6FE8FF",
+    "type.defaultLibrary": "#A97CFF",
+    "interface": "#A7DFFF"
   },
   "colors": {
-    "editor.background": "#0F0E18",
+    "editor.background": "#100D1A",
     "editor.foreground": "#E5E2F2",
     "editorLineNumber.foreground": "#7D7895",
     "editorLineNumber.activeForeground": "#BBB5D3",
-    "editorCursor.foreground": "#78D0E3",
+    "editorCursor.foreground": "#6FE8FF",
     "editor.selectionBackground": "#332A4B",
     "editor.selectionHighlightBackground": "#271F3B",
     "editor.wordHighlightBackground": "#4E3B7B8A",
@@ -24,7 +24,7 @@
     "editorIndentGuide.background1": "#2A2340",
     "editorIndentGuide.activeBackground1": "#463873",
     "editorBracketMatch.background": "#3A306080",
-    "editorBracketMatch.border": "#9E89E388",
+    "editorBracketMatch.border": "#6FE8FF88",
     "activityBar.background": "#090812",
     "activityBar.foreground": "#D4D0E5",
     "sideBar.background": "#0D0C17",
@@ -46,13 +46,13 @@
     {
       "scope": ["keyword", "storage", "keyword.control"],
       "settings": {
-        "foreground": "#B186FF"
+        "foreground": "#A97CFF"
       }
     },
     {
       "scope": ["entity.name.function", "support.function"],
       "settings": {
-        "foreground": "#7ECDF4"
+        "foreground": "#6FE8FF"
       }
     },
     {
@@ -70,7 +70,7 @@
         "support.class.component.tsx"
       ],
       "settings": {
-        "foreground": "#B186FF"
+        "foreground": "#A97CFF"
       }
     },
     {
@@ -82,7 +82,7 @@
     {
       "scope": ["string", "constant.other.symbol"],
       "settings": {
-        "foreground": "#96D6DF"
+        "foreground": "#8CE3F2"
       }
     },
     {
@@ -94,7 +94,7 @@
     {
       "scope": ["entity.name.type", "support.type"],
       "settings": {
-        "foreground": "#BAAFE8"
+        "foreground": "#A7DFFF"
       }
     },
     {
