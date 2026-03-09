@@ -1,58 +1,46 @@
 # Anime & Manga Eye-Comfort Theme Pack
 
-VS Code theme extension with five anime/manga-inspired dark variants designed for long coding sessions:
+A VS Code theme extension with six anime/manga-inspired dark variants designed for long coding sessions:
 
-- low-glare backgrounds
-- controlled saturation
-- clear token contrast without harsh neon
+- Low-glare backgrounds
+- Controlled saturation
+- Clear token contrast without harsh neon
 
 ## Theme Variants
 
-- `Anime Comfort: One Piece`
-  Nautical navy base with warm gold accents.
-- `Anime Comfort: Pokemon`
-  Dark crimson core with indigo contrast (pokeball-inspired split energy).
-- `Anime Comfort: Dragon Ball`
-  Namek-style greens with orange energy highlights.
-- `Anime Comfort: Demon Slayer`
-  Charcoal/teal foundation with crimson breathing accents.
-- `Anime Comfort: Jujutsu Kaisen`
-  Deep cursed violet with cyan cursed-energy highlights.
+- **Dragon Ball**: A high-energy theme with bold oranges and deep blues. Designed for those "Power Level over 9000" coding sessions
+- **One Piece**: Rich ocean teals and Straw Hat reds. Navigate through your most complex codebases like a Pirate King
+- **Pokémon**: Sharp yellows and soft greys. Fast, recognizable, and "super effective" against eye strain
+- **Demon Slayer**: Deep charcoal backgrounds with striking water-blue and fire-red accents. Elegant and sharp as Nichirin sword
+- **Jujutsu Kaisen**: A "Hollow Purple" aesthetic featuring dark violents and neon cyans. Master the domain of your own logic
+- **Dandadan**: A chaotic-cool mix of neon pinks, extraterrestrial greens, and occult purples. For the dev who likes things a bit weird
 
-## Quick Start
+## Installation
 
-```bash
-npm install
-```
+### From VSIX (Offline)
 
-## Run Preview (Port 4000)
+1. Download the `.vsix` file from the [Releases](https://github.com/MarkoNikolajevic/anime-theme/releases) page
+2. In VS Code, open the Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`)
+3. Run **Extensions: Install from VSIX...**
+4. Select the downloaded file
 
-```bash
-npm run dev
-```
+## Usage
 
-Preview URL: `http://localhost:4000`
+1. Open Command Palette: `Ctrl+Shift+P` (Windows/Linux) or `Cmd+Shift+P` (macOS)
+2. Run **Preferences: Color Theme**
+3. Select any `Anime Comfort: ...` variant
 
-The preview shows a code sample, palette swatches, and a variant selector to compare themes quickly.
+## Building
 
-## Use in VS Code (Extension Development Host)
-
-1. Open this folder in VS Code.
-2. Press `F5` to launch the Extension Development Host.
-3. In the new window, open Command Palette.
-4. Run `Preferences: Color Theme`.
-5. Choose any `Anime Comfort: ...` variant.
-
-## Build Preview
+To create a `.vsix` package for distribution:
 
 ```bash
-npm run build
+bun install
+bun package
 ```
 
-## Project Structure
+The `.vsix` file will be generated in the project root.
 
-- `package.json` VS Code theme contribution + preview scripts
-- `themes/*.json` five theme definitions
-- `index.html` preview entry
-- `preview/src/main.js` interactive variant switching
-- `preview/src/styles.css` preview visuals and layout
+## License
+
+MIT © [Marko Nikolajevic](https://github.com/MarkoNikolajevic)
