@@ -37,6 +37,43 @@
   },
   "tokenColors": [
     {
+      "scope": [
+        "support.type.property-name.json",
+        "meta.structure.dictionary.json > string.quoted.json"
+      ],
+      "settings": {
+        "foreground": "#E7C85A"
+      }
+    },
+    {
+      "scope": [
+        "meta.structure.dictionary.value.json string.quoted.double.json",
+        "meta.structure.array.json string.quoted.double.json"
+      ],
+      "settings": {
+        "foreground": "#B6C1CD"
+      }
+    },
+    {
+      "scope": [
+        "constant.numeric.json",
+        "constant.language.boolean.json",
+        "constant.language.null.json"
+      ],
+      "settings": {
+        "foreground": "#E7C85A"
+      }
+    },
+    {
+      "scope": [
+        "punctuation.separator.dictionary.key-value.json",
+        "punctuation.separator.array.json"
+      ],
+      "settings": {
+        "foreground": "#8E98A6"
+      }
+    },
+    {
       "scope": ["comment", "punctuation.definition.comment"],
       "settings": {
         "foreground": "#7E8897",
