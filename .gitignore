@@ -5,9 +5,6 @@ node_modules/
 dist/
 *.vsix
 
-# Vite
-*.local
-
 # Environment
 .env
 .env.*

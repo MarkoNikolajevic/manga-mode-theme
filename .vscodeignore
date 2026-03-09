@@ -1,0 +1,10 @@
+.gitignore
+.vscode/**
+*.vsix
+node_modules/**
+bun.lock
+package-lock.json
+yarn.lock
+*.log
+.env
+.env.*
