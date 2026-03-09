@@ -12,7 +12,7 @@ A VS Code theme extension with six anime/manga-inspired dark variants designed f
 - **One Piece**: Rich ocean teals and Straw Hat reds. Navigate through your most complex codebases like a Pirate King
 - **Pokémon**: Sharp yellows and soft greys. Fast, recognizable, and "super effective" against eye strain
 - **Demon Slayer**: Deep charcoal backgrounds with striking water-blue and fire-red accents. Elegant and sharp as Nichirin sword
-- **Jujutsu Kaisen**: A "Hollow Purple" aesthetic featuring dark violents and neon cyans. Master the domain of your own logic
+- **Jujutsu Kaisen**: A "Hollow Purple" aesthetic featuring dark violets and neon cyans. Master the domain of your own logic
 - **Dandadan**: A chaotic-cool mix of neon pinks, extraterrestrial greens, and occult purples. For the dev who likes things a bit weird
 
 ## Installation
