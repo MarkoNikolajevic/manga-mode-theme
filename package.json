@@ -1,12 +1,12 @@
 {
-  "name": "manganode",
+  "name": "mangamode",
   "displayName": "MangaMode",
   "description": "A VS Code theme pack with eye-comfort anime/manga-inspired variants.",
   "version": "1.0.0",
   "publisher": "markonikolajevic",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MarkoNikolajevic/anime-theme"
+    "url": "https://github.com/MarkoNikolajevic/manga-mode-theme"
   },
   "engines": {
     "vscode": "^1.85.0"

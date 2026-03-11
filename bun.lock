@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "manganode",
+      "name": "mangamode",
       "devDependencies": {
         "@vscode/vsce": "^3.7.1",
       },
