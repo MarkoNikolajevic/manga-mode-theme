@@ -1,12 +1,12 @@
-# Anime & Manga Eye-Comfort Theme Pack
+# MangaMode: anime & manga eye-comfort themes
 
-A VS Code theme extension with six anime/manga-inspired dark variants designed for long coding sessions:
+A VS Code theme extension with anime/manga-inspired dark variants designed for long coding sessions:
 
 - Low-glare backgrounds
 - Controlled saturation
 - Clear token contrast without harsh neon
 
-## Theme Variants
+## Theme variants
 
 - **Dragon Ball**: A high-energy theme with bold oranges and deep blues. Designed for those "Power Level over 9000" coding sessions
 - **One Piece**: Rich ocean teals and Straw Hat reds. Navigate through your most complex codebases like a Pirate King
@@ -17,20 +17,18 @@ A VS Code theme extension with six anime/manga-inspired dark variants designed f
 
 ## Installation
 
-### From VSIX (Offline)
-
-1. Download the `.vsix` file from the [Releases](https://github.com/MarkoNikolajevic/anime-theme/releases) page
-2. In VS Code, open the Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`)
-3. Run **Extensions: Install from VSIX...**
-4. Select the downloaded file
+1. Open **Visual Studio Code**
+2. Go to the **Extensions** view (`Ctrl+Shift+X` or `Cmd+Shift+X`)
+3. Search for `MangaMode`
+4. Click **Install**
 
 ## Usage
 
 1. Open Command Palette: `Ctrl+Shift+P` (Windows/Linux) or `Cmd+Shift+P` (macOS)
 2. Run **Preferences: Color Theme**
-3. Select any `Anime Comfort: ...` variant
+3. Select any `MangaMode: ...` variant
 
-## Suggested Settings for Eye Strain & Eye Health
+## Suggested settings for eye strain & eye health
 
 Pair this theme with these VS Code settings to reduce eye fatigue during long coding sessions. Merge these keys into your `settings.json` (File → Preferences → Open User Settings (JSON)):
 
@@ -52,17 +50,12 @@ Pair this theme with these VS Code settings to reduce eye fatigue during long co
 
 **Tip:** Take regular breaks (e.g. 20-20-20 rule: every 20 minutes, look at something 20 feet away for 20 seconds).
 
-## Building
-
-To create a `.vsix` package for distribution:
-
-```bash
-bun install
-bun package
-```
-
-The `.vsix` file will be generated in the project root.
-
 ## License
 
 MIT © [Marko Nikolajevic](https://github.com/MarkoNikolajevic)
+
+<br />
+<br />
+<br />
+
+Made with ❤️ and AI by [Marko Nikolajevic](https://markonikolajevic.dev)

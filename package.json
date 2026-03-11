@@ -1,6 +1,6 @@
 {
-  "name": "anime-manga-eye-comfort-theme-pack",
-  "displayName": "Anime & Manga Eye-Comfort Theme Pack",
+  "name": "manganode",
+  "displayName": "MangaMode",
   "description": "A VS Code theme pack with eye-comfort anime/manga-inspired variants.",
   "version": "1.0.0",
   "publisher": "markonikolajevic",
@@ -31,32 +31,32 @@
   "contributes": {
     "themes": [
       {
-        "label": "Anime Comfort: One Piece",
+        "label": "MangaMode: One Piece",
         "uiTheme": "vs-dark",
         "path": "./themes/one-piece-color-theme.json"
       },
       {
-        "label": "Anime Comfort: Pokemon",
+        "label": "MangaMode: Pokemon",
         "uiTheme": "vs-dark",
         "path": "./themes/pokemon-color-theme.json"
       },
       {
-        "label": "Anime Comfort: Dragon Ball",
+        "label": "MangaMode: Dragon Ball",
         "uiTheme": "vs-dark",
         "path": "./themes/dragon-ball-color-theme.json"
       },
       {
-        "label": "Anime Comfort: Demon Slayer",
+        "label": "MangaMode: Demon Slayer",
         "uiTheme": "vs-dark",
         "path": "./themes/demon-slayer-color-theme.json"
       },
       {
-        "label": "Anime Comfort: Jujutsu Kaisen",
+        "label": "MangaMode: Jujutsu Kaisen",
         "uiTheme": "vs-dark",
         "path": "./themes/jujutsu-kaisen-color-theme.json"
       },
       {
-        "label": "Anime Comfort: DanDaDan",
+        "label": "MangaMode: DanDaDan",
         "uiTheme": "vs-dark",
         "path": "./themes/dandadan-color-theme.json"
       }
