@@ -1,10 +1,10 @@
 # MangaMode: anime & manga eye-comfort themes
 
-A VS Code theme extension with anime/manga-inspired dark variants designed for long coding sessions:
+A VS Code theme extension with anime/manga-inspired dark variants for long coding sessions level up your setup without frying your eyes:
 
-- Low-glare backgrounds
-- Controlled saturation
-- Clear token contrast without harsh neon
+- Low-glare backgrounds for marathon coding
+- Controlled saturation-vibrant but not overwhelming
+- Clear token contrast without harsh neon, so your syntax stays readable
 
 ## Theme variants
 
@@ -17,10 +17,10 @@ A VS Code theme extension with anime/manga-inspired dark variants designed for l
 
 ## Installation
 
-1. Open **Visual Studio Code**
-2. Go to the **Extensions** view (`Ctrl+Shift+X` or `Cmd+Shift+X`)
-3. Search for `MangaMode`
-4. Click **Install**
+1. Download the `.vsix` file from the [Releases](https://github.com/MarkoNikolajevic/anime-theme/releases) page
+2. In VS Code, open the Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`)
+3. Run **Extensions: Install from VSIX...**
+4. Select the downloaded file
 
 ## Usage
 
@@ -50,6 +50,10 @@ Pair this theme with these VS Code settings to reduce eye fatigue during long co
 
 **Tip:** Take regular breaks (e.g. 20-20-20 rule: every 20 minutes, look at something 20 feet away for 20 seconds).
 
+## Feedback
+
+Found a bug, have a theme idea, or just want to say hi? Drop a line at [marko@frompixels.com](mailto:marko@frompixels.com)—your feedback powers the next arc of MangaMode.
+
 ## License
 
 MIT © [Marko Nikolajevic](https://github.com/MarkoNikolajevic)
@@ -58,4 +62,4 @@ MIT © [Marko Nikolajevic](https://github.com/MarkoNikolajevic)
 <br />
 <br />
 
-Made with ❤️ and AI by [Marko Nikolajevic](https://markonikolajevic.dev)
+Crafted with ❤️, AI, and a love for anime by [Marko Nikolajevic](https://markonikolajevic.dev)
