@@ -1,0 +1,27 @@
+name: Release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build-vsix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - run: bun install --frozen-lockfile
+
+      - name: Package extension
+        run: bun run package
+
+      - name: Upload vsix to release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: "*.vsix"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
