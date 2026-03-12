@@ -15,6 +15,32 @@ A VS Code theme extension with anime/manga-inspired dark variants for long codin
 - **Jujutsu Kaisen**: A "Hollow Purple" aesthetic featuring dark violets and neon cyans. Master the domain of your own logic
 - **Dandadan**: A chaotic-cool mix of neon pinks, extraterrestrial greens, and occult purples. For the dev who likes things a bit weird
 
+## Screenshots
+
+**Dragon Ball**
+
+![Dragon Ball](images/screenshots/dragon-ball.png)
+
+**One Piece**
+
+![One Piece](images/screenshots/one-piece.png)
+
+**Pokémon**
+
+![Pokémon](images/screenshots/pokemon.png)
+
+**Demon Slayer**
+
+![Demon Slayer](images/screenshots/demon-slayer.png)
+
+**Jujutsu Kaisen**
+
+![Jujutsu Kaisen](images/screenshots/jujutsu-kaisen.png)
+
+**Dandadan**
+
+![Dandadan](images/screenshots/dandadan.png)
+
 ## Installation
 
 1. Download the `.vsix` file from the [Releases](https://github.com/MarkoNikolajevic/anime-theme/releases) page
