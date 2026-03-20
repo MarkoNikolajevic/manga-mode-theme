@@ -92,7 +92,7 @@ Expand **Preview** under a variant to see it in the editor.
 
 ### From a `.vsix` file (manual)
 
-1. Download the `.vsix` from the [Releases](https://github.com/MarkoNikolajevic/anime-theme/releases) page.
+1. Download the `.vsix` from the [Releases](https://github.com/MarkoNikolajevic/manga-mode-theme/releases) page.
 2. In VS Code, open the Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`).
 3. Run **Extensions: Install from VSIX...**.
 4. Choose the downloaded file.
@@ -127,7 +127,7 @@ Pair this theme with these VS Code settings to reduce eye fatigue during long co
 
 ## Feedback
 
-Found a bug, have a theme idea, or just want to say hi? Drop a line at [marko@frompixels.com](mailto:marko@frompixels.com)—your feedback powers the next arc of MangaMode.
+Found a bug, have a theme idea, or just want to say hi? Drop a line at [marko@frompixels.com](mailto:marko@frompixels.com) - your feedback powers the next arc of MangaMode.
 
 ## License
 
