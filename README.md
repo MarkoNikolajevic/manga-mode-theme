@@ -8,45 +8,94 @@ A VS Code theme extension with anime/manga-inspired dark variants for long codin
 
 ## Theme variants
 
-- **Dragon Ball**: A high-energy theme with bold oranges and deep blues. Designed for those "Power Level over 9000" coding sessions
-- **One Piece**: Rich ocean teals and Straw Hat reds. Navigate through your most complex codebases like a Pirate King
-- **Pokémon**: Sharp yellows and soft greys. Fast, recognizable, and "super effective" against eye strain
-- **Demon Slayer**: Deep charcoal backgrounds with striking water-blue and fire-red accents. Elegant and sharp as Nichirin sword
-- **Jujutsu Kaisen**: A "Hollow Purple" aesthetic featuring dark violets and neon cyans. Master the domain of your own logic
-- **Dandadan**: A chaotic-cool mix of neon pinks, extraterrestrial greens, and occult purples. For the dev who likes things a bit weird
+Expand **Preview** under a variant to see it in the editor.
 
-## Screenshots
+**Dragon Ball:** A high-energy theme with bold oranges and deep blues. Designed for those "Power Level over 9000" coding sessions
 
-**Dragon Ball**
+<details>
+<summary>Preview</summary>
 
 ![Dragon Ball](images/screenshots/dragon-ball.png)
 
-**One Piece**
+</details>
+
+<br>
+<br>
+
+**One Piece:** Rich ocean teals and Straw Hat reds. Navigate through your most complex codebases like a Pirate King
+
+<details>
+<summary>Preview</summary>
 
 ![One Piece](images/screenshots/one-piece.png)
 
-**Pokémon**
+</details>
+
+<br>
+<br>
+
+**Pokémon:** Sharp yellows and soft greys. Fast, recognizable, and "super effective" against eye strain
+
+<details>
+<summary>Preview</summary>
 
 ![Pokémon](images/screenshots/pokemon.png)
 
-**Demon Slayer**
+</details>
+
+<br>
+<br>
+
+**Demon Slayer:** Deep charcoal backgrounds with striking water-blue and fire-red accents. Elegant and sharp as Nichirin sword
+
+<details>
+<summary>Preview</summary>
 
 ![Demon Slayer](images/screenshots/demon-slayer.png)
 
-**Jujutsu Kaisen**
+</details>
+
+<br>
+<br>
+
+**Jujutsu Kaisen:** A "Hollow Purple" aesthetic featuring dark violets and neon cyans. Master the domain of your own logic
+
+<details>
+<summary>Preview</summary>
 
 ![Jujutsu Kaisen](images/screenshots/jujutsu-kaisen.png)
 
-**Dandadan**
+</details>
+
+<br>
+<br>
+
+**Dandadan:** A chaotic-cool mix of neon pinks, extraterrestrial greens, and occult purples. For the dev who likes things a bit weird
+
+<details>
+<summary>Preview</summary>
 
 ![Dandadan](images/screenshots/dandadan.png)
 
+</details>
+
+<br>
+<br>
+
 ## Installation
 
-1. Download the `.vsix` file from the [Releases](https://github.com/MarkoNikolajevic/anime-theme/releases) page
-2. In VS Code, open the Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`)
-3. Run **Extensions: Install from VSIX...**
-4. Select the downloaded file
+### From the Visual Studio Code Marketplace (recommended)
+
+1. In VS Code, open the **Extensions** view: `Ctrl+Shift+X` (Windows/Linux) or `Cmd+Shift+X` (macOS).
+2. Search for **MangaMode**, or paste the extension ID `markonikolajevic.mangamode` into the search box.
+3. Open the **MangaMode** result and click **Install**.
+
+### From a `.vsix` file (manual)
+
+1. Download the `.vsix` from the [Releases](https://github.com/MarkoNikolajevic/anime-theme/releases) page.
+2. In VS Code, open the Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`).
+3. Run **Extensions: Install from VSIX...**.
+4. Choose the downloaded file.
 
 ## Usage
 
