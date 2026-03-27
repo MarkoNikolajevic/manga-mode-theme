@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.2.0] - 2026-03-27
+
+### Added
+
+- **Sailor Moon (light):** The pack’s first light variant—warm cream editor canvas, pastel syntax, and `vs` chrome so the UI matches a proper light theme. Keywords and accents use a softened Sailor-pink; functions stay in navy; strings in teal; structural tokens in lavender; constants in amber gold.
+
 ## [1.1.0] - 2026-03-27
 
 ### Improved

@@ -2,7 +2,7 @@
   "name": "mangamode",
   "displayName": "MangaMode",
   "description": "A VS Code theme pack with eye-comfort anime/manga-inspired variants.",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "publisher": "markonikolajevic",
   "repository": {
     "type": "git",
@@ -26,6 +26,9 @@
     "demon-slayer",
     "jujutsu-kaisen",
     "dandadan",
+    "sailor-moon",
+    "light-theme",
+    "dark-theme",
     "eye-strain"
   ],
   "contributes": {
@@ -59,6 +62,11 @@
         "label": "MangaMode: DanDaDan",
         "uiTheme": "vs-dark",
         "path": "./themes/dandadan-color-theme.json"
+      },
+      {
+        "label": "MangaMode: Sailor Moon",
+        "uiTheme": "vs",
+        "path": "./themes/sailor-moon-color-theme.json"
       }
     ]
   },

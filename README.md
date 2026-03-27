@@ -2,7 +2,7 @@
 
 [![Visual Studio Marketplace version](https://img.shields.io/visual-studio-marketplace/v/markonikolajevic.mangamode)](https://marketplace.visualstudio.com/items?itemName=markonikolajevic.mangamode) [![License: MIT](https://img.shields.io/github/license/MarkoNikolajevic/manga-mode-theme)](https://github.com/MarkoNikolajevic/manga-mode-theme/blob/main/LICENSE)
 
-A VS Code theme extension with anime/manga-inspired dark variants for long coding sessions level up your setup without frying your eyes:
+A VS Code theme extension with anime/manga-inspired variants for long coding sessions level up your setup without frying your eyes:
 
 - Low-glare backgrounds for marathon coding
 - Controlled saturation-vibrant but not overwhelming
@@ -78,6 +78,18 @@ Expand **Preview** under a variant to see it in the editor.
 <summary>Preview</summary>
 
 ![Dandadan](images/screenshots/dandadan.png)
+
+</details>
+
+<br>
+<br>
+
+**Sailor Moon:** A moonlit light theme with soft pinks, sailor blues, and gentle purples. Soft, iconic, and "Moon Prism Power" against eye strain
+
+<details>
+<summary>Preview</summary>
+
+![Sailor Moon](images/screenshots/sailor-moon.png)
 
 </details>
 
