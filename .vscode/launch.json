@@ -1,0 +1,24 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Watch Themes",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "bun run watch:themes"
+    },
+    {
+      "name": "Debug Extension",
+      "type": "extensionHost",
+      "request": "launch",
+      "args": ["--extensionDevelopmentPath=${workspaceFolder}"]
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Watch & Debug",
+      "configurations": ["Watch Themes", "Debug Extension"],
+      "stopAll": true
+    }
+  ]
+}
