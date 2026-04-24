@@ -1,6 +1,6 @@
 # MangaMode: anime & manga eye-comfort themes
 
-[![Visual Studio Marketplace version](https://img.shields.io/visual-studio-marketplace/v/markonikolajevic.mangamode)](https://marketplace.visualstudio.com/items?itemName=markonikolajevic.mangamode) [![License: MIT](https://img.shields.io/github/license/MarkoNikolajevic/manga-mode-theme)](https://github.com/MarkoNikolajevic/manga-mode-theme/blob/main/LICENSE)
+[![Release](https://img.shields.io/github/v/release/MarkoNikolajevic/manga-mode-theme)](https://marketplace.visualstudio.com/items?itemName=markonikolajevic.mangamode) [![License: MIT](https://img.shields.io/github/license/MarkoNikolajevic/manga-mode-theme)](https://github.com/MarkoNikolajevic/manga-mode-theme/blob/main/LICENSE)
 
 A VS Code theme extension with anime/manga-inspired variants for long coding sessions level up your setup without frying your eyes:
 
