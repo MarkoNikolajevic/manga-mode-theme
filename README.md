@@ -1,12 +1,13 @@
 # MangaMode: anime & manga eye-comfort themes
 
-[![Release](https://img.shields.io/github/v/release/MarkoNikolajevic/manga-mode-theme)](https://marketplace.visualstudio.com/items?itemName=markonikolajevic.mangamode) [![License: MIT](https://img.shields.io/github/license/MarkoNikolajevic/manga-mode-theme)](https://github.com/MarkoNikolajevic/manga-mode-theme/blob/main/LICENSE)
+[![Visual Studio Marketplace](https://vsmarketplacebadges.dev/version/markonikolajevic.mangamode.svg)](https://marketplace.visualstudio.com/items?itemName=markonikolajevic.mangamode) [![License: MIT](https://img.shields.io/github/license/MarkoNikolajevic/manga-mode-theme)](https://github.com/MarkoNikolajevic/manga-mode-theme/blob/main/LICENSE)
 
 A VS Code theme extension with anime/manga-inspired variants for long coding sessions level up your setup without frying your eyes:
 
 - Low-glare backgrounds for marathon coding
 - Controlled saturation-vibrant but not overwhelming
 - Clear token contrast without harsh neon, so your syntax stays readable
+- Every text color checked against WCAG AA (AAA for the high contrast variant)
 
 ## Theme variants
 
@@ -95,6 +96,15 @@ Expand **Preview** under a variant to see it in the editor.
 
 <br>
 <br>
+
+**Death Note (high contrast):** Ink-black canvas, off-white text, apple red keywords and shinigami gold. Every token clears WCAG AAA. For low-light rooms, low-vision users, or anyone who wants the page to be as stark as the notebook
+
+<details>
+<summary>Preview</summary>
+
+![Death Note](images/screenshots/death-note.png)
+
+</details>
 
 ## Installation
 

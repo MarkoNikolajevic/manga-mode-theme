@@ -2,7 +2,7 @@
   "name": "mangamode",
   "displayName": "MangaMode",
   "description": "A VS Code theme pack with eye-comfort anime/manga-inspired variants.",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "publisher": "markonikolajevic",
   "repository": {
     "type": "git",
@@ -27,9 +27,11 @@
     "jujutsu-kaisen",
     "dandadan",
     "sailor-moon",
+    "death-note",
     "light-theme",
     "dark-theme",
-    "eye-strain"
+    "eye-strain",
+    "high-contrast"
   ],
   "contributes": {
     "themes": [
@@ -67,10 +69,16 @@
         "label": "MangaMode: Sailor Moon",
         "uiTheme": "vs",
         "path": "./themes/sailor-moon-color-theme.json"
+      },
+      {
+        "label": "MangaMode: Death Note",
+        "uiTheme": "hc-black",
+        "path": "./themes/death-note-color-theme.json"
       }
     ]
   },
   "scripts": {
+    "test": "node scripts/check-contrast.mjs",
     "package": "vsce package"
   },
   "devDependencies": {
