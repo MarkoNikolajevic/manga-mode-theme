@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #f7f6f1;
+  --color-ink: #0b0b0b;
+}
+
+@theme inline {
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+@layer base {
+  :focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+  }
+}
+
+@utility font-display {
+  font-weight: 800;
+  font-stretch: 125%;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+}
+
+@utility halftone {
+  background-image: radial-gradient(var(--color-ink) 0.8px, transparent 1.2px);
+  background-size: 5px 5px;
+}
+
+/* Outlines every opaque child as one shape, so clip-path panels keep a manga border. */
+@utility ink-outline {
+  filter: drop-shadow(2px 0 0 var(--color-ink))
+    drop-shadow(-2px 0 0 var(--color-ink)) drop-shadow(0 2px 0 var(--color-ink))
+    drop-shadow(0 -2px 0 var(--color-ink));
+}
+
+/*
+ * Slanted panel pairs. The `*-start` panel is pulled left by --slant so its
+ * edge runs parallel to its neighbour's, keeping the gutter an even width.
+ */
+@utility slash-end {
+  clip-path: polygon(0 0, 100% 0, calc(100% - var(--slant)) 100%, 0 100%);
+}
+@utility slash-start {
+  clip-path: polygon(var(--slant) 0, 100% 0, 100% 100%, 0 100%);
+  margin-inline-start: calc(var(--slant) * -1);
+}
+@utility backslash-end {
+  clip-path: polygon(0 0, calc(100% - var(--slant)) 0, 100% 100%, 0 100%);
+}
+@utility backslash-start {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, var(--slant) 100%);
+  margin-inline-start: calc(var(--slant) * -1);
+}
