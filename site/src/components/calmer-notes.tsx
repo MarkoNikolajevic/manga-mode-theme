@@ -1,13 +1,33 @@
 'use client';
 
+import { m, type Variants } from 'motion/react';
 import type { ReactNode } from 'react';
 import { contrastRatio, formatRatio, luminance } from '@/lib/contrast';
 import { CONTRAST_TOKENS } from '@/lib/volumes';
+import { SwapText } from './motion';
 import { useVolume } from './volume-context';
+
+const DIALOGUE: Variants = {
+  hidden: {},
+  visible: { transition: { delayChildren: 0.15, staggerChildren: 0.2 } },
+};
+
+const BUBBLE: Variants = {
+  hidden: { opacity: 0, scale: 0.85, x: -16 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    x: 0,
+    transition: { type: 'spring', bounce: 0.35, duration: 0.6 },
+  },
+};
 
 function SpeechBubble({ children }: { children: ReactNode }) {
   return (
-    <li className='relative rounded-[50%] border-2 border-ink bg-paper px-10 py-7 text-center text-sm'>
+    <m.li
+      variants={BUBBLE}
+      className='relative origin-left rounded-[50%] border-2 border-ink bg-paper px-10 py-7 text-center text-sm'
+    >
       <svg
         aria-hidden='true'
         viewBox='0 0 28 18'
@@ -16,7 +36,7 @@ function SpeechBubble({ children }: { children: ReactNode }) {
         <path d='M28 2 0 9l28 7' className='fill-paper stroke-2 stroke-ink' />
       </svg>
       {children}
-    </li>
+    </m.li>
   );
 }
 
@@ -30,19 +50,27 @@ export function CalmerNotes() {
   const extreme = luminance(palette.background) > 0.5 ? 'white' : 'black';
 
   return (
-    <ul className='flex flex-col justify-center gap-6'>
+    <m.ul
+      variants={DIALOGUE}
+      initial='hidden'
+      whileInView='visible'
+      viewport={{ once: true, amount: 0.4 }}
+      className='flex flex-col justify-center gap-6'
+    >
       <SpeechBubble>
-        The background is {palette.background}, not pure {extreme}. Text reads
-        at {formatRatio(ratioOf(palette.text))} instead of a glaring 21:1.
+        The background is <SwapText>{palette.background}</SwapText>, not pure{' '}
+        <SwapText>{extreme}</SwapText>. Text reads at{' '}
+        <SwapText>{formatRatio(ratioOf(palette.text))}</SwapText> instead of a
+        glaring 21:1.
       </SpeechBubble>
       <SpeechBubble>
         Nested brackets on lines 6 to 9 use three shades of one hue, not a
         rainbow.
       </SpeechBubble>
       <SpeechBubble>
-        Even the quietest color, {quietest.label}, still reads at{' '}
-        {formatRatio(quietest.ratio)}.
+        Even the quietest color, <SwapText>{quietest.label}</SwapText>, still
+        reads at <SwapText>{formatRatio(quietest.ratio)}</SwapText>.
       </SpeechBubble>
-    </ul>
+    </m.ul>
   );
 }

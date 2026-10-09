@@ -2,6 +2,7 @@
 
 import { createContext, type ReactNode, use, useState } from 'react';
 import { paletteVars, type Volume } from '@/lib/volumes';
+import { SwapText } from './motion';
 
 interface VolumeContextValue {
   state: { volumes: Volume[]; volume: Volume };
@@ -57,5 +58,5 @@ export function VolumeSurface({
 }
 
 export function VolumeName() {
-  return useVolume().state.volume.name;
+  return <SwapText>{useVolume().state.volume.name}</SwapText>;
 }

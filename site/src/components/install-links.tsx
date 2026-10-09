@@ -1,13 +1,14 @@
 import { OPEN_VSX_URL, VS_CODE_MARKETPLACE_URL } from '@/lib/links';
 
-const BUTTON = 'rounded-full border-2 border-ink px-5 py-2.5 font-bold text-sm';
+const BUTTON =
+  'rounded-full border-2 border-ink px-5 py-2.5 font-bold text-sm motion-safe:transition motion-safe:active:scale-97';
 
 export function InstallLinks() {
   return (
     <div className='flex flex-wrap gap-3'>
       <a
         href={VS_CODE_MARKETPLACE_URL}
-        className={`${BUTTON} bg-ink text-paper`}
+        className={`${BUTTON} bg-ink text-paper hover:bg-ink/85`}
       >
         Install for VS Code
       </a>

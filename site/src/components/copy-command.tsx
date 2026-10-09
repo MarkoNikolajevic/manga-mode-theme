@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { SwapText } from './motion';
 
 const STATUS_LABEL = {
   idle: 'Copy',
@@ -29,9 +30,11 @@ export function CopyCommand({ command }: { command: string }) {
       <button
         type='button'
         onClick={copy}
-        className='shrink-0 cursor-pointer bg-ink px-6 font-bold text-paper text-sm'
+        className='min-w-32 shrink-0 cursor-pointer bg-ink px-6 font-bold text-paper text-sm hover:bg-ink/85 motion-safe:transition-colors'
       >
-        <span aria-live='polite'>{STATUS_LABEL[status]}</span>
+        <span aria-live='polite'>
+          <SwapText>{STATUS_LABEL[status]}</SwapText>
+        </span>
       </button>
     </div>
   );

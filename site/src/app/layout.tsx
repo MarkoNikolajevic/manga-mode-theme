@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Archivo, Geist_Mono } from 'next/font/google';
+import { MotionProvider } from '@/components/motion';
 import './globals.css';
 
 const archivo = Archivo({
@@ -25,7 +26,9 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
       lang='en'
       className={`${archivo.variable} ${geistMono.variable} bg-paper text-ink antialiased motion-safe:scroll-smooth`}
     >
-      <body className='font-sans'>{children}</body>
+      <body className='font-sans'>
+        <MotionProvider>{children}</MotionProvider>
+      </body>
     </html>
   );
 }

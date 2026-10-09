@@ -103,7 +103,7 @@ const LINES: readonly Token[][] = [
 /** Colored entirely through `--tok-*` variables, so any ancestor can theme it. */
 export function CodeSample() {
   return (
-    <pre className='overflow-x-auto bg-(--tok-bg) p-4 font-mono text-(--tok-text) text-xs/6 sm:p-6 sm:text-sm/7'>
+    <pre className='overflow-x-auto bg-(--tok-bg) motion-safe:transition-colors motion-safe:duration-500 [&_span]:motion-safe:transition-colors [&_span]:motion-safe:duration-500 p-4 font-mono text-(--tok-text) text-xs/6 sm:p-6 sm:text-sm/7'>
       <code>
         {LINES.map((tokens, lineIndex) => (
           // biome-ignore lint/suspicious/noArrayIndexKey: static content, lines never reorder
