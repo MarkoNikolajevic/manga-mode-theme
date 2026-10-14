@@ -7,6 +7,7 @@ import { ContrastTable } from '@/components/contrast-table';
 import { CopyCommand } from '@/components/copy-command';
 import { InstallLinks } from '@/components/install-links';
 import { Reveal } from '@/components/motion';
+import { TuningBench } from '@/components/tuning-bench';
 import {
   VolumeName,
   VolumeProvider,
@@ -45,6 +46,9 @@ function SiteHeader() {
             <a href='#contrast'>Contrast</a>
           </li>
           <li>
+            <a href='#tune'>Tune a color</a>
+          </li>
+          <li>
             <a href='#install'>Install</a>
           </li>
           <li>
@@ -72,7 +76,10 @@ function Hero() {
             {HEADLINE.split(' ').map((word, index) => (
               <Fragment key={word}>
                 {index > 0 && ' '}
-                <span aria-hidden className='-my-[0.1em] inline-block overflow-hidden py-[0.1em] align-bottom'>
+                <span
+                  aria-hidden
+                  className='-my-[0.1em] inline-block overflow-hidden py-[0.1em] align-bottom'
+                >
                   <span
                     className='inline-block motion-safe:animate-rise'
                     style={{ animationDelay: `${150 + index * 70}ms` }}
@@ -150,7 +157,7 @@ function CalmerSection() {
           Why it&apos;s calmer
         </h2>
       </Reveal>
-      <div className='mt-6 grid gap-8 lg:grid-cols-[3fr_2fr] lg:gap-14'>
+      <div className='mt-6 grid grid-cols-1 gap-8 lg:grid-cols-[3fr_2fr] lg:gap-14'>
         <Reveal>
           <figure>
             <CalmComparison code={<CodeSample />} />
@@ -185,6 +192,62 @@ function ContrastSection() {
       <div className='mt-4'>
         <ContrastTable />
       </div>
+    </section>
+  );
+}
+
+function TuneSection() {
+  return (
+    <section id='tune' aria-labelledby='tune-heading' className='scroll-mt-6'>
+      <Reveal className='flex flex-wrap items-end justify-between gap-4'>
+        <h2 id='tune-heading' className={SECTION_HEADING}>
+          Try to make it louder
+        </h2>
+        <p className='max-w-sm text-xs/5'>
+          Each color was tuned in OKLCH, moving only lightness so the hue stays
+          true to the series. Drag it yourself and see where readable ends.
+        </p>
+      </Reveal>
+      <div className='mt-4'>
+        <TuningBench />
+      </div>
+    </section>
+  );
+}
+
+const BUILD_NOTES = [
+  [
+    'One source of truth',
+    'Every swatch, ratio, and code sample reads from the same JSON files the extension ships. Change a theme and this page follows on the next build.',
+  ],
+  [
+    'Measured, not eyeballed',
+    'Contrast uses the WCAG 2 formula and rounds down, so a 4.46:1 color is never shown as 4.5:1. The color math has unit tests.',
+  ],
+  [
+    'Motion before hydration',
+    'The hero entrance is plain CSS, so it plays before JavaScript loads. Later motion uses a trimmed Motion bundle and respects the reduced motion setting.',
+  ],
+  [
+    'No highlighter shipped',
+    'The code sample is tokenized by hand and colored through CSS variables, so switching volumes is a style change, not a re-render of a parser.',
+  ],
+] as const;
+
+function BuildNotes() {
+  return (
+    <section aria-labelledby='notes-heading'>
+      <h2 id='notes-heading' className={SECTION_HEADING}>
+        How this page is built
+      </h2>
+      <dl className='mt-6 grid gap-x-14 gap-y-6 sm:grid-cols-2'>
+        {BUILD_NOTES.map(([title, body]) => (
+          <div key={title} className='border-ink border-t-2 pt-3'>
+            <dt className='font-bold'>{title}</dt>
+            <dd className='mt-1 max-w-prose text-sm/6'>{body}</dd>
+          </div>
+        ))}
+      </dl>
     </section>
   );
 }
@@ -245,7 +308,9 @@ export default function Home() {
         <Hero />
         <CalmerSection />
         <ContrastSection />
+        <TuneSection />
         <InstallSection />
+        <BuildNotes />
       </main>
       <SiteFooter />
     </VolumeProvider>
