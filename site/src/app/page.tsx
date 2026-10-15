@@ -222,7 +222,7 @@ const BUILD_NOTES = [
   ],
   [
     'Measured, not eyeballed',
-    'Contrast uses the WCAG 2 formula and rounds down, so a 4.46:1 color is never shown as 4.5:1. The color math has unit tests.',
+    'Contrast uses the WCAG 2 formula and rounds down, so a 4.46:1 color is never shown as 4.5:1. Even text selection is tested: each volume tints it in its own accent, at a shade that keeps ink readable.',
   ],
   [
     'Motion before hydration',

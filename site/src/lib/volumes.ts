@@ -7,6 +7,7 @@ import jujutsuKaisen from '../../../themes/jujutsu-kaisen-color-theme.json';
 import onePiece from '../../../themes/one-piece-color-theme.json';
 import pokemon from '../../../themes/pokemon-color-theme.json';
 import sailorMoon from '../../../themes/sailor-moon-color-theme.json';
+import { pageSelection } from './selection';
 
 interface ThemeFile {
   name: string;
@@ -38,6 +39,13 @@ export interface Volume {
   highContrast: boolean;
   palette: Palette;
   chrome: Record<ChromeKey, string>;
+  selection: {
+    /** Tint of the volume's accent for text on the paper page. */
+    page: string;
+    /** The theme's own editor selection, used inside code panels. */
+    editor: string;
+    editorText?: string;
+  };
 }
 
 // Shelf order matches the order themes are contributed in the extension manifest.
@@ -116,6 +124,11 @@ export const VOLUMES: Volume[] = THEMES.map((theme, index) => ({
   highContrast: theme.type === 'hc',
   palette: toPalette(theme),
   chrome: toChrome(theme),
+  selection: {
+    page: pageSelection(scopeColor(theme, 'entity.name.function')),
+    editor: workbenchColor(theme, 'editor.selectionBackground'),
+    editorText: theme.colors['editor.selectionForeground'],
+  },
 }));
 
 /** A deliberately garish palette, invented for the side-by-side comparison. */
