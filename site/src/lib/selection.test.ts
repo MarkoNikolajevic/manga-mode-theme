@@ -15,11 +15,16 @@ const accents = readdirSync(themesDir).map((file) => {
   return [file, token.settings.foreground as string] as const;
 });
 
-test('every volume gets a page selection that is visible and readable', () => {
+test('every volume gets a soft, readable page selection', () => {
   assert.equal(accents.length, 8);
   for (const [file, accent] of accents) {
     const tint = pageSelection(accent);
-    assert.ok(contrastRatio(tint, PAPER) >= 3, `${file}: ${tint} vs paper`);
+    const onPaper = contrastRatio(tint, PAPER);
+    // At least as visible as the browser's default selection, but still a tint.
+    assert.ok(
+      onPaper >= 1.3 && onPaper < 1.6,
+      `${file}: ${tint} is ${onPaper} vs paper`,
+    );
     assert.ok(contrastRatio(INK, tint) >= 4.5, `${file}: ink on ${tint}`);
   }
 });
