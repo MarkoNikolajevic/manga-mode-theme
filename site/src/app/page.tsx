@@ -5,6 +5,7 @@ import { CalmerNotes } from '@/components/calmer-notes';
 import { CodeSample } from '@/components/code-sample';
 import { ContrastTable } from '@/components/contrast-table';
 import { CopyCommand } from '@/components/copy-command';
+import { EditorWindow } from '@/components/editor-window';
 import { InstallLinks } from '@/components/install-links';
 import { Reveal } from '@/components/motion';
 import { TuningBench } from '@/components/tuning-bench';
@@ -110,14 +111,13 @@ function Hero() {
       </div>
 
       <div className='ink-outline grid gap-5 md:grid-cols-[3fr_2fr] md:gap-3'>
-        <VolumeSurface className='min-w-0 bg-(--tok-bg) motion-safe:animate-panel-in motion-safe:transition-colors motion-safe:duration-500 motion-safe:[animation-delay:200ms] md:backslash-end md:pr-12'>
-          <div className='flex justify-between border-(--tok-line)/30 border-b px-4 py-2 font-mono text-(--tok-line) text-xs motion-safe:transition-colors motion-safe:duration-500 sm:px-6'>
-            <span>chapter.ts</span>
-            <span>
-              MangaMode: <VolumeName />
-            </span>
-          </div>
-          <CodeSample />
+        <VolumeSurface className='min-w-0 bg-(--tok-bg) motion-safe:animate-panel-in motion-safe:transition-colors motion-safe:duration-500 motion-safe:[animation-delay:200ms] md:backslash-end'>
+          <EditorWindow className='h-full'>
+            {/* Keeps code clear of the slanted edge; the chrome runs into it. */}
+            <div className='flex-1 md:pr-12'>
+              <CodeSample />
+            </div>
+          </EditorWindow>
         </VolumeSurface>
         <div className='min-w-0 bg-paper p-6 motion-safe:animate-panel-in motion-safe:[animation-delay:300ms] md:backslash-start md:pl-16'>
           <VolumeShelf />

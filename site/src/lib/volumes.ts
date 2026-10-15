@@ -37,6 +37,7 @@ export interface Volume {
   /** High contrast themes are held to AAA (7:1) instead of AA (4.5:1). */
   highContrast: boolean;
   palette: Palette;
+  chrome: Record<ChromeKey, string>;
 }
 
 // Shelf order matches the order themes are contributed in the extension manifest.
@@ -88,11 +89,33 @@ const toPalette = (theme: ThemeFile): Palette => ({
   ],
 });
 
+/** Workbench colors the hero's editor window is drawn with. */
+const CHROME_KEYS = [
+  'activityBar.background',
+  'activityBar.foreground',
+  'activityBarBadge.background',
+  'editorGroupHeader.tabsBackground',
+  'tab.activeBackground',
+  'tab.activeForeground',
+  'tab.inactiveBackground',
+  'tab.inactiveForeground',
+  'tab.activeBorder',
+  'statusBar.background',
+  'statusBar.foreground',
+] as const;
+type ChromeKey = (typeof CHROME_KEYS)[number];
+
+const toChrome = (theme: ThemeFile) =>
+  Object.fromEntries(
+    CHROME_KEYS.map((key) => [key, workbenchColor(theme, key)]),
+  ) as Record<ChromeKey, string>;
+
 export const VOLUMES: Volume[] = THEMES.map((theme, index) => ({
   issue: index + 1,
   name: theme.name.replace('MangaMode: ', ''),
   highContrast: theme.type === 'hc',
   palette: toPalette(theme),
+  chrome: toChrome(theme),
 }));
 
 /** A deliberately garish palette, invented for the side-by-side comparison. */
@@ -137,3 +160,12 @@ export const paletteVars = (palette: Palette): PaletteVars => ({
   '--tok-b2': palette.brackets[1],
   '--tok-b3': palette.brackets[2],
 });
+
+/** `tab.activeBorder` becomes `--ed-tab-activeBorder`. */
+export const chromeVars = (chrome: Volume['chrome']) =>
+  Object.fromEntries(
+    Object.entries(chrome).map(([key, value]) => [
+      `--ed-${key.replaceAll('.', '-')}`,
+      value,
+    ]),
+  ) as CSSProperties;
