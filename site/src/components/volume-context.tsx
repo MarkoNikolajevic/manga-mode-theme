@@ -1,6 +1,12 @@
 'use client';
 
-import { createContext, type ReactNode, use, useState } from 'react';
+import {
+  type CSSProperties,
+  createContext,
+  type ReactNode,
+  use,
+  useState,
+} from 'react';
 import { paletteVars, type Volume } from '@/lib/volumes';
 import { SwapText } from './motion';
 
@@ -29,7 +35,13 @@ export function VolumeProvider({
         actions: { selectVolume: setIssue },
       }}
     >
-      {children}
+      {/* `contents` keeps layout untouched while every page element inherits the selection color. */}
+      <div
+        className='contents'
+        style={{ '--sel-page-bg': volume.selection.page } as CSSProperties}
+      >
+        {children}
+      </div>
     </VolumeContext>
   );
 }
@@ -51,7 +63,20 @@ export function VolumeSurface({
 }) {
   const { volume } = useVolume().state;
   return (
-    <div className={className} style={paletteVars(volume.palette)}>
+    <div
+      data-volume-surface
+      data-selection-text={volume.selection.editorText ? '' : undefined}
+      className={className}
+      style={
+        {
+          ...paletteVars(volume.palette),
+          '--sel-editor-bg': volume.selection.editor,
+          ...(volume.selection.editorText && {
+            '--sel-editor-fg': volume.selection.editorText,
+          }),
+        } as CSSProperties
+      }
+    >
       {children}
     </div>
   );

@@ -50,6 +50,22 @@
 }
 
 @layer base {
+  /* Page text selects in a tint of the volume's accent; code panels use the
+   * theme's own editor selection. `currentcolor` keeps token colors, since
+   * ::selection otherwise inherits the page rule's ink. */
+  ::selection {
+    background-color: var(--sel-page-bg);
+    color: var(--color-ink);
+  }
+  [data-volume-surface] ::selection {
+    background-color: var(--sel-editor-bg);
+    color: currentcolor;
+  }
+  /* Only themes that define editor.selectionForeground (Death Note). */
+  [data-selection-text] ::selection {
+    color: var(--sel-editor-fg);
+  }
+
   :focus-visible {
     outline: 2px solid var(--color-ink);
     outline-offset: 2px;
@@ -92,4 +108,27 @@
 @utility backslash-start {
   clip-path: polygon(0 0, 100% 0, 100% 100%, var(--slant) 100%);
   margin-inline-start: calc(var(--slant) * -1);
+}
+
+/* Range input whose track is the color ramp itself; the thumb reads as an ink frame. */
+@utility tuner {
+  appearance: none;
+  height: 1.5rem;
+  border: 2px solid var(--color-ink);
+  cursor: pointer;
+
+  &::-webkit-slider-thumb {
+    appearance: none;
+    width: 0.75rem;
+    height: 1.75rem;
+    background: var(--color-paper);
+    border: 2px solid var(--color-ink);
+  }
+  &::-moz-range-thumb {
+    width: 0.5rem;
+    height: 1.5rem;
+    background: var(--color-paper);
+    border: 2px solid var(--color-ink);
+    border-radius: 0;
+  }
 }

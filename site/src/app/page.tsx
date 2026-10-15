@@ -5,8 +5,10 @@ import { CalmerNotes } from '@/components/calmer-notes';
 import { CodeSample } from '@/components/code-sample';
 import { ContrastTable } from '@/components/contrast-table';
 import { CopyCommand } from '@/components/copy-command';
+import { EditorWindow } from '@/components/editor-window';
 import { InstallLinks } from '@/components/install-links';
 import { Reveal } from '@/components/motion';
+import { TuningBench } from '@/components/tuning-bench';
 import {
   VolumeName,
   VolumeProvider,
@@ -45,6 +47,9 @@ function SiteHeader() {
             <a href='#contrast'>Contrast</a>
           </li>
           <li>
+            <a href='#tune'>Tune a color</a>
+          </li>
+          <li>
             <a href='#install'>Install</a>
           </li>
           <li>
@@ -72,7 +77,10 @@ function Hero() {
             {HEADLINE.split(' ').map((word, index) => (
               <Fragment key={word}>
                 {index > 0 && ' '}
-                <span aria-hidden className='-my-[0.1em] inline-block overflow-hidden py-[0.1em] align-bottom'>
+                <span
+                  aria-hidden
+                  className='-my-[0.1em] inline-block overflow-hidden py-[0.1em] align-bottom'
+                >
                   <span
                     className='inline-block motion-safe:animate-rise'
                     style={{ animationDelay: `${150 + index * 70}ms` }}
@@ -103,14 +111,13 @@ function Hero() {
       </div>
 
       <div className='ink-outline grid gap-5 md:grid-cols-[3fr_2fr] md:gap-3'>
-        <VolumeSurface className='min-w-0 bg-(--tok-bg) motion-safe:animate-panel-in motion-safe:transition-colors motion-safe:duration-500 motion-safe:[animation-delay:200ms] md:backslash-end md:pr-12'>
-          <div className='flex justify-between border-(--tok-line)/30 border-b px-4 py-2 font-mono text-(--tok-line) text-xs motion-safe:transition-colors motion-safe:duration-500 sm:px-6'>
-            <span>chapter.ts</span>
-            <span>
-              MangaMode: <VolumeName />
-            </span>
-          </div>
-          <CodeSample />
+        <VolumeSurface className='min-w-0 bg-(--tok-bg) motion-safe:animate-panel-in motion-safe:transition-colors motion-safe:duration-500 motion-safe:[animation-delay:200ms] md:backslash-end'>
+          <EditorWindow className='h-full'>
+            {/* Keeps code clear of the slanted edge; the chrome runs into it. */}
+            <div className='flex-1 md:pr-12'>
+              <CodeSample />
+            </div>
+          </EditorWindow>
         </VolumeSurface>
         <div className='min-w-0 bg-paper p-6 motion-safe:animate-panel-in motion-safe:[animation-delay:300ms] md:backslash-start md:pl-16'>
           <VolumeShelf />
@@ -150,7 +157,7 @@ function CalmerSection() {
           Why it&apos;s calmer
         </h2>
       </Reveal>
-      <div className='mt-6 grid gap-8 lg:grid-cols-[3fr_2fr] lg:gap-14'>
+      <div className='mt-6 grid grid-cols-1 gap-8 lg:grid-cols-[3fr_2fr] lg:gap-14'>
         <Reveal>
           <figure>
             <CalmComparison code={<CodeSample />} />
@@ -185,6 +192,62 @@ function ContrastSection() {
       <div className='mt-4'>
         <ContrastTable />
       </div>
+    </section>
+  );
+}
+
+function TuneSection() {
+  return (
+    <section id='tune' aria-labelledby='tune-heading' className='scroll-mt-6'>
+      <Reveal className='flex flex-wrap items-end justify-between gap-4'>
+        <h2 id='tune-heading' className={SECTION_HEADING}>
+          Try to make it louder
+        </h2>
+        <p className='max-w-sm text-xs/5'>
+          The bench moves lightness in OKLCH so the hue holds while you drag.
+          See where readable ends.
+        </p>
+      </Reveal>
+      <div className='mt-4'>
+        <TuningBench />
+      </div>
+    </section>
+  );
+}
+
+const BUILD_NOTES = [
+  [
+    'One source of truth',
+    'Every swatch, ratio, and code sample reads from the same JSON files the extension ships. Change a theme and this page follows on the next build.',
+  ],
+  [
+    'Measured, not eyeballed',
+    'Contrast uses the WCAG 2 formula and rounds down, so a 4.46:1 color is never shown as 4.5:1. Even text selection is tested: each volume tints it in its own accent, at a shade that keeps ink readable.',
+  ],
+  [
+    'Motion before hydration',
+    'The hero entrance is plain CSS, so it plays before JavaScript loads. Later motion uses a trimmed Motion bundle and respects the reduced motion setting.',
+  ],
+  [
+    'No highlighter shipped',
+    'The code sample is tokenized by hand and colored through CSS variables, so switching volumes is a style change, not a re-render of a parser.',
+  ],
+] as const;
+
+function BuildNotes() {
+  return (
+    <section aria-labelledby='notes-heading'>
+      <h2 id='notes-heading' className={SECTION_HEADING}>
+        How this page is built
+      </h2>
+      <dl className='mt-6 grid gap-x-14 gap-y-6 sm:grid-cols-2'>
+        {BUILD_NOTES.map(([title, body]) => (
+          <div key={title} className='border-ink border-t-2 pt-3'>
+            <dt className='font-bold'>{title}</dt>
+            <dd className='mt-1 max-w-prose text-sm/6'>{body}</dd>
+          </div>
+        ))}
+      </dl>
     </section>
   );
 }
@@ -245,7 +308,9 @@ export default function Home() {
         <Hero />
         <CalmerSection />
         <ContrastSection />
+        <TuneSection />
         <InstallSection />
+        <BuildNotes />
       </main>
       <SiteFooter />
     </VolumeProvider>
