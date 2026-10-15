@@ -18,6 +18,9 @@ jobs:
 
       - run: bun install --frozen-lockfile
 
+      - name: Check contrast
+        run: bun run test
+
       - name: Package extension
         run: bun run package
 

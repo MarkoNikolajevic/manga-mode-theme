@@ -5,7 +5,7 @@
 ### Added
 
 - **Death Note (high contrast):** First `hc-black` variant. Near-black canvas with off-white text, apple-red keywords, shinigami-gold functions, parchment strings and Ryuk grey-blue types. Every token is at or above WCAG AAA (7:1); gold cursor and borders keep focus visible without relying on color alone.
-- **Contrast check:** `bun test` (or `node scripts/check-contrast.mjs`) fails if any text color in any theme drops below WCAG AA, or AAA for high contrast themes.
+- **Contrast check:** `bun run test` (or `node scripts/check-contrast.mjs`) fails if any text color in any theme drops below WCAG AA, or AAA for high contrast themes.
 
 ### Changed
 
