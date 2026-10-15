@@ -10,6 +10,7 @@ import sailorMoon from '../../../themes/sailor-moon-color-theme.json';
 
 interface ThemeFile {
   name: string;
+  type: string;
   colors: Record<string, string>;
   tokenColors: {
     scope: string | string[];
@@ -33,6 +34,8 @@ export interface Palette {
 export interface Volume {
   issue: number;
   name: string;
+  /** High contrast themes are held to AAA (7:1) instead of AA (4.5:1). */
+  highContrast: boolean;
   palette: Palette;
 }
 
@@ -88,6 +91,7 @@ const toPalette = (theme: ThemeFile): Palette => ({
 export const VOLUMES: Volume[] = THEMES.map((theme, index) => ({
   issue: index + 1,
   name: theme.name.replace('MangaMode: ', ''),
+  highContrast: theme.type === 'hc',
   palette: toPalette(theme),
 }));
 

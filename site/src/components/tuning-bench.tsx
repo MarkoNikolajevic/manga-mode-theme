@@ -1,7 +1,7 @@
 'use client';
 
 import { useId, useState } from 'react';
-import { contrastRatio, formatRatio, wcagLevel } from '@/lib/contrast';
+import { contrastRatio, formatRatio } from '@/lib/contrast';
 import { hexToOklch, oklchToHex } from '@/lib/oklch';
 import { CONTRAST_TOKENS, type Palette } from '@/lib/volumes';
 import { CodeSample } from './code-sample';
@@ -15,19 +15,25 @@ const TUNABLE = CONTRAST_TOKENS.filter(
 type TunableKey = (typeof TUNABLE)[number]['key'];
 
 const STEPS = 48;
-const VERDICT = {
-  AAA: 'Passes AAA. Room to spare.',
-  AA: 'Passes AA. Readable for a full day.',
-  Fail: 'Fails AA. This one would not ship.',
-} as const;
-
 /** Resets whenever the volume changes, so every palette starts as shipped. */
 export function TuningBench() {
   const { volume } = useVolume().state;
-  return <Bench key={volume.issue} palette={volume.palette} />;
+  return (
+    <Bench
+      key={volume.issue}
+      palette={volume.palette}
+      highContrast={volume.highContrast}
+    />
+  );
 }
 
-function Bench({ palette }: { palette: Palette }) {
+function Bench({
+  palette,
+  highContrast,
+}: {
+  palette: Palette;
+  highContrast: boolean;
+}) {
   const [key, setKey] = useState<TunableKey>('keyword');
   const [lightness, setLightness] = useState<number | null>(null);
   const sliderId = useId();
@@ -38,14 +44,16 @@ function Bench({ palette }: { palette: Palette }) {
       ? palette[key]
       : oklchToHex({ ...shipped, l: lightness });
   const ratio = contrastRatio(color, palette.background);
-  const level = wcagLevel(ratio);
+  const floor = highContrast ? 7 : 4.5;
+  const target = highContrast ? 'AAA' : 'AA';
+  const passes = ratio >= floor;
 
-  // The ramp the slider walks along, and which stops of it fail AA.
+  // The ramp the slider walks along, and which stops of it fall below the floor.
   const ramp = Array.from({ length: STEPS + 1 }, (_, step) =>
     oklchToHex({ ...shipped, l: step / STEPS }),
   );
   const fails = ramp.map(
-    (stop) => wcagLevel(contrastRatio(stop, palette.background)) === 'Fail',
+    (stop) => contrastRatio(stop, palette.background) < floor,
   );
 
   return (
@@ -89,7 +97,9 @@ function Bench({ palette }: { palette: Palette }) {
           <p className='mt-2 text-sm'>
             <span className='font-mono'>{color}</span> on{' '}
             <span className='font-mono'>{palette.background}</span>.{' '}
-            {VERDICT[level]}
+            {passes
+              ? `Passes ${target}, the bar this theme ships at.`
+              : `Below ${target}. This one would not ship.`}
           </p>
         </div>
 
@@ -105,7 +115,7 @@ function Bench({ palette }: { palette: Palette }) {
             step={0.005}
             value={lightness ?? shipped.l}
             onChange={(event) => setLightness(Number(event.target.value))}
-            aria-valuetext={`${color}, ${formatRatio(ratio)}, ${level === 'Fail' ? 'fails AA' : `passes ${level}`}`}
+            aria-valuetext={`${color}, ${formatRatio(ratio)}, ${passes ? 'passes' : 'below'} ${target}`}
             className='tuner mt-2 w-full'
             style={{ background: `linear-gradient(to right, ${ramp.join()})` }}
           />
@@ -123,8 +133,8 @@ function Bench({ palette }: { palette: Palette }) {
             />
           </div>
           <p className='mt-2 text-xs'>
-            Black bars mark lightness that fails AA. The tick is the shipped
-            color.
+            Black bars mark lightness below this theme&apos;s minimum. The tick
+            is the shipped color.
           </p>
         </div>
 

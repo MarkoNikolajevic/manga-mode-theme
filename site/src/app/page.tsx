@@ -204,8 +204,8 @@ function TuneSection() {
           Try to make it louder
         </h2>
         <p className='max-w-sm text-xs/5'>
-          Each color was tuned in OKLCH, moving only lightness so the hue stays
-          true to the series. Drag it yourself and see where readable ends.
+          The bench moves lightness in OKLCH so the hue holds while you drag.
+          See where readable ends.
         </p>
       </Reveal>
       <div className='mt-4'>
