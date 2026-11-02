@@ -7,6 +7,7 @@ import jujutsuKaisen from '../../../themes/jujutsu-kaisen-color-theme.json';
 import onePiece from '../../../themes/one-piece-color-theme.json';
 import pokemon from '../../../themes/pokemon-color-theme.json';
 import sailorMoon from '../../../themes/sailor-moon-color-theme.json';
+import { branchFor } from './easter-eggs';
 import { pageSelection } from './selection';
 
 interface ThemeFile {
@@ -35,6 +36,8 @@ export interface Palette {
 export interface Volume {
   issue: number;
   name: string;
+  /** Git branch shown in the editor status bar. */
+  branch: string;
   /** High contrast themes are held to AAA (7:1) instead of AA (4.5:1). */
   highContrast: boolean;
   palette: Palette;
@@ -118,18 +121,22 @@ const toChrome = (theme: ThemeFile) =>
     CHROME_KEYS.map((key) => [key, workbenchColor(theme, key)]),
   ) as Record<ChromeKey, string>;
 
-export const VOLUMES: Volume[] = THEMES.map((theme, index) => ({
-  issue: index + 1,
-  name: theme.name.replace('MangaMode: ', ''),
-  highContrast: theme.type === 'hc',
-  palette: toPalette(theme),
-  chrome: toChrome(theme),
-  selection: {
-    page: pageSelection(scopeColor(theme, 'entity.name.function')),
-    editor: workbenchColor(theme, 'editor.selectionBackground'),
-    editorText: theme.colors['editor.selectionForeground'],
-  },
-}));
+export const VOLUMES: Volume[] = THEMES.map((theme, index) => {
+  const name = theme.name.replace('MangaMode: ', '');
+  return {
+    issue: index + 1,
+    name,
+    branch: branchFor(name),
+    highContrast: theme.type === 'hc',
+    palette: toPalette(theme),
+    chrome: toChrome(theme),
+    selection: {
+      page: pageSelection(scopeColor(theme, 'entity.name.function')),
+      editor: workbenchColor(theme, 'editor.selectionBackground'),
+      editorText: theme.colors['editor.selectionForeground'],
+    },
+  };
+});
 
 /** A deliberately garish palette, invented for the side-by-side comparison. */
 export const LOUD_PALETTE: Palette = {

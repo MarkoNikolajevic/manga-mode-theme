@@ -7,11 +7,12 @@ import {
   use,
   useState,
 } from 'react';
+import { hourSixCaption, noteRead, shelfIsRead } from '@/lib/easter-eggs';
 import { paletteVars, type Volume } from '@/lib/volumes';
 import { SwapText } from './motion';
 
 interface VolumeContextValue {
-  state: { volumes: Volume[]; volume: Volume };
+  state: { volumes: Volume[]; volume: Volume; shelfRead: boolean };
   actions: { selectVolume: (issue: number) => void };
 }
 
@@ -25,14 +26,27 @@ export function VolumeProvider({
   children: ReactNode;
 }) {
   const [issue, setIssue] = useState(volumes[0].issue);
+  // The volume on screen when the page loads already counts as read.
+  const [read, setRead] = useState<ReadonlySet<number>>(
+    () => new Set([volumes[0].issue]),
+  );
   const volume =
     volumes.find((candidate) => candidate.issue === issue) ?? volumes[0];
+  const shelfRead = shelfIsRead(
+    read,
+    volumes.map((candidate) => candidate.issue),
+  );
 
   return (
     <VolumeContext
       value={{
-        state: { volumes, volume },
-        actions: { selectVolume: setIssue },
+        state: { volumes, volume, shelfRead },
+        actions: {
+          selectVolume: (next) => {
+            setIssue(next);
+            setRead((current) => noteRead(current, next));
+          },
+        },
       }}
     >
       {/* `contents` keeps layout untouched while every page element inherits the selection color. */}
@@ -84,4 +98,9 @@ export function VolumeSurface({
 
 export function VolumeName() {
   return <SwapText>{useVolume().state.volume.name}</SwapText>;
+}
+
+/** Hero caption. Switches once every volume on the shelf has been opened. */
+export function HourSix() {
+  return <SwapText>{hourSixCaption(useVolume().state.shelfRead)}</SwapText>;
 }

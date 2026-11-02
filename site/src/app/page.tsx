@@ -10,6 +10,7 @@ import { InstallLinks } from '@/components/install-links';
 import { Reveal } from '@/components/motion';
 import { TuningBench } from '@/components/tuning-bench';
 import {
+  HourSix,
   VolumeName,
   VolumeProvider,
   VolumeSurface,
@@ -99,7 +100,7 @@ function Hero() {
         </div>
         <div className='halftone relative flex min-h-64 flex-col justify-between bg-paper p-6 motion-safe:animate-panel-in motion-safe:[animation-delay:100ms] md:slash-start md:pl-16'>
           <p className='self-start border-2 border-ink bg-paper px-3 py-1.5 font-bold text-xs motion-safe:animate-panel-in motion-safe:[animation-delay:400ms]'>
-            Hour six of the refactor.
+            <HourSix />
           </p>
           <p
             aria-hidden

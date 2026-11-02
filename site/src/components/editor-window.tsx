@@ -2,6 +2,7 @@
 
 import type { ReactNode } from 'react';
 import { chromeVars } from '@/lib/volumes';
+import { SwapText } from './motion';
 import { useVolume, VolumeName } from './volume-context';
 
 const ACTIVE_FILE = 'chapter.ts';
@@ -26,7 +27,7 @@ export function EditorWindow({
   className?: string;
   children: ReactNode;
 }) {
-  const { chrome } = useVolume().state.volume;
+  const { chrome, branch } = useVolume().state.volume;
 
   return (
     <div
@@ -71,7 +72,9 @@ export function EditorWindow({
       </div>
 
       <div className='flex justify-between gap-4 bg-(--ed-statusBar-background) px-3 py-1 text-(--ed-statusBar-foreground)'>
-        <span aria-hidden>main</span>
+        <span aria-hidden>
+          <SwapText>{branch}</SwapText>
+        </span>
         <span>
           MangaMode: <VolumeName />
         </span>
