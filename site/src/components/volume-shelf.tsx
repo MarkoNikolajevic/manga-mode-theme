@@ -12,10 +12,19 @@ export function VolumeShelf() {
   return (
     <fieldset className='flex h-full min-w-0 flex-col'>
       <legend className='font-bold text-lg'>Pick a volume</legend>
-      <p aria-live='polite' className='mt-1 text-sm'>
-        Reading <SwapText>{`${volume.name}, vol. ${volume.issue}`}</SwapText>
+      <div aria-live='polite' className='mt-2 min-h-28'>
+        <p className='flex flex-wrap items-center gap-2 text-sm'>
+          <SwapText>{volume.name}</SwapText>
+          <span className='border border-ink px-1.5 py-0.5 font-mono text-[10px] uppercase'>
+            {volume.appearance}
+          </span>
+        </p>
+        <p className='mt-2 max-w-xs text-sm/5'>{volume.description}</p>
+      </div>
+      <p className='mt-2 text-xs md:hidden'>
+        Scroll the shelf to explore all 8 volumes →
       </p>
-      <div className='mt-4 flex flex-1 items-end gap-1.5 overflow-x-auto border-ink border-b-8 pt-4'>
+      <div className='mt-2 flex flex-1 items-end gap-1.5 overflow-x-auto border-ink border-b-8 pt-4'>
         {volumes.map(({ issue, name, palette }, index) => (
           <label
             key={issue}
@@ -47,6 +56,20 @@ export function VolumeShelf() {
             />
           </label>
         ))}
+      </div>
+      <div className='mt-4 flex flex-wrap gap-x-4 gap-y-2 text-xs'>
+        {volumes
+          .filter(({ appearance }) => appearance !== 'Dark')
+          .map(({ issue, name, appearance }) => (
+            <button
+              key={issue}
+              type='button'
+              onClick={() => selectVolume(issue)}
+              className='min-h-8 cursor-pointer underline underline-offset-4 hover:no-underline'
+            >
+              {appearance}: {name}
+            </button>
+          ))}
       </div>
     </fieldset>
   );

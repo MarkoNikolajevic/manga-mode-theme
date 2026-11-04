@@ -40,7 +40,7 @@ function SiteHeader() {
         MangaMode
       </a>
       <nav aria-label='Main'>
-        <ul className='flex gap-5 text-sm underline underline-offset-4'>
+        <ul className='flex flex-wrap gap-x-5 gap-y-3 text-sm underline underline-offset-4'>
           <li>
             <a href='#calmer'>Why it&apos;s calmer</a>
           </li>
@@ -97,14 +97,23 @@ function Hero() {
             for long sessions. Soft backgrounds, three-tone brackets, and every
             text color passes WCAG AA.
           </p>
+          <div className='mt-7'>
+            <InstallLinks />
+            <a
+              href='#install'
+              className='mt-4 inline-block text-xs underline underline-offset-4'
+            >
+              Free &amp; open source · Setup in 2 steps
+            </a>
+          </div>
         </div>
-        <div className='halftone relative flex min-h-64 flex-col justify-between bg-paper p-6 motion-safe:animate-panel-in motion-safe:[animation-delay:100ms] md:slash-start md:pl-16'>
+        <div className='halftone relative flex min-h-28 flex-row items-center justify-between bg-paper p-6 motion-safe:animate-panel-in motion-safe:[animation-delay:100ms] md:min-h-64 md:flex-col md:items-stretch md:slash-start md:pl-16'>
           <p className='self-start border-2 border-ink bg-paper px-3 py-1.5 font-bold text-xs motion-safe:animate-panel-in motion-safe:[animation-delay:400ms]'>
             <HourSix />
           </p>
           <p
             aria-hidden
-            className='-rotate-12 self-end font-display text-7xl text-paper [paint-order:stroke_fill] [-webkit-text-stroke:6px_var(--color-ink)] motion-safe:animate-sfx-pop motion-safe:[animation-delay:700ms] sm:text-8xl'
+            className='-rotate-12 self-center font-display text-5xl text-paper [paint-order:stroke_fill] [-webkit-text-stroke:6px_var(--color-ink)] motion-safe:animate-sfx-pop motion-safe:[animation-delay:700ms] md:self-end md:text-7xl lg:text-8xl'
           >
             shhh
           </p>
@@ -266,6 +275,24 @@ function InstallSection() {
         </h2>
         <InstallLinks />
         <CopyCommand command={INSTALL_COMMAND} />
+        <ol className='space-y-4 border-ink border-t-2 pt-5 text-sm/6'>
+          <li>
+            <span className='font-bold'>01 · Install MangaMode.</span> Use your
+            editor’s marketplace above, or run the command in your terminal for
+            VS Code.
+          </li>
+          <li>
+            <span className='font-bold'>02 · Choose your volume.</span> Open the
+            Command Palette (<kbd className='font-mono text-xs'>⌘⇧P</kbd> on
+            macOS, <kbd className='font-mono text-xs'>Ctrl+Shift+P</kbd> on
+            Windows/Linux), run <strong>Preferences: Color Theme</strong>, and
+            select{' '}
+            <span className='font-bold'>
+              MangaMode: <VolumeName />
+            </span>
+            .
+          </li>
+        </ol>
         <p className='text-xs'>
           MIT licensed.{' '}
           <a href={GITHUB_URL} className='underline underline-offset-4'>

@@ -36,6 +36,8 @@ export interface Palette {
 export interface Volume {
   issue: number;
   name: string;
+  description: string;
+  appearance: 'Dark' | 'Light' | 'High contrast';
   /** Git branch shown in the editor status bar. */
   branch: string;
   /** High contrast themes are held to AAA (7:1) instead of AA (4.5:1). */
@@ -62,6 +64,20 @@ const THEMES: ThemeFile[] = [
   sailorMoon,
   deathNote,
 ];
+
+const VOLUME_DESCRIPTIONS: Record<string, string> = {
+  'One Piece': 'Ocean blues and weathered gold, with a little Straw Hat red.',
+  Pokemon: 'Electric yellow and leafy green on a soft charcoal canvas.',
+  'Dragon Ball':
+    'Warm oranges and deep blues. A little energy, kept in balance.',
+  'Demon Slayer':
+    'Water blues and ember reds against a forest-dark background.',
+  'Jujutsu Kaisen': 'Muted violets and cool cyan for a quieter kind of domain.',
+  DanDaDan: 'Occult purple, alien green, and a flash of pink after dark.',
+  'Sailor Moon': 'A warm paper canvas with moonlit pinks, blues, and purples.',
+  'Death Note':
+    'Near-black ink, apple red, and shinigami gold. Built for contrast.',
+};
 
 function requireColor(
   theme: ThemeFile,
@@ -126,6 +142,13 @@ export const VOLUMES: Volume[] = THEMES.map((theme, index) => {
   return {
     issue: index + 1,
     name,
+    description: VOLUME_DESCRIPTIONS[name],
+    appearance:
+      theme.type === 'hc'
+        ? 'High contrast'
+        : theme.type === 'light'
+          ? 'Light'
+          : 'Dark',
     branch: branchFor(name),
     highContrast: theme.type === 'hc',
     palette: toPalette(theme),
