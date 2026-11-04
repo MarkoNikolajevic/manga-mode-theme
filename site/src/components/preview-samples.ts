@@ -1,0 +1,97 @@
+import type { Token } from './code-sample';
+
+export const LANGUAGES = [
+  { id: 'typescript', label: 'TypeScript', fileName: 'chapter.ts' },
+  { id: 'python', label: 'Python', fileName: 'chapter.py' },
+  { id: 'html', label: 'HTML / CSS', fileName: 'chapter.html' },
+] as const;
+
+const PYTHON: readonly Token[][] = [
+  [['comment', '# A little personality. Room to think.']],
+  [['keyword', 'from'], ' dataclasses ', ['keyword', 'import'], ' dataclass'],
+  [],
+  [['function', '@dataclass']],
+  [['keyword', 'class'], ' ', ['type', 'Volume'], ':'],
+  ['    name: ', ['type', 'str']],
+  ['    chapters: ', ['type', 'int'], ' = ', ['number', '24']],
+  [],
+  [
+    ['keyword', 'def'],
+    ' ',
+    ['function', 'read_chapter'],
+    ['b1', '('],
+    'volume: ',
+    ['type', 'Volume'],
+    ['b1', ')'],
+    ' -> ',
+    ['type', 'str'],
+    ':',
+  ],
+  ['    ', ['string', '"""Take it one panel at a time."""']],
+  ['    ', ['keyword', 'return'], ' ', ['string', 'f"Next up: {volume.name}"']],
+  [],
+  [
+    'shelf = ',
+    ['b1', '['],
+    ['type', 'Volume'],
+    ['b2', '('],
+    ['string', '"One Piece"'],
+    ['b2', ')'],
+    ['b1', ']'],
+  ],
+  [['keyword', 'for'], ' volume ', ['keyword', 'in'], ' shelf:'],
+  [
+    '    ',
+    ['function', 'print'],
+    ['b1', '('],
+    ['function', 'read_chapter'],
+    ['b2', '('],
+    'volume',
+    ['b2', ')'],
+    ['b1', ')'],
+  ],
+];
+
+const HTML: readonly Token[][] = [
+  [['comment', '<!-- Your next chapter starts here. -->']],
+  ['<', ['keyword', 'style'], '>'],
+  ['  ', ['type', '.chapter'], ' ', ['b1', '{']],
+  ['    color: ', ['string', 'var(--ink)'], ';'],
+  ['    padding: ', ['number', '24px'], ';'],
+  ['    display: ', ['string', 'grid'], ';'],
+  ['    gap: ', ['number', '16px'], ';'],
+  ['  ', ['b1', '}']],
+  ['</', ['keyword', 'style'], '>'],
+  [],
+  [
+    '<',
+    ['keyword', 'article'],
+    ' ',
+    ['type', 'class'],
+    '=',
+    ['string', '"chapter"'],
+    '>',
+  ],
+  ['  <', ['keyword', 'h1'], '>One panel at a time.</', ['keyword', 'h1'], '>'],
+  [
+    '  <',
+    ['keyword', 'p'],
+    '>A quieter space for your next idea.</',
+    ['keyword', 'p'],
+    '>',
+  ],
+  [
+    '  <',
+    ['keyword', 'a'],
+    ' ',
+    ['type', 'href'],
+    '=',
+    ['string', '"#next"'],
+    '>Keep reading</',
+    ['keyword', 'a'],
+    '>',
+  ],
+  ['</', ['keyword', 'article'], '>'],
+];
+
+export const SAMPLE_LINES = { python: PYTHON, html: HTML };

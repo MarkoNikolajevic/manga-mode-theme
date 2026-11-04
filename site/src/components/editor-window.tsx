@@ -5,8 +5,6 @@ import { chromeVars } from '@/lib/volumes';
 import { SwapText } from './motion';
 import { useVolume, VolumeName } from './volume-context';
 
-const ACTIVE_FILE = 'chapter.ts';
-
 // Files, search, source control, extensions: outline glyphs in the activity bar.
 const ACTIVITY_ICONS = [
   'M6 3h8l4 4v14H6zM14 3v4h4',
@@ -22,9 +20,11 @@ const ACTIVITY_ICONS = [
  */
 export function EditorWindow({
   className,
+  fileName = 'chapter.ts',
   children,
 }: {
   className?: string;
+  fileName?: string;
   children: ReactNode;
 }) {
   const { chrome, branch } = useVolume().state.volume;
@@ -61,7 +61,7 @@ export function EditorWindow({
             className='flex bg-(--ed-editorGroupHeader-tabsBackground)'
           >
             <span className='border-(--ed-tab-activeBorder) border-b-2 bg-(--ed-tab-activeBackground) px-3 py-1.5 text-(--ed-tab-activeForeground)'>
-              {ACTIVE_FILE}
+              {fileName}
             </span>
             <span className='bg-(--ed-tab-inactiveBackground) px-3 py-1.5 text-(--ed-tab-inactiveForeground)'>
               volumes.json

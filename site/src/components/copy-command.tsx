@@ -23,14 +23,14 @@ export function CopyCommand({ command }: { command: string }) {
   }
 
   return (
-    <div className='flex overflow-hidden rounded-full border-2 border-ink'>
-      <code className='flex-1 overflow-x-auto whitespace-nowrap px-4 py-2.5 font-mono text-xs sm:text-sm'>
+    <div className='flex flex-col overflow-hidden rounded-2xl border-2 border-ink sm:flex-row sm:rounded-full'>
+      <code className='min-w-0 flex-1 overflow-x-auto whitespace-pre-wrap break-all px-4 py-2.5 font-mono text-xs sm:whitespace-nowrap sm:break-normal sm:text-sm'>
         {command}
       </code>
       <button
         type='button'
         onClick={copy}
-        className='min-w-32 shrink-0 cursor-pointer bg-ink px-6 font-bold text-paper text-sm hover:bg-ink/85 motion-safe:transition-colors'
+        className='min-h-11 min-w-32 shrink-0 cursor-pointer bg-ink px-6 font-bold text-paper text-sm hover:bg-ink/85 motion-safe:transition-colors'
       >
         <span aria-live='polite'>
           <SwapText>{STATUS_LABEL[status]}</SwapText>

@@ -6,6 +6,7 @@ import { CodeSample } from '@/components/code-sample';
 import { ContrastTable } from '@/components/contrast-table';
 import { CopyCommand } from '@/components/copy-command';
 import { EditorWindow } from '@/components/editor-window';
+import { ExpandPreview } from '@/components/expand-preview';
 import { InstallLinks } from '@/components/install-links';
 import { Reveal } from '@/components/motion';
 import { TuningBench } from '@/components/tuning-bench';
@@ -40,7 +41,7 @@ function SiteHeader() {
         MangaMode
       </a>
       <nav aria-label='Main'>
-        <ul className='flex gap-5 text-sm underline underline-offset-4'>
+        <ul className='flex flex-wrap gap-x-5 gap-y-3 text-sm underline underline-offset-4'>
           <li>
             <a href='#calmer'>Why it&apos;s calmer</a>
           </li>
@@ -68,12 +69,12 @@ function Hero() {
       aria-labelledby='hero-heading'
       className='flex flex-col gap-5 md:[--slant:3rem]'
     >
-      <div className='ink-outline grid gap-5 md:grid-cols-[3fr_2fr] md:gap-3'>
-        <div className='bg-paper p-8 motion-safe:animate-panel-in sm:p-12 md:slash-end md:pr-20'>
+      <div className='ink-outline grid gap-5 lg:grid-cols-[3fr_2fr] lg:gap-3'>
+        <div className='min-w-0 bg-paper p-6 motion-safe:animate-panel-in sm:p-12 lg:slash-end lg:pr-20'>
           <h1
             id='hero-heading'
             aria-label={HEADLINE}
-            className='font-display text-5xl sm:text-7xl'
+            className='font-display text-5xl sm:text-6xl xl:text-7xl'
           >
             {HEADLINE.split(' ').map((word, index) => (
               <Fragment key={word}>
@@ -97,14 +98,23 @@ function Hero() {
             for long sessions. Soft backgrounds, three-tone brackets, and every
             text color passes WCAG AA.
           </p>
+          <div className='mt-7'>
+            <InstallLinks />
+            <a
+              href='#install'
+              className='mt-4 inline-block text-xs underline underline-offset-4'
+            >
+              Free &amp; open source · Setup in 2 steps
+            </a>
+          </div>
         </div>
-        <div className='halftone relative flex min-h-64 flex-col justify-between bg-paper p-6 motion-safe:animate-panel-in motion-safe:[animation-delay:100ms] md:slash-start md:pl-16'>
+        <div className='halftone relative flex min-h-28 flex-row items-center justify-between bg-paper p-6 motion-safe:animate-panel-in motion-safe:[animation-delay:100ms] lg:min-h-64 lg:flex-col lg:items-stretch lg:slash-start lg:pl-16'>
           <p className='self-start border-2 border-ink bg-paper px-3 py-1.5 font-bold text-xs motion-safe:animate-panel-in motion-safe:[animation-delay:400ms]'>
             <HourSix />
           </p>
           <p
             aria-hidden
-            className='-rotate-12 self-end font-display text-7xl text-paper [paint-order:stroke_fill] [-webkit-text-stroke:6px_var(--color-ink)] motion-safe:animate-sfx-pop motion-safe:[animation-delay:700ms] sm:text-8xl'
+            className='-rotate-12 self-center font-display text-5xl text-paper [paint-order:stroke_fill] [-webkit-text-stroke:6px_var(--color-ink)] motion-safe:animate-sfx-pop motion-safe:[animation-delay:700ms] lg:self-end lg:text-8xl'
           >
             shhh
           </p>
@@ -112,13 +122,15 @@ function Hero() {
       </div>
 
       <div className='ink-outline grid gap-5 md:grid-cols-[3fr_2fr] md:gap-3'>
-        <VolumeSurface className='min-w-0 bg-(--tok-bg) motion-safe:animate-panel-in motion-safe:transition-colors motion-safe:duration-500 motion-safe:[animation-delay:200ms] md:backslash-end'>
-          <EditorWindow className='h-full'>
-            {/* Keeps code clear of the slanted edge; the chrome runs into it. */}
-            <div className='flex-1 md:pr-12'>
-              <CodeSample />
-            </div>
-          </EditorWindow>
+        <VolumeSurface className='flex min-w-0 flex-col bg-(--tok-bg) motion-safe:animate-panel-in motion-safe:transition-colors motion-safe:duration-500 motion-safe:[animation-delay:200ms] md:backslash-end'>
+          <ExpandPreview>
+            <EditorWindow className='flex-1'>
+              {/* Keeps code clear of the slanted edge; the chrome runs into it. */}
+              <div className='flex-1 md:pr-12'>
+                <CodeSample />
+              </div>
+            </EditorWindow>
+          </ExpandPreview>
         </VolumeSurface>
         <div className='min-w-0 bg-paper p-6 motion-safe:animate-panel-in motion-safe:[animation-delay:300ms] md:backslash-start md:pl-16'>
           <VolumeShelf />
@@ -260,12 +272,30 @@ function InstallSection() {
       aria-labelledby='install-heading'
       className='halftone scroll-mt-6 border-2 border-ink px-4 py-12 sm:py-16'
     >
-      <Reveal className='mx-auto flex max-w-2xl flex-col gap-6 border-2 border-ink bg-paper p-6 sm:p-8'>
-        <h2 id='install-heading' className={SECTION_HEADING}>
+      <div className='mx-auto flex max-w-2xl flex-col gap-6 border-2 border-ink bg-paper p-6 sm:p-8'>
+        <h2 id='install-heading' className='font-display text-3xl sm:text-5xl'>
           To be continued in your editor
         </h2>
         <InstallLinks />
         <CopyCommand command={INSTALL_COMMAND} />
+        <ol className='space-y-4 border-ink border-t-2 pt-5 text-sm/6'>
+          <li>
+            <span className='font-bold'>01 · Install MangaMode.</span> Use your
+            editor’s marketplace above, or run the command in your terminal for
+            VS Code.
+          </li>
+          <li>
+            <span className='font-bold'>02 · Choose your volume.</span> Open the
+            Command Palette (<kbd className='font-mono text-xs'>⌘⇧P</kbd> on
+            macOS, <kbd className='font-mono text-xs'>Ctrl+Shift+P</kbd> on
+            Windows/Linux), run <strong>Preferences: Color Theme</strong>, and
+            select{' '}
+            <span className='font-bold'>
+              MangaMode: <VolumeName />
+            </span>
+            .
+          </li>
+        </ol>
         <p className='text-xs'>
           MIT licensed.{' '}
           <a href={GITHUB_URL} className='underline underline-offset-4'>
@@ -273,7 +303,7 @@ function InstallSection() {
           </a>
           .
         </p>
-      </Reveal>
+      </div>
     </section>
   );
 }

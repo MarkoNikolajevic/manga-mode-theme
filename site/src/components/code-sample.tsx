@@ -8,7 +8,7 @@ type TokenKind =
   | 'b1'
   | 'b2'
   | 'b3';
-type Token = string | readonly [TokenKind, string];
+export type Token = string | readonly [TokenKind, string];
 
 const TOKEN_CLASS: Record<TokenKind, string> = {
   comment: 'text-(--tok-comment)',
@@ -101,32 +101,39 @@ const LINES: readonly Token[][] = [
 ];
 
 /** Colored entirely through `--tok-*` variables, so any ancestor can theme it. */
-export function CodeSample() {
+export function CodeSample({ lines = LINES }: { lines?: readonly Token[][] }) {
   return (
-    <pre className='overflow-x-auto bg-(--tok-bg) motion-safe:transition-colors motion-safe:duration-500 [&_span]:motion-safe:transition-colors [&_span]:motion-safe:duration-500 p-4 font-mono text-(--tok-text) text-xs/6 sm:p-6 sm:text-sm/7'>
-      <code>
-        {LINES.map((tokens, lineIndex) => (
-          // biome-ignore lint/suspicious/noArrayIndexKey: static content, lines never reorder
-          <span key={lineIndex} className='block'>
-            <span
-              aria-hidden
-              className='inline-block w-8 select-none text-(--tok-line)'
-            >
-              {lineIndex + 1}
+    <section
+      // biome-ignore lint/a11y/noNoninteractiveTabindex: Long code lines need keyboard scrolling.
+      tabIndex={0}
+      aria-label='Code sample'
+      className='overflow-x-auto focus-visible:outline-(--tok-function)'
+    >
+      <pre className='min-w-max bg-(--tok-bg) motion-safe:transition-colors motion-safe:duration-500 [&_span]:motion-safe:transition-colors [&_span]:motion-safe:duration-500 p-4 font-mono text-(--tok-text) text-xs/6 sm:p-6 sm:text-sm/7'>
+        <code>
+          {lines.map((tokens, lineIndex) => (
+            // biome-ignore lint/suspicious/noArrayIndexKey: static content, lines never reorder
+            <span key={lineIndex} className='block'>
+              <span
+                aria-hidden
+                className='inline-block w-8 select-none text-(--tok-line)'
+              >
+                {lineIndex + 1}
+              </span>
+              {tokens.map((token, tokenIndex) =>
+                typeof token === 'string' ? (
+                  token
+                ) : (
+                  // biome-ignore lint/suspicious/noArrayIndexKey: static content, tokens never reorder
+                  <span key={tokenIndex} className={TOKEN_CLASS[token[0]]}>
+                    {token[1]}
+                  </span>
+                ),
+              )}
             </span>
-            {tokens.map((token, tokenIndex) =>
-              typeof token === 'string' ? (
-                token
-              ) : (
-                // biome-ignore lint/suspicious/noArrayIndexKey: static content, tokens never reorder
-                <span key={tokenIndex} className={TOKEN_CLASS[token[0]]}>
-                  {token[1]}
-                </span>
-              ),
-            )}
-          </span>
-        ))}
-      </code>
-    </pre>
+          ))}
+        </code>
+      </pre>
+    </section>
   );
 }
