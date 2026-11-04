@@ -35,7 +35,12 @@ export function ContrastTable() {
   const { palette } = useVolume().state.volume;
 
   return (
-    <div className='overflow-x-auto border-2 border-ink'>
+    <section
+      // biome-ignore lint/a11y/noNoninteractiveTabindex: The wide table needs keyboard scrolling.
+      tabIndex={0}
+      aria-label='Token contrast table'
+      className='overflow-x-auto border-2 border-ink'
+    >
       <table className='w-full min-w-xl text-left text-sm'>
         <thead className='border-ink border-b-2 text-xs'>
           <tr>
@@ -91,6 +96,6 @@ export function ContrastTable() {
           })}
         </m.tbody>
       </table>
-    </div>
+    </section>
   );
 }

@@ -1,9 +1,11 @@
 'use client';
 
+import { useId } from 'react';
 import { SwapText } from './motion';
 import { useVolume } from './volume-context';
 
 export function VolumeShelf() {
+  const groupId = useId();
   const {
     state: { volumes, volume },
     actions: { selectVolume },
@@ -33,11 +35,11 @@ export function VolumeShelf() {
               color: palette.text,
               animationDelay: `${450 + index * 50}ms`,
             }}
-            className='flex h-56 w-10 shrink-0 cursor-pointer flex-col items-center justify-between border-2 border-ink pt-2 has-checked:-translate-y-3 not-has-checked:hover:-translate-y-1 has-focus-visible:outline-2 has-focus-visible:outline-ink has-focus-visible:outline-offset-2 motion-safe:animate-drop motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-spring'
+            className='relative flex h-56 w-10 shrink-0 cursor-pointer flex-col items-center justify-between border-2 border-ink pt-2 has-checked:-translate-y-3 not-has-checked:hover:-translate-y-1 has-focus-visible:outline-2 has-focus-visible:outline-ink has-focus-visible:outline-offset-2 motion-safe:animate-drop motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-spring'
           >
             <input
               type='radio'
-              name='volume'
+              name={groupId}
               value={issue}
               checked={issue === volume.issue}
               onChange={() => selectVolume(issue)}

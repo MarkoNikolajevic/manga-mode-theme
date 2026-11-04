@@ -39,6 +39,7 @@ export function CalmComparison({ code }: { code: ReactNode }) {
         <VolumeSurface>{code}</VolumeSurface>
         <div
           aria-hidden
+          inert
           className='absolute inset-0'
           style={{
             ...paletteVars(LOUD_PALETTE),
