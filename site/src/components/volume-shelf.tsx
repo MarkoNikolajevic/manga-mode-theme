@@ -24,7 +24,7 @@ export function VolumeShelf() {
         <p className='mt-2 max-w-xs text-sm/5'>{volume.description}</p>
       </div>
       <p className='mt-2 text-xs md:hidden'>
-        Scroll the shelf to explore all 8 volumes →
+        Scroll the shelf to explore all {volumes.length} volumes →
       </p>
       <div className='mt-2 flex flex-1 items-end gap-1.5 overflow-x-auto border-ink border-b-8 pt-4'>
         {volumes.map(({ issue, name, palette }, index) => (

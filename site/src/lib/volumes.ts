@@ -1,8 +1,10 @@
 import type { CSSProperties } from 'react';
+import apothecaryDiaries from '../../../themes/apothecary-diaries-color-theme.json';
 import dandadan from '../../../themes/dandadan-color-theme.json';
 import deathNote from '../../../themes/death-note-color-theme.json';
 import demonSlayer from '../../../themes/demon-slayer-color-theme.json';
 import dragonBall from '../../../themes/dragon-ball-color-theme.json';
+import gachiakuta from '../../../themes/gachiakuta-color-theme.json';
 import jujutsuKaisen from '../../../themes/jujutsu-kaisen-color-theme.json';
 import onePiece from '../../../themes/one-piece-color-theme.json';
 import pokemon from '../../../themes/pokemon-color-theme.json';
@@ -63,6 +65,8 @@ const THEMES: ThemeFile[] = [
   dandadan,
   sailorMoon,
   deathNote,
+  apothecaryDiaries,
+  gachiakuta,
 ];
 
 const VOLUME_DESCRIPTIONS: Record<string, string> = {
@@ -77,6 +81,10 @@ const VOLUME_DESCRIPTIONS: Record<string, string> = {
   'Sailor Moon': 'A warm paper canvas with moonlit pinks, blues, and purples.',
   'Death Note':
     'Near-black ink, apple red, and shinigami gold. Built for contrast.',
+  'The Apothecary Diaries':
+    'Pale celadon, pine, jade, and plum. A quiet study in palace botanicals.',
+  Gachiakuta:
+    'Warm soot, chalk, and weathered rust, with a sharp yellow-green mark.',
 };
 
 function requireColor(

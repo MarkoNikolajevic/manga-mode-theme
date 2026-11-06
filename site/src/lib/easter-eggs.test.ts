@@ -25,10 +25,12 @@ test('each shipped theme has the status-bar branch agreed for it', () => {
       ['Death Note', 'notebook'],
       ['Demon Slayer', 'nichirin'],
       ['Dragon Ball', 'kame'],
+      ['Gachiakuta', 'reclaimed'],
       ['Jujutsu Kaisen', 'domain'],
       ['One Piece', 'grand-line'],
       ['Pokemon', 'pallet'],
       ['Sailor Moon', 'moon'],
+      ['The Apothecary Diaries', 'apothecary'],
     ],
   );
 });

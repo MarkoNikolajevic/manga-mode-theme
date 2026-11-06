@@ -8,6 +8,8 @@ const BRANCH_BY_NAME: Record<string, string> = {
   DanDaDan: 'occult',
   'Sailor Moon': 'moon',
   'Death Note': 'notebook',
+  'The Apothecary Diaries': 'apothecary',
+  Gachiakuta: 'reclaimed',
 };
 
 export function branchFor(name: string): string {

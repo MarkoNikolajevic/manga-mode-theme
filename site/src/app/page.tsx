@@ -94,7 +94,7 @@ function Hero() {
             ))}
           </h1>
           <p className='mt-6 max-w-sm text-sm/6 motion-safe:animate-panel-in motion-safe:[animation-delay:450ms]'>
-            Eight VS Code and Cursor themes drawn from manga palettes and tuned
+            Ten VS Code and Cursor themes drawn from manga palettes and tuned
             for long sessions. Soft backgrounds, three-tone brackets, and every
             text color passes WCAG AA.
           </p>
