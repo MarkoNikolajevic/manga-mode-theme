@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "MangaMode: anime themes that don't shout",
   description:
-    'Eight VS Code and Cursor themes drawn from manga palettes and tuned for long sessions. Every text color passes WCAG AA.',
+    'Ten VS Code and Cursor themes drawn from manga palettes and tuned for long sessions. Every text color passes WCAG AA.',
 };
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {

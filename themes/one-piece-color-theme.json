@@ -4,12 +4,12 @@
   "semanticHighlighting": true,
   "semanticTokenColors": {
     "class": "#63C8BC",
-    "class.defaultLibrary": "#D95E63",
+    "class.defaultLibrary": "#DD7074",
     "type": "#63C8BC",
-    "type.defaultLibrary": "#D95E63",
+    "type.defaultLibrary": "#DD7074",
     "interface": "#EDC372",
     "function": "#63C8BC",
-    "function.defaultLibrary": "#D95E63",
+    "function.defaultLibrary": "#DD7074",
     "method": "#63C8BC",
     "variable": "#E5EFFB",
     "variable.readonly": "#EDC372",
@@ -20,7 +20,7 @@
     "enumMember": "#EDC372",
     "namespace": "#EDC372",
     "typeParameter": "#EDC372",
-    "decorator": "#D95E63"
+    "decorator": "#DD7074"
   },
   "colors": {
     "editor.background": "#0B1B24",
@@ -29,12 +29,12 @@
     "editorLineNumber.foreground": "#658895",
     "editorLineNumber.activeForeground": "#97B9C6",
     "editorCursor.foreground": "#EDC372",
-    "editor.selectionBackground": "#1F3D49",
+    "editor.selectionBackground": "#162D38",
     "editor.selectionHighlightBackground": "#19323B99",
-    "editor.wordHighlightBackground": "#2E6E7C8A",
-    "editor.wordHighlightStrongBackground": "#3A8F9FB0",
-    "editor.findMatchBackground": "#A65A4A80",
-    "editor.findMatchHighlightBackground": "#6A4B4666",
+    "editor.wordHighlightBackground": "#2E6E7C3A",
+    "editor.wordHighlightStrongBackground": "#3A8F9F28",
+    "editor.findMatchBackground": "#A65A4A38",
+    "editor.findMatchHighlightBackground": "#6A4B4651",
     "editorIndentGuide.background1": "#1C333C",
     "editorIndentGuide.activeBackground1": "#2F6270",
     "editorBracketMatch.background": "#28515D55",
@@ -49,9 +49,9 @@
     "editorWarning.foreground": "#EDC372",
     "editorInfo.foreground": "#63C8BC",
     "editorInlayHint.foreground": "#6E8EAE",
-    "editorInlayHint.background": "#1F3D4980",
+    "editorInlayHint.background": "#1F3D495C",
     "editorInlayHint.parameterForeground": "#6E8EAE",
-    "editorInlayHint.parameterBackground": "#1F3D4980",
+    "editorInlayHint.parameterBackground": "#1F3D495C",
     "editorInlayHint.typeForeground": "#97DCD4",
     "editorInlayHint.typeBackground": "#1F3D4980",
     "editorSuggestWidget.background": "#0B1720",
@@ -61,7 +61,7 @@
     "editorHoverWidget.background": "#0B1720",
     "editorHoverWidget.foreground": "#DCEAF1",
     "editorHoverWidget.border": "#1C333C",
-    "focusBorder": "#63C8BC66",
+    "focusBorder": "#63C8BC",
     "input.background": "#0F2330",
     "input.foreground": "#DCEAF1",
     "input.border": "#1C333C",
@@ -106,8 +106,8 @@
     "terminal.ansiBrightMagenta": "#D95E63",
     "terminal.ansiBrightCyan": "#97DCD4",
     "terminal.ansiBrightWhite": "#DCEAF1",
-    "diffEditor.insertedTextBackground": "#8BD5B222",
-    "diffEditor.removedTextBackground": "#D95E6322",
+    "diffEditor.insertedTextBackground": "#8BD5B205",
+    "diffEditor.removedTextBackground": "#D95E631D",
     "diffEditor.insertedLineBackground": "#8BD5B215",
     "diffEditor.removedLineBackground": "#D95E6315",
     "diffEditorGutter.insertedLineBackground": "#8BD5B222",
@@ -163,7 +163,13 @@
     "peekViewEditor.background": "#0F2330",
     "peekViewResult.background": "#0B1720",
     "peekViewTitle.background": "#0B1720",
-    "terminalCursor.foreground": "#EDC372"
+    "terminalCursor.foreground": "#EDC372",
+    "editorSuggestWidget.selectedForeground": "#DCEAF1",
+    "list.focusForeground": "#DCEAF1",
+    "list.inactiveSelectionForeground": "#DCEAF1",
+    "menu.selectionForeground": "#DCEAF1",
+    "quickInput.foreground": "#DCEAF1",
+    "quickInputList.focusForeground": "#DCEAF1"
   },
   "tokenColors": [
     {
@@ -172,7 +178,7 @@
         "meta.structure.dictionary.json > string.quoted.json"
       ],
       "settings": {
-        "foreground": "#D95E63"
+        "foreground": "#DD7074"
       }
     },
     {
@@ -209,7 +215,7 @@
         "punctuation.definition.comment"
       ],
       "settings": {
-        "foreground": "#6E8EAE",
+        "foreground": "#7594B2",
         "fontStyle": "italic"
       }
     },
@@ -220,7 +226,7 @@
         "keyword.control"
       ],
       "settings": {
-        "foreground": "#D95E63"
+        "foreground": "#DD7074"
       }
     },
     {
@@ -247,7 +253,7 @@
         "support.class.component.tsx"
       ],
       "settings": {
-        "foreground": "#D95E63"
+        "foreground": "#DD7074"
       }
     },
     {

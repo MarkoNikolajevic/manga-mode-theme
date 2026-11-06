@@ -1,34 +1,34 @@
-import Image from 'next/image';
-import { Fragment } from 'react';
-import { CalmComparison } from '@/components/calm-comparison';
-import { CalmerNotes } from '@/components/calmer-notes';
-import { CodeSample } from '@/components/code-sample';
-import { ContrastTable } from '@/components/contrast-table';
-import { CopyCommand } from '@/components/copy-command';
-import { EditorWindow } from '@/components/editor-window';
-import { ExpandPreview } from '@/components/expand-preview';
-import { InstallLinks } from '@/components/install-links';
-import { Reveal } from '@/components/motion';
-import { TuningBench } from '@/components/tuning-bench';
+import Image from "next/image";
+import { Fragment } from "react";
+import { CalmComparison } from "@/components/calm-comparison";
+import { CalmerNotes } from "@/components/calmer-notes";
+import { CodeSample } from "@/components/code-sample";
+import { ContrastTable } from "@/components/contrast-table";
+import { CopyCommand } from "@/components/copy-command";
+import { EditorWindow } from "@/components/editor-window";
+import { ExpandPreview } from "@/components/expand-preview";
+import { InstallLinks } from "@/components/install-links";
+import { Reveal } from "@/components/motion";
+import { TuningBench } from "@/components/tuning-bench";
 import {
   HourSix,
   VolumeName,
   VolumeProvider,
   VolumeSurface,
-} from '@/components/volume-context';
-import { VolumeShelf } from '@/components/volume-shelf';
-import { getInstallCount } from '@/lib/install-count';
+} from "@/components/volume-context";
+import { VolumeShelf } from "@/components/volume-shelf";
+import { getInstallCount } from "@/lib/install-count";
 import {
   AUTHOR_URL,
   GITHUB_URL,
   INSTALL_COMMAND,
   README_URL,
-} from '@/lib/links';
-import { VOLUMES } from '@/lib/volumes';
-import logo from '../../../images/icon.png';
+} from "@/lib/links";
+import { VOLUMES } from "@/lib/volumes";
+import logo from "../../../images/icon.png";
 
-const CONTAINER = 'mx-auto w-full max-w-6xl px-4 sm:px-6';
-const SECTION_HEADING = 'font-display text-4xl sm:text-5xl';
+const CONTAINER = "mx-auto w-full max-w-7xl px-4 sm:px-6";
+const SECTION_HEADING = "font-display text-4xl sm:text-5xl";
 const HEADLINE = "Anime themes that don't shout.";
 
 function SiteHeader() {
@@ -36,23 +36,23 @@ function SiteHeader() {
     <header
       className={`${CONTAINER} flex flex-wrap items-center justify-between gap-4 py-5`}
     >
-      <a href='/' className='flex items-center gap-2.5 font-display text-xl'>
-        <Image src={logo} alt='' className='size-8 rounded-md' />
+      <a href="/" className="flex items-center gap-2.5 font-display text-xl">
+        <Image src={logo} alt="" className="size-8 rounded-md" />
         MangaMode
       </a>
-      <nav aria-label='Main'>
-        <ul className='flex flex-wrap gap-x-5 gap-y-3 text-sm underline underline-offset-4'>
+      <nav aria-label="Main">
+        <ul className="flex flex-wrap gap-x-5 gap-y-3 text-sm underline underline-offset-4">
           <li>
-            <a href='#calmer'>Why it&apos;s calmer</a>
+            <a href="#calmer">Why it&apos;s calmer</a>
           </li>
           <li>
-            <a href='#contrast'>Contrast</a>
+            <a href="#contrast">Contrast</a>
           </li>
           <li>
-            <a href='#tune'>Tune a color</a>
+            <a href="#tune">Tune a color</a>
           </li>
           <li>
-            <a href='#install'>Install</a>
+            <a href="#install">Install</a>
           </li>
           <li>
             <a href={GITHUB_URL}>GitHub</a>
@@ -66,25 +66,25 @@ function SiteHeader() {
 function Hero() {
   return (
     <section
-      aria-labelledby='hero-heading'
-      className='flex flex-col gap-5 md:[--slant:3rem]'
+      aria-labelledby="hero-heading"
+      className="flex flex-col gap-5 md:[--slant:3rem]"
     >
-      <div className='ink-outline grid gap-5 lg:grid-cols-[3fr_2fr] lg:gap-3'>
-        <div className='min-w-0 bg-paper p-6 motion-safe:animate-panel-in sm:p-12 lg:slash-end lg:pr-20'>
+      <div className="ink-outline grid gap-5 lg:grid-cols-[3fr_2fr] lg:gap-3">
+        <div className="min-w-0 bg-paper p-6 motion-safe:animate-panel-in sm:p-12 lg:slash-end lg:pr-20">
           <h1
-            id='hero-heading'
+            id="hero-heading"
             aria-label={HEADLINE}
-            className='font-display text-5xl sm:text-6xl xl:text-7xl'
+            className="font-display text-5xl sm:text-6xl xl:text-7xl"
           >
-            {HEADLINE.split(' ').map((word, index) => (
+            {HEADLINE.split(" ").map((word, index) => (
               <Fragment key={word}>
-                {index > 0 && ' '}
+                {index > 0 && " "}
                 <span
                   aria-hidden
-                  className='-my-[0.1em] inline-block overflow-hidden py-[0.1em] align-bottom'
+                  className="my-[-0.1em] inline-block overflow-hidden py-[0.1em] align-bottom"
                 >
                   <span
-                    className='inline-block motion-safe:animate-rise'
+                    className="inline-block motion-safe:animate-rise"
                     style={{ animationDelay: `${150 + index * 70}ms` }}
                   >
                     {word}
@@ -93,46 +93,46 @@ function Hero() {
               </Fragment>
             ))}
           </h1>
-          <p className='mt-6 max-w-sm text-sm/6 motion-safe:animate-panel-in motion-safe:[animation-delay:450ms]'>
-            Eight VS Code and Cursor themes drawn from manga palettes and tuned
+          <p className="mt-6 max-w-sm text-sm/6 motion-safe:animate-panel-in motion-safe:[animation-delay:450ms]">
+            Ten VS Code and Cursor themes drawn from manga palettes and tuned
             for long sessions. Soft backgrounds, three-tone brackets, and every
             text color passes WCAG AA.
           </p>
-          <div className='mt-7'>
+          <div className="mt-7">
             <InstallLinks />
             <a
-              href='#install'
-              className='mt-4 inline-block text-xs underline underline-offset-4'
+              href="#install"
+              className="mt-4 inline-block text-xs underline underline-offset-4"
             >
               Free &amp; open source · Setup in 2 steps
             </a>
           </div>
         </div>
-        <div className='halftone relative flex min-h-28 flex-row items-center justify-between bg-paper p-6 motion-safe:animate-panel-in motion-safe:[animation-delay:100ms] lg:min-h-64 lg:flex-col lg:items-stretch lg:slash-start lg:pl-16'>
-          <p className='self-start border-2 border-ink bg-paper px-3 py-1.5 font-bold text-xs motion-safe:animate-panel-in motion-safe:[animation-delay:400ms]'>
+        <div className="halftone relative flex min-h-28 flex-row items-center justify-between bg-paper p-6 motion-safe:animate-panel-in motion-safe:[animation-delay:100ms] lg:min-h-64 lg:flex-col lg:items-stretch lg:slash-start lg:pl-16">
+          <p className="self-start border-2 border-ink bg-paper px-3 py-1.5 font-bold text-xs motion-safe:animate-panel-in motion-safe:[animation-delay:400ms]">
             <HourSix />
           </p>
           <p
             aria-hidden
-            className='-rotate-12 self-center font-display text-5xl text-paper [paint-order:stroke_fill] [-webkit-text-stroke:6px_var(--color-ink)] motion-safe:animate-sfx-pop motion-safe:[animation-delay:700ms] lg:self-end lg:text-8xl'
+            className="-rotate-12 self-center font-display text-5xl text-paper [paint-order:stroke_fill] [-webkit-text-stroke:6px_var(--color-ink)] motion-safe:animate-sfx-pop motion-safe:[animation-delay:700ms] lg:self-end lg:text-8xl"
           >
             shhh
           </p>
         </div>
       </div>
 
-      <div className='ink-outline grid gap-5 md:grid-cols-[3fr_2fr] md:gap-3'>
-        <VolumeSurface className='flex min-w-0 flex-col bg-(--tok-bg) motion-safe:animate-panel-in motion-safe:transition-colors motion-safe:duration-500 motion-safe:[animation-delay:200ms] md:backslash-end'>
+      <div className="ink-outline grid gap-5 md:grid-cols-[3fr_2fr] md:gap-3">
+        <VolumeSurface className="flex min-w-0 flex-col bg-(--tok-bg) motion-safe:animate-panel-in motion-safe:transition-colors motion-safe:duration-500 motion-safe:[animation-delay:200ms] md:backslash-end">
           <ExpandPreview>
-            <EditorWindow className='flex-1'>
+            <EditorWindow className="flex-1">
               {/* Keeps code clear of the slanted edge; the chrome runs into it. */}
-              <div className='flex-1 md:pr-12'>
+              <div className="flex-1 md:pr-12">
                 <CodeSample />
               </div>
             </EditorWindow>
           </ExpandPreview>
         </VolumeSurface>
-        <div className='min-w-0 bg-paper p-6 motion-safe:animate-panel-in motion-safe:[animation-delay:300ms] md:backslash-start md:pl-16'>
+        <div className="min-w-0 bg-paper p-6 motion-safe:animate-panel-in motion-safe:[animation-delay:300ms] md:backslash-start md:pl-16">
           <VolumeShelf />
         </div>
       </div>
@@ -146,12 +146,12 @@ async function InstallStrip() {
   const installs = await getInstallCount();
 
   return (
-    <div className='flex flex-wrap items-center justify-between gap-4 border-2 border-ink px-6 py-4 motion-safe:animate-panel-in motion-safe:[animation-delay:400ms]'>
-      <p className='text-sm'>
+    <div className="flex flex-wrap items-center justify-between gap-4 border-2 border-ink px-6 py-4 motion-safe:animate-panel-in motion-safe:[animation-delay:400ms]">
+      <p className="text-sm">
         Free on both marketplaces
         {installs === null
-          ? '.'
-          : `, installed ${new Intl.NumberFormat('en').format(installs)} times so far.`}
+          ? "."
+          : `, installed ${new Intl.NumberFormat("en").format(installs)} times so far.`}
       </p>
       <InstallLinks />
     </div>
@@ -161,20 +161,20 @@ async function InstallStrip() {
 function CalmerSection() {
   return (
     <section
-      id='calmer'
-      aria-labelledby='calmer-heading'
-      className='scroll-mt-6'
+      id="calmer"
+      aria-labelledby="calmer-heading"
+      className="scroll-mt-6"
     >
       <Reveal>
-        <h2 id='calmer-heading' className={SECTION_HEADING}>
+        <h2 id="calmer-heading" className={SECTION_HEADING}>
           Why it&apos;s calmer
         </h2>
       </Reveal>
-      <div className='mt-6 grid grid-cols-1 gap-8 lg:grid-cols-[3fr_2fr] lg:gap-14'>
+      <div className="mt-6 grid grid-cols-1 gap-8 lg:grid-cols-[3fr_2fr] lg:gap-14">
         <Reveal>
           <figure>
             <CalmComparison code={<CodeSample />} />
-            <figcaption className='mt-3 text-xs'>
+            <figcaption className="mt-3 text-xs">
               The loud theme on the left is invented for this comparison.
             </figcaption>
           </figure>
@@ -188,21 +188,21 @@ function CalmerSection() {
 function ContrastSection() {
   return (
     <section
-      id='contrast'
-      aria-labelledby='contrast-heading'
-      className='scroll-mt-6'
+      id="contrast"
+      aria-labelledby="contrast-heading"
+      className="scroll-mt-6"
     >
-      <Reveal className='flex flex-wrap items-end justify-between gap-4'>
-        <h2 id='contrast-heading' className={SECTION_HEADING}>
+      <Reveal className="flex flex-wrap items-end justify-between gap-4">
+        <h2 id="contrast-heading" className={SECTION_HEADING}>
           Every color, measured
         </h2>
-        <p className='max-w-sm text-xs/5'>
+        <p className="max-w-sm text-xs/5">
           Ratios for <VolumeName /> against its editor background. Pick another
           volume from the shelf and the table follows. The same check runs on
           every release, so a color that fails never ships.
         </p>
       </Reveal>
-      <div className='mt-4'>
+      <div className="mt-4">
         <ContrastTable />
       </div>
     </section>
@@ -211,17 +211,17 @@ function ContrastSection() {
 
 function TuneSection() {
   return (
-    <section id='tune' aria-labelledby='tune-heading' className='scroll-mt-6'>
-      <Reveal className='flex flex-wrap items-end justify-between gap-4'>
-        <h2 id='tune-heading' className={SECTION_HEADING}>
+    <section id="tune" aria-labelledby="tune-heading" className="scroll-mt-6">
+      <Reveal className="flex flex-wrap items-end justify-between gap-4">
+        <h2 id="tune-heading" className={SECTION_HEADING}>
           Try to make it louder
         </h2>
-        <p className='max-w-sm text-xs/5'>
+        <p className="max-w-sm text-xs/5">
           The bench moves lightness in OKLCH so the hue holds while you drag.
           See where readable ends.
         </p>
       </Reveal>
-      <div className='mt-4'>
+      <div className="mt-4">
         <TuningBench />
       </div>
     </section>
@@ -230,34 +230,34 @@ function TuneSection() {
 
 const BUILD_NOTES = [
   [
-    'One source of truth',
-    'Every swatch, ratio, and code sample reads from the same JSON files the extension ships. Change a theme and this page follows on the next build.',
+    "One source of truth",
+    "Every swatch, ratio, and code sample reads from the same JSON files the extension ships. Change a theme and this page follows on the next build.",
   ],
   [
-    'Measured, not eyeballed',
-    'Contrast uses the WCAG 2 formula and rounds down, so a 4.46:1 color is never shown as 4.5:1. Even text selection is tested: each volume tints it in its own accent, at a shade that keeps ink readable.',
+    "Measured, not eyeballed",
+    "Contrast uses the WCAG 2 formula and rounds down, so a 4.46:1 color is never shown as 4.5:1. Even text selection is tested: each volume tints it in its own accent, at a shade that keeps ink readable.",
   ],
   [
-    'Motion before hydration',
-    'The hero entrance is plain CSS, so it plays before JavaScript loads. Later motion uses a trimmed Motion bundle and respects the reduced motion setting.',
+    "Motion before hydration",
+    "The hero entrance is plain CSS, so it plays before JavaScript loads. Later motion uses a trimmed Motion bundle and respects the reduced motion setting.",
   ],
   [
-    'No highlighter shipped',
-    'The code sample is tokenized by hand and colored through CSS variables, so switching volumes is a style change, not a re-render of a parser.',
+    "No highlighter shipped",
+    "The code sample is tokenized by hand and colored through CSS variables, so switching volumes is a style change, not a re-render of a parser.",
   ],
 ] as const;
 
 function BuildNotes() {
   return (
-    <section aria-labelledby='notes-heading'>
-      <h2 id='notes-heading' className={SECTION_HEADING}>
+    <section aria-labelledby="notes-heading">
+      <h2 id="notes-heading" className={SECTION_HEADING}>
         How this page is built
       </h2>
-      <dl className='mt-6 grid gap-x-14 gap-y-6 sm:grid-cols-2'>
+      <dl className="mt-6 grid gap-x-14 gap-y-6 sm:grid-cols-2">
         {BUILD_NOTES.map(([title, body]) => (
-          <div key={title} className='border-ink border-t-2 pt-3'>
-            <dt className='font-bold'>{title}</dt>
-            <dd className='mt-1 max-w-prose text-sm/6'>{body}</dd>
+          <div key={title} className="border-ink border-t-2 pt-3">
+            <dt className="font-bold">{title}</dt>
+            <dd className="mt-1 max-w-prose text-sm/6">{body}</dd>
           </div>
         ))}
       </dl>
@@ -268,37 +268,37 @@ function BuildNotes() {
 function InstallSection() {
   return (
     <section
-      id='install'
-      aria-labelledby='install-heading'
-      className='halftone scroll-mt-6 border-2 border-ink px-4 py-12 sm:py-16'
+      id="install"
+      aria-labelledby="install-heading"
+      className="halftone scroll-mt-6 border-2 border-ink px-4 py-12 sm:py-16"
     >
-      <div className='mx-auto flex max-w-2xl flex-col gap-6 border-2 border-ink bg-paper p-6 sm:p-8'>
-        <h2 id='install-heading' className='font-display text-3xl sm:text-5xl'>
+      <div className="mx-auto flex max-w-2xl flex-col gap-6 border-2 border-ink bg-paper p-6 sm:p-8">
+        <h2 id="install-heading" className="font-display text-3xl sm:text-5xl">
           To be continued in your editor
         </h2>
         <InstallLinks />
         <CopyCommand command={INSTALL_COMMAND} />
-        <ol className='space-y-4 border-ink border-t-2 pt-5 text-sm/6'>
+        <ol className="space-y-4 border-ink border-t-2 pt-5 text-sm/6">
           <li>
-            <span className='font-bold'>01 · Install MangaMode.</span> Use your
+            <span className="font-bold">01 · Install MangaMode.</span> Use your
             editor’s marketplace above, or run the command in your terminal for
             VS Code.
           </li>
           <li>
-            <span className='font-bold'>02 · Choose your volume.</span> Open the
-            Command Palette (<kbd className='font-mono text-xs'>⌘⇧P</kbd> on
-            macOS, <kbd className='font-mono text-xs'>Ctrl+Shift+P</kbd> on
+            <span className="font-bold">02 · Choose your volume.</span> Open the
+            Command Palette (<kbd className="font-mono text-xs">⌘⇧P</kbd> on
+            macOS, <kbd className="font-mono text-xs">Ctrl+Shift+P</kbd> on
             Windows/Linux), run <strong>Preferences: Color Theme</strong>, and
-            select{' '}
-            <span className='font-bold'>
+            select{" "}
+            <span className="font-bold">
               MangaMode: <VolumeName />
             </span>
             .
           </li>
         </ol>
-        <p className='text-xs'>
-          MIT licensed.{' '}
-          <a href={GITHUB_URL} className='underline underline-offset-4'>
+        <p className="text-xs">
+          MIT licensed.{" "}
+          <a href={GITHUB_URL} className="underline underline-offset-4">
             Read the source on GitHub
           </a>
           .
@@ -311,18 +311,18 @@ function InstallSection() {
 function SiteFooter() {
   return (
     <footer className={CONTAINER}>
-      <div className='flex flex-wrap justify-between gap-4 border-ink border-t-2 py-6 text-xs'>
-        <p className='max-w-xs'>
+      <div className="flex flex-wrap justify-between gap-4 border-ink border-t-2 py-6 text-xs">
+        <p className="max-w-xs">
           MangaMode is an independent fan project, not affiliated with or
           endorsed by the owners of the series named here.
         </p>
         <p>
-          Made by{' '}
-          <a href={AUTHOR_URL} className='underline underline-offset-4'>
+          Made by{" "}
+          <a href={AUTHOR_URL} className="underline underline-offset-4">
             Marko Nikolajevic
           </a>
-          {' · '}
-          <a href={README_URL} className='underline underline-offset-4'>
+          {" · "}
+          <a href={README_URL} className="underline underline-offset-4">
             How it was built
           </a>
         </p>

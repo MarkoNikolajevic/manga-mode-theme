@@ -11,7 +11,7 @@ A VS Code theme extension with anime/manga-inspired variants for long coding ses
 
 ## Theme variants
 
-Expand **Preview** under a variant to see it in the editor.
+Expand **Preview** under a variant to see an illustrative editor preview generated from the shipped palette. Actual syntax highlighting varies by language and editor extensions.
 
 **Dragon Ball:** A high-energy theme with bold oranges and deep blues. Designed for those "Power Level over 9000" coding sessions
 
@@ -106,6 +106,26 @@ Expand **Preview** under a variant to see it in the editor.
 
 </details>
 
+**The Apothecary Diaries (light):** Pale celadon, pine, jade, and plum, mixed with Maomao’s eye for detail. Diagnose the bugs in your code before the palace starts spreading rumors
+
+<details>
+<summary>Preview</summary>
+
+![The Apothecary Diaries](images/screenshots/apothecary-diaries.png)
+
+</details>
+
+**Gachiakuta (dark):** Warm soot, chalk, and rusty oranges with a sharp yellow-green streak. For turning that “trash” legacy code into something even Rudo would treasure
+
+<details>
+<summary>Preview</summary>
+
+![Gachiakuta](images/screenshots/gachiakuta.png)
+
+</details>
+
+Both variants include semantic highlighting, matching terminal palettes, and WCAG AA text contrast. Explore them in the website’s interactive theme preview, or select them through **Preferences: Color Theme** after installing this release.
+
 ## Installation
 
 ### From the Visual Studio Code Marketplace (recommended)
@@ -148,6 +168,22 @@ Pair this theme with these VS Code settings to reduce eye fatigue during long co
 ```
 
 **Tip:** Take regular breaks (e.g. 20-20-20 rule: every 20 minutes, look at something 20 feet away for 20 seconds).
+
+## Development checks and previews
+
+`bun run test` checks text on editor states and workbench surfaces, non-text indicators, and generated preview freshness. High contrast text is held to 7:1; other text to 4.5:1; focus and meaningful UI indicators to 3:1.
+
+To regenerate all Marketplace previews with the website’s expanded editor renderer:
+
+```sh
+cd site
+bun install --frozen-lockfile
+bunx playwright install chromium
+cd ..
+bun run previews
+```
+
+Commit the PNGs and `images/screenshots/manifest.json` together. `bun run previews:check` detects changed palettes, renderer sources, dependencies, or images without launching a browser. Capture uses a production build, fixed viewport, bundled site fonts, and reduced motion. Keep the same OS and pinned browser version when comparing pixels across runs.
 
 ## Feedback
 

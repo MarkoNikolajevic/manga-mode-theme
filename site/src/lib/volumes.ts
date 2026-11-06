@@ -1,14 +1,16 @@
-import type { CSSProperties } from 'react';
-import dandadan from '../../../themes/dandadan-color-theme.json';
-import deathNote from '../../../themes/death-note-color-theme.json';
-import demonSlayer from '../../../themes/demon-slayer-color-theme.json';
-import dragonBall from '../../../themes/dragon-ball-color-theme.json';
-import jujutsuKaisen from '../../../themes/jujutsu-kaisen-color-theme.json';
-import onePiece from '../../../themes/one-piece-color-theme.json';
-import pokemon from '../../../themes/pokemon-color-theme.json';
-import sailorMoon from '../../../themes/sailor-moon-color-theme.json';
-import { branchFor } from './easter-eggs';
-import { pageSelection } from './selection';
+import type { CSSProperties } from "react";
+import apothecaryDiaries from "../../../themes/apothecary-diaries-color-theme.json";
+import dandadan from "../../../themes/dandadan-color-theme.json";
+import deathNote from "../../../themes/death-note-color-theme.json";
+import demonSlayer from "../../../themes/demon-slayer-color-theme.json";
+import dragonBall from "../../../themes/dragon-ball-color-theme.json";
+import gachiakuta from "../../../themes/gachiakuta-color-theme.json";
+import jujutsuKaisen from "../../../themes/jujutsu-kaisen-color-theme.json";
+import onePiece from "../../../themes/one-piece-color-theme.json";
+import pokemon from "../../../themes/pokemon-color-theme.json";
+import sailorMoon from "../../../themes/sailor-moon-color-theme.json";
+import { branchFor } from "./easter-eggs";
+import { pageSelection } from "./selection";
 
 interface ThemeFile {
   name: string;
@@ -37,7 +39,7 @@ export interface Volume {
   issue: number;
   name: string;
   description: string;
-  appearance: 'Dark' | 'Light' | 'High contrast';
+  appearance: "Dark" | "Light" | "High contrast";
   /** Git branch shown in the editor status bar. */
   branch: string;
   /** High contrast themes are held to AAA (7:1) instead of AA (4.5:1). */
@@ -61,22 +63,27 @@ const THEMES: ThemeFile[] = [
   demonSlayer,
   jujutsuKaisen,
   dandadan,
+  gachiakuta,
   sailorMoon,
+  apothecaryDiaries,
   deathNote,
 ];
 
 const VOLUME_DESCRIPTIONS: Record<string, string> = {
-  'One Piece': 'Ocean blues and weathered gold, with a little Straw Hat red.',
-  Pokemon: 'Electric yellow and leafy green on a soft charcoal canvas.',
-  'Dragon Ball':
-    'Warm oranges and deep blues. A little energy, kept in balance.',
-  'Demon Slayer':
-    'Water blues and ember reds against a forest-dark background.',
-  'Jujutsu Kaisen': 'Muted violets and cool cyan for a quieter kind of domain.',
-  DanDaDan: 'Occult purple, alien green, and a flash of pink after dark.',
-  'Sailor Moon': 'A warm paper canvas with moonlit pinks, blues, and purples.',
-  'Death Note':
-    'Near-black ink, apple red, and shinigami gold. Built for contrast.',
+  "One Piece": "Ocean blues and weathered gold, with a little Straw Hat red.",
+  Pokemon: "Electric yellow and leafy green on a soft charcoal canvas.",
+  "Dragon Ball":
+    "Warm oranges and deep blues. A little energy, kept in balance.",
+  "Demon Slayer":
+    "Water blues and ember reds against a forest-dark background.",
+  "Jujutsu Kaisen": "Muted violets and cool cyan for a quieter kind of domain.",
+  DanDaDan: "Occult purple, alien green, and a flash of pink after dark.",
+  "Sailor Moon": "A warm paper canvas with moonlit pinks, blues, and purples.",
+  "Death Note":
+    "Near-black ink, apple red, and shinigami gold. Built for contrast.",
+  "The Apothecary Diaries":
+    "Celadon, jade, and plum. Diagnose bugs before the palace spreads rumors.",
+  Gachiakuta: "Soot, chalk, and rust. Legacy code even Rudo would treasure.",
 };
 
 function requireColor(
@@ -100,35 +107,35 @@ const scopeColor = (theme: ThemeFile, scope: string) =>
   );
 
 const toPalette = (theme: ThemeFile): Palette => ({
-  background: workbenchColor(theme, 'editor.background'),
-  text: workbenchColor(theme, 'editor.foreground'),
-  lineNumber: workbenchColor(theme, 'editorLineNumber.foreground'),
-  comment: scopeColor(theme, 'comment'),
-  keyword: scopeColor(theme, 'keyword'),
-  function: scopeColor(theme, 'entity.name.function'),
-  string: scopeColor(theme, 'string'),
-  number: scopeColor(theme, 'constant.numeric'),
-  type: scopeColor(theme, 'entity.name.type'),
+  background: workbenchColor(theme, "editor.background"),
+  text: workbenchColor(theme, "editor.foreground"),
+  lineNumber: workbenchColor(theme, "editorLineNumber.foreground"),
+  comment: scopeColor(theme, "comment"),
+  keyword: scopeColor(theme, "keyword"),
+  function: scopeColor(theme, "entity.name.function"),
+  string: scopeColor(theme, "string"),
+  number: scopeColor(theme, "constant.numeric"),
+  type: scopeColor(theme, "entity.name.type"),
   brackets: [
-    workbenchColor(theme, 'editorBracketHighlight.foreground1'),
-    workbenchColor(theme, 'editorBracketHighlight.foreground2'),
-    workbenchColor(theme, 'editorBracketHighlight.foreground3'),
+    workbenchColor(theme, "editorBracketHighlight.foreground1"),
+    workbenchColor(theme, "editorBracketHighlight.foreground2"),
+    workbenchColor(theme, "editorBracketHighlight.foreground3"),
   ],
 });
 
 /** Workbench colors the hero's editor window is drawn with. */
 const CHROME_KEYS = [
-  'activityBar.background',
-  'activityBar.foreground',
-  'activityBarBadge.background',
-  'editorGroupHeader.tabsBackground',
-  'tab.activeBackground',
-  'tab.activeForeground',
-  'tab.inactiveBackground',
-  'tab.inactiveForeground',
-  'tab.activeBorder',
-  'statusBar.background',
-  'statusBar.foreground',
+  "activityBar.background",
+  "activityBar.foreground",
+  "activityBarBadge.background",
+  "editorGroupHeader.tabsBackground",
+  "tab.activeBackground",
+  "tab.activeForeground",
+  "tab.inactiveBackground",
+  "tab.inactiveForeground",
+  "tab.activeBorder",
+  "statusBar.background",
+  "statusBar.foreground",
 ] as const;
 type ChromeKey = (typeof CHROME_KEYS)[number];
 
@@ -138,77 +145,77 @@ const toChrome = (theme: ThemeFile) =>
   ) as Record<ChromeKey, string>;
 
 export const VOLUMES: Volume[] = THEMES.map((theme, index) => {
-  const name = theme.name.replace('MangaMode: ', '');
+  const name = theme.name.replace("MangaMode: ", "");
   return {
     issue: index + 1,
     name,
     description: VOLUME_DESCRIPTIONS[name],
     appearance:
-      theme.type === 'hc'
-        ? 'High contrast'
-        : theme.type === 'light'
-          ? 'Light'
-          : 'Dark',
+      theme.type === "hc"
+        ? "High contrast"
+        : theme.type === "light"
+          ? "Light"
+          : "Dark",
     branch: branchFor(name),
-    highContrast: theme.type === 'hc',
+    highContrast: theme.type === "hc",
     palette: toPalette(theme),
     chrome: toChrome(theme),
     selection: {
-      page: pageSelection(scopeColor(theme, 'entity.name.function')),
-      editor: workbenchColor(theme, 'editor.selectionBackground'),
-      editorText: theme.colors['editor.selectionForeground'],
+      page: pageSelection(scopeColor(theme, "entity.name.function")),
+      editor: workbenchColor(theme, "editor.selectionBackground"),
+      editorText: theme.colors["editor.selectionForeground"],
     },
   };
 });
 
 /** A deliberately garish palette, invented for the side-by-side comparison. */
 export const LOUD_PALETTE: Palette = {
-  background: '#000000',
-  text: '#FFFFFF',
-  lineNumber: '#FFFFFF',
-  comment: '#00FF00',
-  keyword: '#FF00FF',
-  function: '#00FFFF',
-  string: '#39FF14',
-  number: '#FFFF00',
-  type: '#FF8C00',
-  brackets: ['#FFD700', '#DA70D6', '#179FFF'],
+  background: "#000000",
+  text: "#FFFFFF",
+  lineNumber: "#FFFFFF",
+  comment: "#00FF00",
+  keyword: "#FF00FF",
+  function: "#00FFFF",
+  string: "#39FF14",
+  number: "#FFFF00",
+  type: "#FF8C00",
+  brackets: ["#FFD700", "#DA70D6", "#179FFF"],
 };
 
 export const CONTRAST_TOKENS = [
-  { label: 'Text', key: 'text' },
-  { label: 'Comment', key: 'comment' },
-  { label: 'Keyword', key: 'keyword' },
-  { label: 'Function', key: 'function' },
-  { label: 'String', key: 'string' },
-  { label: 'Number', key: 'number' },
-  { label: 'Type', key: 'type' },
-  { label: 'Line number', key: 'lineNumber' },
+  { label: "Text", key: "text" },
+  { label: "Comment", key: "comment" },
+  { label: "Keyword", key: "keyword" },
+  { label: "Function", key: "function" },
+  { label: "String", key: "string" },
+  { label: "Number", key: "number" },
+  { label: "Type", key: "type" },
+  { label: "Line number", key: "lineNumber" },
 ] as const satisfies readonly { label: string; key: keyof Palette }[];
 
 type PaletteVars = CSSProperties & Record<`--tok-${string}`, string>;
 
 /** Exposes a palette as the CSS variables `CodeSample` is colored with. */
 export const paletteVars = (palette: Palette): PaletteVars => ({
-  '--tok-bg': palette.background,
-  '--tok-text': palette.text,
-  '--tok-line': palette.lineNumber,
-  '--tok-comment': palette.comment,
-  '--tok-keyword': palette.keyword,
-  '--tok-function': palette.function,
-  '--tok-string': palette.string,
-  '--tok-number': palette.number,
-  '--tok-type': palette.type,
-  '--tok-b1': palette.brackets[0],
-  '--tok-b2': palette.brackets[1],
-  '--tok-b3': palette.brackets[2],
+  "--tok-bg": palette.background,
+  "--tok-text": palette.text,
+  "--tok-line": palette.lineNumber,
+  "--tok-comment": palette.comment,
+  "--tok-keyword": palette.keyword,
+  "--tok-function": palette.function,
+  "--tok-string": palette.string,
+  "--tok-number": palette.number,
+  "--tok-type": palette.type,
+  "--tok-b1": palette.brackets[0],
+  "--tok-b2": palette.brackets[1],
+  "--tok-b3": palette.brackets[2],
 });
 
 /** `tab.activeBorder` becomes `--ed-tab-activeBorder`. */
-export const chromeVars = (chrome: Volume['chrome']) =>
+export const chromeVars = (chrome: Volume["chrome"]) =>
   Object.fromEntries(
     Object.entries(chrome).map(([key, value]) => [
-      `--ed-${key.replaceAll('.', '-')}`,
+      `--ed-${key.replaceAll(".", "-")}`,
       value,
     ]),
   ) as CSSProperties;

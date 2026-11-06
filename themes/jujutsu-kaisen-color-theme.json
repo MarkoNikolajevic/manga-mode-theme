@@ -29,12 +29,12 @@
     "editorLineNumber.foreground": "#807B97",
     "editorLineNumber.activeForeground": "#BBB5D3",
     "editorCursor.foreground": "#6FE8FF",
-    "editor.selectionBackground": "#332A4B",
+    "editor.selectionBackground": "#262039",
     "editor.selectionHighlightBackground": "#271F3B99",
-    "editor.wordHighlightBackground": "#4E3B7B8A",
-    "editor.wordHighlightStrongBackground": "#6B4EB5B0",
-    "editor.findMatchBackground": "#6852A180",
-    "editor.findMatchHighlightBackground": "#564B7066",
+    "editor.wordHighlightBackground": "#4E3B7B61",
+    "editor.wordHighlightStrongBackground": "#6B4EB541",
+    "editor.findMatchBackground": "#6852A141",
+    "editor.findMatchHighlightBackground": "#564B7051",
     "editorIndentGuide.background1": "#2A2340",
     "editorIndentGuide.activeBackground1": "#463873",
     "editorBracketMatch.background": "#3A306080",
@@ -61,7 +61,7 @@
     "editorHoverWidget.background": "#0D0C17",
     "editorHoverWidget.foreground": "#E5E2F2",
     "editorHoverWidget.border": "#2A2340",
-    "focusBorder": "#6FE8FF66",
+    "focusBorder": "#6FE8FF",
     "input.background": "#1A1528",
     "input.foreground": "#E5E2F2",
     "input.border": "#2A2340",
@@ -106,8 +106,8 @@
     "terminal.ansiBrightMagenta": "#A97CFF",
     "terminal.ansiBrightCyan": "#A7DFFF",
     "terminal.ansiBrightWhite": "#E5E2F2",
-    "diffEditor.insertedTextBackground": "#8CE3F222",
-    "diffEditor.removedTextBackground": "#E06B7422",
+    "diffEditor.insertedTextBackground": "#8CE3F207",
+    "diffEditor.removedTextBackground": "#E06B7418",
     "diffEditor.insertedLineBackground": "#8CE3F215",
     "diffEditor.removedLineBackground": "#E06B7415",
     "diffEditorGutter.insertedLineBackground": "#8CE3F222",
@@ -163,7 +163,13 @@
     "peekViewEditor.background": "#1A1528",
     "peekViewResult.background": "#0D0C17",
     "peekViewTitle.background": "#0D0C17",
-    "terminalCursor.foreground": "#6FE8FF"
+    "terminalCursor.foreground": "#6FE8FF",
+    "editorSuggestWidget.selectedForeground": "#E5E2F2",
+    "list.focusForeground": "#E5E2F2",
+    "list.inactiveSelectionForeground": "#E5E2F2",
+    "menu.selectionForeground": "#E5E2F2",
+    "quickInput.foreground": "#E5E2F2",
+    "quickInputList.focusForeground": "#E5E2F2"
   },
   "tokenColors": [
     {
@@ -200,7 +206,7 @@
         "punctuation.separator.array.json"
       ],
       "settings": {
-        "foreground": "#8D80B3"
+        "foreground": "#8F83B5"
       }
     },
     {

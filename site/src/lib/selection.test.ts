@@ -16,7 +16,7 @@ const accents = readdirSync(themesDir).map((file) => {
 });
 
 test('every volume gets a soft, readable page selection', () => {
-  assert.equal(accents.length, 8);
+  assert.equal(accents.length, 10);
   for (const [file, accent] of accents) {
     const tint = pageSelection(accent);
     const onPaper = contrastRatio(tint, PAPER);

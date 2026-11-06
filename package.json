@@ -2,7 +2,7 @@
   "name": "mangamode",
   "displayName": "MangaMode",
   "description": "A VS Code theme pack with eye-comfort anime/manga-inspired variants.",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "publisher": "markonikolajevic",
   "repository": {
     "type": "git",
@@ -28,6 +28,8 @@
     "dandadan",
     "sailor-moon",
     "death-note",
+    "apothecary-diaries",
+    "gachiakuta",
     "light-theme",
     "dark-theme",
     "eye-strain",
@@ -74,12 +76,24 @@
         "label": "MangaMode: Death Note",
         "uiTheme": "hc-black",
         "path": "./themes/death-note-color-theme.json"
+      },
+      {
+        "label": "MangaMode: The Apothecary Diaries",
+        "uiTheme": "vs",
+        "path": "./themes/apothecary-diaries-color-theme.json"
+      },
+      {
+        "label": "MangaMode: Gachiakuta",
+        "uiTheme": "vs-dark",
+        "path": "./themes/gachiakuta-color-theme.json"
       }
     ]
   },
   "scripts": {
-    "test": "node scripts/check-contrast.mjs",
-    "package": "vsce package"
+    "test": "node --test scripts/*.test.mjs && node scripts/check-contrast.mjs && node scripts/check-previews.mjs",
+    "package": "vsce package",
+    "previews": "cd site && bun run previews",
+    "previews:check": "node scripts/check-previews.mjs"
   },
   "devDependencies": {
     "@vscode/vsce": "^3.7.1"
