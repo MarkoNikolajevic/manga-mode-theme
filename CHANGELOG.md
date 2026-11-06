@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.4.0] - 2026-11-06
+
+### Added
+
+- **The Apothecary Diaries (light):** Maomao-inspired pale celadon surfaces with pine text, jade functions, plum keywords, and ochre constants and types. Includes semantic highlighting, a full terminal palette, and matching workbench controls.
+- **Gachiakuta (dark):** Warm soot and chalk with rust keywords, weathered sage strings, dusty ochre types, and yellow-green focus and active indicators. Keeps the series’ raw character within MangaMode’s restrained editor style.
+
+### Changed
+
+- **Website:** Expanded the shelf to ten volumes, including live syntax previews, editor chrome, contrast tables, and tuning controls for both new themes. Updated theme counts and descriptions.
+- **Contrast:** Both new palettes clear WCAG AA for syntax and muted editor text; syntax remains readable on their editor selection backgrounds.
+
 ## [1.3.0] - 2026-09-07
 
 ### Added
