@@ -70,17 +70,20 @@ const THEMES: ThemeFile[] = [
 ];
 
 const VOLUME_DESCRIPTIONS: Record<string, string> = {
-  "One Piece": "Ocean blues and weathered gold, with a little Straw Hat red.",
-  Pokemon: "Electric yellow and leafy green on a soft charcoal canvas.",
+  "One Piece":
+    "Ocean blues and Straw Hat red. Complicated code, handled like a Pirate King.",
+  Pokemon:
+    "Electric yellow on soft charcoal. Super effective against eye strain.",
   "Dragon Ball":
-    "Warm oranges and deep blues. A little energy, kept in balance.",
-  "Demon Slayer":
-    "Water blues and ember reds against a forest-dark background.",
-  "Jujutsu Kaisen": "Muted violets and cool cyan for a quieter kind of domain.",
-  DanDaDan: "Occult purple, alien green, and a flash of pink after dark.",
-  "Sailor Moon": "A warm paper canvas with moonlit pinks, blues, and purples.",
+    "Warm oranges and deep blues, for those \"Power Level over 9000\" hours.",
+  "Demon Slayer": "Water blues and ember reds, sharp as a Nichirin sword.",
+  "Jujutsu Kaisen": "Muted violets and cool cyan. A quieter Hollow Purple.",
+  DanDaDan:
+    "Occult purple, alien green, and a flash of pink. Weird, on purpose.",
+  "Sailor Moon":
+    "Moonlit pinks on warm paper. \"Moon Prism Power\" against eye strain.",
   "Death Note":
-    "Near-black ink, apple red, and shinigami gold. Built for contrast.",
+    "Near-black ink, apple red, and shinigami gold. Stark as the notebook.",
   "The Apothecary Diaries":
     "Celadon, jade, and plum. Diagnose bugs before the palace spreads rumors.",
   Gachiakuta: "Soot, chalk, and rust. Legacy code even Rudo would treasure.",
