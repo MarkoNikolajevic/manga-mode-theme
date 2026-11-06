@@ -106,9 +106,9 @@ Expand **Preview** under a variant to see it in the editor.
 
 </details>
 
-**The Apothecary Diaries (light):** A Maomao-inspired palette of pale celadon, pine, jade, and plum. Botanical greens lead the interface, with restrained ochre details and a cool light canvas that stays distinct from Sailor Moon.
+**The Apothecary Diaries (light):** Pale celadon, pine, jade, and plum, mixed with Maomao’s eye for detail. Diagnose the bugs in your code before the palace starts spreading rumors
 
-**Gachiakuta (dark):** Warm soot surfaces, chalk text, rust keywords, weathered sage strings, and dusty ochre types. A sharp yellow-green cursor and active indicators preserve the graffiti energy while keeping the editor clean.
+**Gachiakuta (dark):** Warm soot, chalk, and rusty oranges with a sharp yellow-green streak. For turning that “trash” legacy code into something even Rudo would treasure
 
 Both variants include semantic highlighting, matching terminal palettes, and WCAG AA text contrast. Explore them in the website’s interactive theme preview, or select them through **Preferences: Color Theme** after installing this release.
 
