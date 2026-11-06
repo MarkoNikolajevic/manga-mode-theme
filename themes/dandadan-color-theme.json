@@ -29,15 +29,15 @@
     "editorLineNumber.foreground": "#817999",
     "editorLineNumber.activeForeground": "#B9B0D2",
     "editorCursor.foreground": "#A9EC72",
-    "editor.selectionBackground": "#372A54",
+    "editor.selectionBackground": "#271E3D",
     "editor.selectionHighlightBackground": "#2A213F99",
-    "editor.wordHighlightBackground": "#5A3D8D8A",
-    "editor.wordHighlightStrongBackground": "#7C54C6B0",
-    "editor.findMatchBackground": "#3D8FA780",
-    "editor.findMatchHighlightBackground": "#4A657366",
+    "editor.wordHighlightBackground": "#5A3D8D53",
+    "editor.wordHighlightStrongBackground": "#7C54C637",
+    "editor.findMatchBackground": "#3D8FA72C",
+    "editor.findMatchHighlightBackground": "#4A65733E",
     "editorIndentGuide.background1": "#2B2140",
     "editorIndentGuide.activeBackground1": "#4B3A74",
-    "editorBracketMatch.background": "#3E306180",
+    "editorBracketMatch.background": "#3E30617D",
     "editorBracketMatch.border": "#A9EC7288",
     "editorBracketHighlight.foreground1": "#A9EC72",
     "editorBracketHighlight.foreground2": "#B2E89F",
@@ -61,7 +61,7 @@
     "editorHoverWidget.background": "#100D1A",
     "editorHoverWidget.foreground": "#E7E2F3",
     "editorHoverWidget.border": "#2B2140",
-    "focusBorder": "#A9EC7266",
+    "focusBorder": "#A9EC72",
     "input.background": "#1C1628",
     "input.foreground": "#E7E2F3",
     "input.border": "#2B2140",
@@ -106,8 +106,8 @@
     "terminal.ansiBrightMagenta": "#F57DB4",
     "terminal.ansiBrightCyan": "#C3F19C",
     "terminal.ansiBrightWhite": "#E7E2F3",
-    "diffEditor.insertedTextBackground": "#A9EC7222",
-    "diffEditor.removedTextBackground": "#E06B7422",
+    "diffEditor.insertedTextBackground": "#A9EC7205",
+    "diffEditor.removedTextBackground": "#E06B7415",
     "diffEditor.insertedLineBackground": "#A9EC7215",
     "diffEditor.removedLineBackground": "#E06B7415",
     "diffEditorGutter.insertedLineBackground": "#A9EC7222",
@@ -163,7 +163,13 @@
     "peekViewEditor.background": "#1C1628",
     "peekViewResult.background": "#100D1A",
     "peekViewTitle.background": "#100D1A",
-    "terminalCursor.foreground": "#A9EC72"
+    "terminalCursor.foreground": "#A9EC72",
+    "editorSuggestWidget.selectedForeground": "#E7E2F3",
+    "list.focusForeground": "#E7E2F3",
+    "list.inactiveSelectionForeground": "#E7E2F3",
+    "menu.selectionForeground": "#E7E2F3",
+    "quickInput.foreground": "#E7E2F3",
+    "quickInputList.focusForeground": "#E7E2F3"
   },
   "tokenColors": [
     {
@@ -200,7 +206,7 @@
         "punctuation.separator.array.json"
       ],
       "settings": {
-        "foreground": "#8B7FB6"
+        "foreground": "#8E83B8"
       }
     },
     {

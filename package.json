@@ -90,7 +90,7 @@
     ]
   },
   "scripts": {
-    "test": "node scripts/check-contrast.mjs",
+    "test": "node --test scripts/*.test.mjs && node scripts/check-contrast.mjs",
     "package": "vsce package"
   },
   "devDependencies": {

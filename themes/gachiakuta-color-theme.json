@@ -106,8 +106,8 @@
     "terminal.ansiBrightMagenta": "#CFB0BF",
     "terminal.ansiBrightCyan": "#AFCDC3",
     "terminal.ansiBrightWhite": "#F0EADF",
-    "diffEditor.insertedTextBackground": "#A8B59022",
-    "diffEditor.removedTextBackground": "#E58F8722",
+    "diffEditor.insertedTextBackground": "#A8B5901A",
+    "diffEditor.removedTextBackground": "#E58F871E",
     "diffEditor.insertedLineBackground": "#A8B59015",
     "diffEditor.removedLineBackground": "#E58F8715",
     "diffEditorGutter.insertedLineBackground": "#A8B59022",
@@ -168,7 +168,8 @@
     "list.focusForeground": "#E4DED3",
     "list.inactiveSelectionForeground": "#E4DED3",
     "menu.selectionForeground": "#E4DED3",
-    "quickInput.foreground": "#E4DED3"
+    "quickInput.foreground": "#E4DED3",
+    "quickInputList.focusForeground": "#E4DED3"
   },
   "tokenColors": [
     {
