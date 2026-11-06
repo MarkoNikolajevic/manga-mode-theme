@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "biome check",
     "test": "node --test 'src/**/*.test.ts'",
-    "format": "biome format --write"
+    "format": "biome format --write",
+    "previews": "bun run build && node scripts/generate-previews.mjs"
   },
   "dependencies": {
     "motion": "^14.9.1",
@@ -23,6 +24,7 @@
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "babel-plugin-react-compiler": "1.0.0",
+    "playwright": "1.65.0",
     "tailwindcss": "^4.3.4",
     "typescript": "^7.0.2"
   },

@@ -6,9 +6,12 @@
 
 - **The Apothecary Diaries (light):** Maomao-inspired pale celadon surfaces with pine text, jade functions, plum keywords, and ochre constants and types. Includes semantic highlighting, a full terminal palette, and matching workbench controls.
 - **Gachiakuta (dark):** Warm soot and chalk with rust keywords, weathered sage strings, dusty ochre types, and yellow-green focus and active indicators. Keeps the series’ raw character within MangaMode’s restrained editor style.
+- **UI-state contrast checks:** Automated coverage for selection, search and occurrence highlights, layered diff backgrounds, inlay hints, buttons, lists, menus, tabs, and focus indicators. Alpha colors are composited before checking; missing required state colors fail the check.
+- **Generated previews:** One command captures all ten Marketplace images from the website’s expanded editor renderer. Source and image hashes prevent stale previews from passing release checks.
 
 ### Changed
 
+- **State readability:** Softened highlight fills, strengthened focus borders, and adjusted muted text and bracket colors where UI states fell below the contrast target. Added explicit foregrounds for selected suggestions and workbench lists.
 - **Website:** Expanded the shelf to ten volumes, including live syntax previews, editor chrome, contrast tables, and tuning controls for both new themes. Updated theme counts and descriptions.
 - **Contrast:** Both new palettes clear WCAG AA for syntax and muted editor text; syntax remains readable on their editor selection backgrounds.
 
