@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.mangamode.dev'),
   title: "MangaMode: anime themes that don't shout",
   description:
     'Ten VS Code and Cursor themes drawn from manga palettes and tuned for long sessions. Every text color passes WCAG AA.',
