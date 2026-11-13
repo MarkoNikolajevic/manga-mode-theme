@@ -14,6 +14,9 @@ export function VolumeShelf() {
   return (
     <fieldset className='flex h-full min-w-0 flex-col'>
       <legend className='font-bold text-lg'>Pick a volume</legend>
+      <p className='mt-2 text-xs'>
+        Choose a volume to preview its colors in the editor.
+      </p>
       <div aria-live='polite' className='mt-2 min-h-28'>
         <p className='flex flex-wrap items-center gap-2 text-sm'>
           <SwapText>{volume.name}</SwapText>

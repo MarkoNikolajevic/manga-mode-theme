@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.mangamode.dev'),
   title: "MangaMode: anime themes that don't shout",
   description:
-    'Ten VS Code and Cursor themes drawn from manga palettes and tuned for long sessions. Every text color passes WCAG AA.',
+    'Ten manga-inspired themes for VS Code and Cursor. Dark, light, and high-contrast palettes, with text contrast checked against WCAG AA.',
 };
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {

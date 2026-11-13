@@ -2,7 +2,7 @@
 
 import { m, type Variants } from 'motion/react';
 import type { ReactNode } from 'react';
-import { contrastRatio, formatRatio, luminance } from '@/lib/contrast';
+import { contrastRatio, formatRatio } from '@/lib/contrast';
 import { CONTRAST_TOKENS } from '@/lib/volumes';
 import { SwapText } from './motion';
 import { useVolume } from './volume-context';
@@ -47,7 +47,6 @@ export function CalmerNotes() {
     label: label.toLowerCase(),
     ratio: ratioOf(palette[key]),
   })).reduce((min, token) => (token.ratio < min.ratio ? token : min));
-  const extreme = luminance(palette.background) > 0.5 ? 'white' : 'black';
 
   return (
     <m.ul
@@ -58,18 +57,17 @@ export function CalmerNotes() {
       className='flex flex-col justify-center gap-6'
     >
       <SpeechBubble>
-        The background is <SwapText>{palette.background}</SwapText>, not pure{' '}
-        <SwapText>{extreme}</SwapText>. Text reads at{' '}
-        <SwapText>{formatRatio(ratioOf(palette.text))}</SwapText> instead of a
-        glaring 21:1.
+        The background is <SwapText>{palette.background}</SwapText>, with text
+        contrast of <SwapText>{formatRatio(ratioOf(palette.text))}</SwapText>.
       </SpeechBubble>
       <SpeechBubble>
-        Nested brackets on lines 6 to 9 use three shades of one hue, not a
-        rainbow.
+        Nested brackets use three shades of one hue, so each level stays
+        distinct.
       </SpeechBubble>
       <SpeechBubble>
-        Even the quietest color, <SwapText>{quietest.label}</SwapText>, still
-        reads at <SwapText>{formatRatio(quietest.ratio)}</SwapText>.
+        Even <SwapText>{quietest.label}</SwapText>, the lowest-contrast text
+        color in this preview, reaches{' '}
+        <SwapText>{formatRatio(quietest.ratio)}</SwapText>.
       </SpeechBubble>
     </m.ul>
   );
