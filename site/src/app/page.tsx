@@ -94,9 +94,9 @@ function Hero() {
             ))}
           </h1>
           <p className="mt-6 max-w-sm text-sm/6 motion-safe:animate-panel-in motion-safe:[animation-delay:450ms]">
-            Ten VS Code and Cursor themes drawn from manga palettes and tuned
-            for long sessions. Soft backgrounds, three-tone brackets, and every
-            text color passes WCAG AA.
+            Ten manga-inspired themes for VS Code and Cursor, tuned for long
+            coding sessions. Choose from dark, light, and high-contrast palettes,
+            with text contrast checked against WCAG AA.
           </p>
           <div className="mt-7">
             <InstallLinks />
@@ -148,10 +148,10 @@ async function InstallStrip() {
   return (
     <div className="flex flex-wrap items-center justify-between gap-4 border-2 border-ink px-6 py-4 motion-safe:animate-panel-in motion-safe:[animation-delay:400ms]">
       <p className="text-sm">
-        Free on both marketplaces
+        Free on both marketplaces.
         {installs === null
-          ? "."
-          : `, installed ${new Intl.NumberFormat("en").format(installs)} times so far.`}
+          ? null
+          : ` ${new Intl.NumberFormat("en").format(installs)} combined installs and downloads.`}
       </p>
       <InstallLinks />
     </div>
@@ -175,7 +175,8 @@ function CalmerSection() {
           <figure>
             <CalmComparison code={<CodeSample />} />
             <figcaption className="mt-3 text-xs">
-              The loud theme on the left is invented for this comparison.
+              The loud palette is made up to show the difference. Drag the slider
+              to compare.
             </figcaption>
           </figure>
         </Reveal>
@@ -194,12 +195,12 @@ function ContrastSection() {
     >
       <Reveal className="flex flex-wrap items-end justify-between gap-4">
         <h2 id="contrast-heading" className={SECTION_HEADING}>
-          Every color, measured
+          Text contrast, measured
         </h2>
         <p className="max-w-sm text-xs/5">
-          Ratios for <VolumeName /> against its editor background. Pick another
-          volume from the shelf and the table follows. The same check runs on
-          every release, so a color that fails never ships.
+          Text contrast ratios for <VolumeName /> against its editor background.
+          Choose another volume to compare. Every release runs automated contrast
+          checks.
         </p>
       </Reveal>
       <div className="mt-4">
@@ -217,8 +218,8 @@ function TuneSection() {
           Try to make it louder
         </h2>
         <p className="max-w-sm text-xs/5">
-          The bench moves lightness in OKLCH so the hue holds while you drag.
-          See where readable ends.
+          Pick a syntax color and drag its lightness slider. Watch the preview
+          and contrast ratio change. This only changes the preview.
         </p>
       </Reveal>
       <div className="mt-4">
@@ -230,20 +231,20 @@ function TuneSection() {
 
 const BUILD_NOTES = [
   [
-    "One source of truth",
-    "Every swatch, ratio, and code sample reads from the same JSON files the extension ships. Change a theme and this page follows on the next build.",
+    "The preview uses the real palettes",
+    "Every swatch, ratio, and code sample uses colors from the theme files shipped in the extension.",
   ],
   [
-    "Measured, not eyeballed",
-    "Contrast uses the WCAG 2 formula and rounds down, so a 4.46:1 color is never shown as 4.5:1. Even text selection is tested: each volume tints it in its own accent, at a shade that keeps ink readable.",
+    "Contrast checks include selected text",
+    "Text contrast is checked against each background, including selection highlights. Displayed ratios round down, so 4.46:1 stays below the 4.5:1 AA threshold.",
   ],
   [
-    "Motion before hydration",
-    "The hero entrance is plain CSS, so it plays before JavaScript loads. Later motion uses a trimmed Motion bundle and respects the reduced motion setting.",
+    "Motion follows your settings",
+    "Page animations respect your reduced motion setting.",
   ],
   [
-    "No highlighter shipped",
-    "The code sample is tokenized by hand and colored through CSS variables, so switching volumes is a style change, not a re-render of a parser.",
+    "One sample across every volume",
+    "Switch volumes to compare palettes on the same code sample.",
   ],
 ] as const;
 

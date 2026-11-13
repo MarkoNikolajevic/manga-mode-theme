@@ -73,7 +73,7 @@ const VOLUME_DESCRIPTIONS: Record<string, string> = {
   "One Piece":
     "Ocean blues and Straw Hat red. Complicated code, handled like a Pirate King.",
   Pokemon:
-    "Electric yellow on soft charcoal. Super effective against eye strain.",
+    "Electric yellow on soft charcoal. A familiar spark for your editor.",
   "Dragon Ball":
     "Warm oranges and deep blues, for those \"Power Level over 9000\" hours.",
   "Demon Slayer": "Water blues and ember reds, sharp as a Nichirin sword.",
@@ -81,7 +81,7 @@ const VOLUME_DESCRIPTIONS: Record<string, string> = {
   DanDaDan:
     "Occult purple, alien green, and a flash of pink. Weird, on purpose.",
   "Sailor Moon":
-    "Moonlit pinks on warm paper. \"Moon Prism Power\" against eye strain.",
+    "Moonlit pinks on warm paper, with sailor blues and gentle purples.",
   "Death Note":
     "Near-black ink, apple red, and shinigami gold. Stark as the notebook.",
   "The Apothecary Diaries":
