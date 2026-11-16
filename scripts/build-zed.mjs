@@ -269,7 +269,8 @@ export function zedFiles() {
     ),
   };
   return {
-    'zed/extension.toml': `id = "${manifest.name}"
+    // Zed requires theme IDs to say so, and the ID is permanent once published.
+    'zed/extension.toml': `id = "${manifest.name}-theme"
 name = "${manifest.displayName}"
 version = "${manifest.version}"
 schema_version = 1

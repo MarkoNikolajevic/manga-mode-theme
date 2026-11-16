@@ -16,6 +16,11 @@ test('committed Zed extension matches the VS Code themes', () => {
     );
 });
 
+// The Zed registry only accepts a license inside the extension directory.
+test('Zed extension carries the project license', () => {
+  assert.deepEqual(readProjectFile('zed/LICENSE'), readProjectFile('LICENSE'));
+});
+
 test('every VS Code variant ships to Zed with valid colors', () => {
   assert.deepEqual(
     family.themes.map((theme) => theme.name),
