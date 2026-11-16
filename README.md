@@ -141,6 +141,17 @@ Both variants include semantic highlighting, matching terminal palettes, and WCA
 3. Run **Extensions: Install from VSIX...**.
 4. Choose the downloaded file.
 
+### In Zed (dev extension)
+
+MangaMode is not in the Zed extension registry yet. Until it is:
+
+1. Clone this repository.
+2. In Zed, open the Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`) and run **zed: install dev extension**.
+3. Choose the `zed` folder inside the clone.
+4. Run **theme selector: toggle** and pick any `MangaMode: ...` variant.
+
+Zed highlights with tree-sitter instead of TextMate scopes, so some tokens land on a different color than in VS Code. Zed has no high contrast mode, so Death Note is listed as a dark theme with the same palette.
+
 ## Usage
 
 1. Open Command Palette: `Ctrl+Shift+P` (Windows/Linux) or `Cmd+Shift+P` (macOS)
@@ -172,6 +183,8 @@ Pair this theme with these VS Code settings to reduce eye fatigue during long co
 ## Development checks and previews
 
 `bun run test` checks text on editor states and workbench surfaces, non-text indicators, and generated preview freshness. High contrast text is held to 7:1; other text to 4.5:1; focus and meaningful UI indicators to 3:1.
+
+The Zed extension in `zed/` is generated from the VS Code themes. After changing a theme or the version, run `node scripts/build-zed.mjs` and commit the result; the tests fail when it is stale.
 
 To regenerate all Marketplace previews with the website’s expanded editor renderer:
 

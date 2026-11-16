@@ -1,0 +1,7 @@
+id = "mangamode"
+name = "MangaMode"
+version = "1.4.0"
+schema_version = 1
+authors = ["Marko Nikolajevic"]
+description = "Eye-comfort anime and manga-inspired themes."
+repository = "https://github.com/MarkoNikolajevic/manga-mode-theme"
