@@ -11,3 +11,4 @@ yarn.lock
 scripts/**
 site/**
 .fallow/**
+zed/**

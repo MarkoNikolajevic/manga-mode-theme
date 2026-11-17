@@ -1,5 +1,11 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+
+- **Zed:** All ten variants as one Zed theme family in `zed/`, generated from the VS Code themes by `node scripts/build-zed.mjs`. Installable as a dev extension. Interface text is checked against the same contrast floors on Zed’s surfaces, including hovered and selected rows.
+
 ## [1.4.0] - 2026-11-06
 
 ### Added
