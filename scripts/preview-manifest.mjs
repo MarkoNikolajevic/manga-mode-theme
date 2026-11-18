@@ -1,14 +1,10 @@
 import { createHash } from 'node:crypto';
-import { readFileSync } from 'node:fs';
+import { readProjectFile, themeContributions } from './theme-catalog.mjs';
 
-export const projectRoot = new URL('../', import.meta.url);
+import { themeId } from './theme-id.mjs';
+
 export const hash = (bytes) => createHash('sha256').update(bytes).digest('hex');
-export const readProjectFile = (path) =>
-  readFileSync(new URL(path, projectRoot));
-export const themeContributions = () =>
-  JSON.parse(readProjectFile('package.json')).contributes.themes;
-export const screenshotName = (theme) =>
-  theme.path.split('/').at(-1).replace('-color-theme.json', '.png');
+export const screenshotName = (theme) => `${themeId(theme)}.png`;
 
 export function previewSourceHashes() {
   const paths = [
@@ -18,6 +14,9 @@ export function previewSourceHashes() {
     'site/next.config.ts',
     'site/scripts/generate-previews.mjs',
     'scripts/preview-manifest.mjs',
+    'scripts/theme-catalog.mjs',
+    'scripts/theme-id.mjs',
+    'scripts/color-math.mjs',
     'site/src/app/layout.tsx',
     'site/src/app/page.tsx',
     'site/src/app/globals.css',
@@ -29,6 +28,8 @@ export function previewSourceHashes() {
     'site/src/components/volume-context.tsx',
     'site/src/components/motion.tsx',
     'site/src/lib/volumes.ts',
+    'site/src/lib/volume-catalog.ts',
+    'site/src/lib/contrast.ts',
     'site/src/lib/easter-eggs.ts',
     'site/src/lib/selection.ts',
     'site/src/lib/oklch.ts',

@@ -10,11 +10,9 @@ import { chromium } from 'playwright';
 import {
   hash,
   previewSourceHashes,
-  projectRoot,
-  readProjectFile,
   screenshotName,
-  themeContributions,
 } from '../../scripts/preview-manifest.mjs';
+import { projectRoot, readProjectFile, themeContributions } from '../../scripts/theme-catalog.mjs';
 
 // Use the production build and the same expanded editor the website displays.
 // https://nextjs.org/docs/app/guides/custom-server

@@ -2,10 +2,9 @@ import assert from 'node:assert/strict';
 import {
   hash,
   previewSourceHashes,
-  readProjectFile,
   screenshotName,
-  themeContributions,
 } from './preview-manifest.mjs';
+import { readProjectFile, themeContributions } from './theme-catalog.mjs';
 
 try {
   const manifest = JSON.parse(

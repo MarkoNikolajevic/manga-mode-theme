@@ -1,3 +1,5 @@
+import { luminanceRatio, rgbLuminance } from './color-math.mjs';
+
 // Colors and state layering follow https://code.visualstudio.com/api/references/theme-color.
 export function parseColor(value) {
   if (
@@ -28,18 +30,9 @@ export function composite(foreground, background) {
 export function contrastRatio(foreground, background) {
   const bg =
     typeof background === 'string' ? parseColor(background) : background;
-  const luminance = (color) =>
-    color
-      .slice(0, 3)
-      .map((c) => {
-        const s = c / 255;
-        return s <= 0.04045 ? s / 12.92 : ((s + 0.055) / 1.055) ** 2.4;
-      })
-      .reduce((sum, c, i) => sum + c * [0.2126, 0.7152, 0.0722][i], 0);
   if (bg[3] !== 1) throw new Error('Contrast requires an opaque background');
-  const a = luminance(composite(foreground, bg));
-  const b = luminance(bg);
-  return (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);
+  const [red, green, blue] = composite(foreground, bg);
+  return luminanceRatio(rgbLuminance(red, green, blue), rgbLuminance(bg[0], bg[1], bg[2]));
 }
 
 export function checkTheme(theme) {

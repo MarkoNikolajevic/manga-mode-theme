@@ -24,7 +24,7 @@ import {
   INSTALL_COMMAND,
   README_URL,
 } from "@/lib/links";
-import { VOLUMES } from "@/lib/volumes";
+import { VOLUMES } from "@/lib/volume-catalog";
 import logo from "../../../images/icon.png";
 
 const CONTAINER = "mx-auto w-full max-w-7xl px-4 sm:px-6";
