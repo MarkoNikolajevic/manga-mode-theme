@@ -7,7 +7,7 @@ import {
   projectRoot,
   readProjectFile,
   themeContributions,
-} from './preview-manifest.mjs';
+} from './theme-catalog.mjs';
 
 const TRANSPARENT = '#00000000';
 const alpha = (hex, aa) => hex.slice(0, 7) + aa;

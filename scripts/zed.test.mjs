@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { textFloor, textSurfaces, zedFiles } from './build-zed.mjs';
 import { contrastRatio, parseColor } from './contrast.mjs';
-import { readProjectFile, themeContributions } from './preview-manifest.mjs';
+import { readProjectFile, themeContributions } from './theme-catalog.mjs';
 
 const files = zedFiles();
 const family = JSON.parse(files['zed/themes/mangamode.json']);
