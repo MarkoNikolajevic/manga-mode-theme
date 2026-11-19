@@ -23,27 +23,6 @@ export function MotionProvider({ children }: { children: ReactNode }) {
   );
 }
 
-/** Fades content up once as it scrolls into view. */
-export function Reveal({
-  className,
-  children,
-}: {
-  className?: string;
-  children: ReactNode;
-}) {
-  return (
-    <m.div
-      className={className}
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '0px 0px -15% 0px' }}
-      transition={{ duration: 0.6, ease: EASE_OUT_EXPO }}
-    >
-      {children}
-    </m.div>
-  );
-}
-
 /** Cross-fades text when it changes; renders statically on first paint. */
 export function SwapText({ children }: { children: string }) {
   return (

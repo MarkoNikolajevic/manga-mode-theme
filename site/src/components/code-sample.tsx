@@ -23,7 +23,7 @@ const TOKEN_CLASS: Record<TokenKind, string> = {
 };
 
 // Hand-tokenized so the sample renders without shipping a highlighter.
-// Brackets on lines 6 to 9 nest three deep, which the comparison copy relies on.
+// Brackets on lines 6 to 9 nest three deep, which the bracket caption relies on.
 const LINES: readonly Token[][] = [
   [['comment', '// Personality, under control.']],
   [

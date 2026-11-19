@@ -57,7 +57,7 @@ function Bench({
   );
 
   return (
-    <div className='grid grid-cols-1 border-2 border-ink lg:grid-cols-[3fr_2fr]'>
+    <div className='panel grid grid-cols-1 lg:grid-cols-[3fr_2fr]'>
       <VolumeSurface className='min-w-0 border-ink border-b-2 bg-(--tok-bg) lg:border-r-2 lg:border-b-0'>
         <div style={{ [`--tok-${key}`]: color }}>
           <CodeSample />

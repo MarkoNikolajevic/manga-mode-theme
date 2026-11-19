@@ -1,8 +1,9 @@
 import 'server-only';
 import manifest from '../../../package.json';
 import { themeId } from '../../../scripts/theme-id.mjs';
+import { accentOn } from './contrast';
 import { branchFor } from './easter-eggs';
-import { pageSelection } from './selection';
+import { INK, PAPER, pageSelection } from './selection';
 import { CHROME_KEYS, type Palette, type Volume } from './volumes';
 
 interface ThemeFile {
@@ -122,6 +123,19 @@ export const VOLUMES: Volume[] = SHELF.map(([id, description], index) => {
     highContrast: theme.type === 'hc',
     palette: toPalette(theme),
     chrome: toChrome(theme),
+    accent: {
+      // Paper accents only set large display text, so they need 3:1; the ink band uses them for small text.
+      paper: accentOn(
+        workbenchColor(theme, 'activityBarBadge.background'),
+        PAPER,
+        3,
+      ),
+      ink: accentOn(
+        workbenchColor(theme, 'activityBarBadge.background'),
+        INK,
+        4.5,
+      ),
+    },
     selection: {
       page: pageSelection(scopeColor(theme, 'entity.name.function')),
       editor: workbenchColor(theme, 'editor.selectionBackground'),

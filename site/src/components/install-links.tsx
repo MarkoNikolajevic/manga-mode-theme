@@ -1,7 +1,7 @@
 import { OPEN_VSX_URL, VS_CODE_MARKETPLACE_URL } from '@/lib/links';
 
 const BUTTON =
-  'rounded-full border-2 border-ink px-5 py-2.5 font-bold text-sm motion-safe:transition motion-safe:active:scale-97';
+  'border-2 border-ink px-5 py-2.5 font-bold text-sm motion-safe:transition motion-safe:active:scale-97';
 
 export function InstallLinks() {
   return (
