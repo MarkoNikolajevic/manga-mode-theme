@@ -24,6 +24,8 @@ export interface Volume {
   highContrast: boolean;
   palette: Palette;
   chrome: Record<ChromeKey, string>;
+  /** The volume's badge color, shifted to read on the paper page and on the ink install band. */
+  accent: { paper: string; ink: string };
   selection: {
     /** Tint of the volume's accent for text on the paper page. */
     page: string;
@@ -48,20 +50,6 @@ export const CHROME_KEYS = [
   'statusBar.foreground',
 ] as const;
 type ChromeKey = (typeof CHROME_KEYS)[number];
-
-/** A deliberately garish palette, invented for the side-by-side comparison. */
-export const LOUD_PALETTE: Palette = {
-  background: '#000000',
-  text: '#FFFFFF',
-  lineNumber: '#FFFFFF',
-  comment: '#00FF00',
-  keyword: '#FF00FF',
-  function: '#00FFFF',
-  string: '#39FF14',
-  number: '#FFFF00',
-  type: '#FF8C00',
-  brackets: ['#FFD700', '#DA70D6', '#179FFF'],
-};
 
 export const CONTRAST_TOKENS = [
   { label: 'Text', key: 'text' },

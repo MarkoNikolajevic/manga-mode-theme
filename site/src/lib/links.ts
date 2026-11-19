@@ -7,4 +7,5 @@ export const OPEN_VSX_URL =
 export const GITHUB_URL =
   'https://github.com/MarkoNikolajevic/manga-mode-theme';
 export const README_URL = `${GITHUB_URL}#readme`;
+export const ZED_SETUP_URL = `${GITHUB_URL}#in-zed-dev-extension`;
 export const AUTHOR_URL = 'https://markonikolajevic.dev';

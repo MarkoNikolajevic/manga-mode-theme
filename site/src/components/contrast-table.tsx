@@ -1,6 +1,5 @@
 'use client';
 
-import { m, type Variants } from 'motion/react';
 import {
   contrastRatio,
   formatRatio,
@@ -8,94 +7,73 @@ import {
   wcagLevel,
 } from '@/lib/contrast';
 import { CONTRAST_TOKENS } from '@/lib/volumes';
-import { EASE_OUT_EXPO, SwapText } from './motion';
-import { useVolume } from './volume-context';
+import { SwapText } from './motion';
+import { useVolume, VolumeName } from './volume-context';
 
 const LEVEL_CLASS: Record<WcagLevel, string> = {
   AAA: 'bg-ink text-paper',
-  AA: 'bg-paper text-ink',
-  Fail: 'bg-paper text-ink line-through',
+  AA: 'shadow-[inset_0_0_0_1.5px_var(--color-ink)]',
+  Fail: 'line-through shadow-[inset_0_0_0_1.5px_var(--color-ink)]',
 };
 
-const ROWS: Variants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.05 } },
-};
-
-const ROW: Variants = {
-  hidden: { opacity: 0, x: -8 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.4, ease: EASE_OUT_EXPO },
-  },
-};
-
+/** Each syntax color measured against the open volume's editor background. */
 export function ContrastTable() {
-  const { palette } = useVolume().state.volume;
+  const { palette, highContrast } = useVolume().state.volume;
 
   return (
-    <section
-      // biome-ignore lint/a11y/noNoninteractiveTabindex: The wide table needs keyboard scrolling.
-      tabIndex={0}
-      aria-label='Token contrast table'
-      className='overflow-x-auto border-2 border-ink'
-    >
-      <table className='w-full min-w-xl text-left text-sm'>
-        <thead className='border-ink border-b-2 text-xs'>
+    <div className='panel px-5 py-5.5 sm:px-6'>
+      <h3 className='font-bold text-xl'>Contrast, measured</h3>
+      <p className='mt-1 text-ink/75 text-sm'>
+        Against the <VolumeName /> editor background,{' '}
+        <span className='font-mono'>{palette.background}</span>.
+      </p>
+      <table className='mt-3.5 w-full text-left text-[15px] tabular-nums'>
+        <thead className='sr-only'>
           <tr>
-            {['Token', 'Sample', 'Color', 'Contrast', 'WCAG level'].map(
-              (heading) => (
-                <th key={heading} scope='col' className='px-4 py-3 font-bold'>
-                  {heading}
-                </th>
-              ),
-            )}
+            <th scope='col'>Swatch</th>
+            <th scope='col'>Token</th>
+            <th scope='col'>Color</th>
+            <th scope='col'>Contrast and WCAG level</th>
           </tr>
         </thead>
-        <m.tbody
-          variants={ROWS}
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true, amount: 0.3 }}
-          className='divide-y-2 divide-ink'
-        >
+        <tbody>
           {CONTRAST_TOKENS.map(({ label, key }) => {
             const color = palette[key];
             const ratio = contrastRatio(color, palette.background);
             const level = wcagLevel(ratio);
             return (
-              <m.tr key={key} variants={ROW}>
-                <th scope='row' className='px-4 py-3 font-normal'>
-                  {label}
-                </th>
-                <td className='px-4 py-3'>
+              <tr key={key} className='border-ink/15 border-b'>
+                <td className='w-6 py-2.5'>
                   <span
                     aria-hidden
-                    className='inline-block px-2 py-1 font-mono text-xs motion-safe:transition-colors motion-safe:duration-500'
-                    style={{ backgroundColor: palette.background, color }}
-                  >
-                    Aa
-                  </span>
+                    className='block size-3.5 shadow-[inset_0_0_0_1px_rgb(0_0_0/0.2)] motion-safe:transition-colors motion-safe:duration-500'
+                    style={{ backgroundColor: color }}
+                  />
                 </td>
-                <td className='px-4 py-3 font-mono text-xs'>
+                <th scope='row' className='py-2.5 font-normal'>
+                  {label}
+                </th>
+                <td className='py-2.5 text-right font-mono text-sm'>
                   <SwapText>{color}</SwapText>
                 </td>
-                <td className='px-4 py-3 font-mono text-xs'>
+                <td className='py-2.5 text-right font-mono text-sm'>
                   <SwapText>{formatRatio(ratio)}</SwapText>
-                </td>
-                <td className='px-4 py-3'>
                   <span
-                    className={`inline-block min-w-14 rounded-full border-2 border-ink px-3 py-0.5 text-center font-bold text-xs motion-safe:transition-colors motion-safe:duration-300 ${LEVEL_CLASS[level]}`}
+                    className={`ml-2.5 inline-block min-w-10 px-1.5 py-0.5 text-center font-semibold text-[11px] ${LEVEL_CLASS[level]}`}
                   >
-                    <SwapText>{level}</SwapText>
+                    {level}
                   </span>
                 </td>
-              </m.tr>
+              </tr>
             );
           })}
-        </m.tbody>
+        </tbody>
       </table>
-    </section>
+      <p className='mt-3.5 text-ink/75 text-sm'>
+        {highContrast
+          ? 'High contrast volume: every token clears WCAG AAA (7:1).'
+          : 'Every token clears WCAG AA (4.5:1). Ratios round down, so 4.46:1 never shows as 4.5:1.'}
+      </p>
+    </div>
   );
 }

@@ -1,9 +1,34 @@
 'use client';
 
 import { useId } from 'react';
+import type { Palette } from '@/lib/volumes';
 import { SwapText } from './motion';
 import { useVolume } from './volume-context';
 
+// Uneven spine heights read as real books on a shelf.
+const SPINE_HEIGHT = [
+  'h-88',
+  'h-84',
+  'h-80',
+  'h-84',
+  'h-82',
+  'h-80',
+  'h-84',
+  'h-82',
+  'h-86',
+  'h-82',
+];
+const BAND: readonly Exclude<keyof Palette, 'brackets'>[] = [
+  'keyword',
+  'function',
+  'string',
+  'number',
+  'type',
+];
+
+const pad = (issue: number) => String(issue).padStart(2, '0');
+
+/** Every volume as a book spine. A native radio group, so arrow keys move between spines. */
 export function VolumeShelf() {
   const groupId = useId();
   const {
@@ -12,69 +37,57 @@ export function VolumeShelf() {
   } = useVolume();
 
   return (
-    <fieldset className='flex h-full min-w-0 flex-col'>
-      <legend className='font-bold text-lg'>Pick a volume</legend>
-      <p className='mt-2 text-xs'>
-        Choose a volume to preview its colors in the editor.
-      </p>
-      <div aria-live='polite' className='mt-2 min-h-28'>
-        <p className='flex flex-wrap items-center gap-2 text-sm'>
-          <SwapText>{volume.name}</SwapText>
-          <span className='border border-ink px-1.5 py-0.5 font-mono text-[10px] uppercase'>
-            {volume.appearance}
-          </span>
-        </p>
-        <p className='mt-2 max-w-xs text-sm/5'>{volume.description}</p>
-      </div>
-      <p className='mt-2 text-xs md:hidden'>
-        Scroll the shelf to explore all {volumes.length} volumes →
-      </p>
-      <div className='mt-2 flex flex-1 items-end gap-1.5 overflow-x-auto border-ink border-b-8 pt-4'>
-        {volumes.map(({ issue, name, palette }, index) => (
-          <label
-            key={issue}
-            style={{
-              backgroundColor: palette.background,
-              color: palette.text,
-              animationDelay: `${450 + index * 50}ms`,
-            }}
-            className='relative flex h-56 w-10 shrink-0 cursor-pointer flex-col items-center justify-between border-2 border-ink pt-2 has-checked:-translate-y-3 not-has-checked:hover:-translate-y-1 has-focus-visible:outline-2 has-focus-visible:outline-ink has-focus-visible:outline-offset-2 motion-safe:animate-drop motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-spring'
-          >
-            <input
-              type='radio'
-              name={groupId}
-              value={issue}
-              checked={issue === volume.issue}
-              onChange={() => selectVolume(issue)}
-              className='sr-only'
-            />
-            <span aria-hidden className='font-mono text-xs'>
-              {issue}
-            </span>
-            <span className='font-display text-sm leading-none [writing-mode:vertical-rl]'>
-              {name}
-            </span>
-            <span
-              aria-hidden
-              className='h-8 w-full'
-              style={{ backgroundColor: palette.function }}
-            />
-          </label>
-        ))}
-      </div>
-      <div className='mt-4 flex flex-wrap gap-x-4 gap-y-2 text-xs'>
-        {volumes
-          .filter(({ appearance }) => appearance !== 'Dark')
-          .map(({ issue, name, appearance }) => (
-            <button
+    <fieldset className='min-w-0'>
+      <legend className='flex w-full items-baseline justify-between gap-4 font-bold'>
+        Pull a volume off the shelf
+        <span aria-hidden className='font-mono font-normal text-sm'>
+          <SwapText>{pad(volume.issue)}</SwapText> / {pad(volumes.length)}
+        </span>
+      </legend>
+      <div className='snap-x snap-proximity overflow-x-auto pt-9'>
+        <div className='grid min-w-158 grid-cols-[repeat(10,minmax(3.5rem,1fr))] items-end gap-2 border-ink border-b-6'>
+          {volumes.map(({ issue, name, appearance, palette }, index) => (
+            <label
               key={issue}
-              type='button'
-              onClick={() => selectVolume(issue)}
-              className='min-h-8 cursor-pointer underline underline-offset-4 hover:no-underline'
+              style={{
+                backgroundColor: palette.background,
+                color: palette.text,
+                animationDelay: `${300 + index * 50}ms`,
+              }}
+              className={`${SPINE_HEIGHT[index % SPINE_HEIGHT.length]} relative flex snap-start cursor-pointer flex-col items-center rounded-t-sm shadow-[inset_-6px_0_0_rgb(0_0_0/0.12)] has-checked:-translate-y-7 has-checked:shadow-[inset_-6px_0_0_rgb(0_0_0/0.12),0_18px_30px_-18px_rgb(0_0_0/0.6)] not-has-checked:hover:-translate-y-2 has-focus-visible:outline-3 has-focus-visible:outline-ink has-focus-visible:outline-offset-3 max-sm:h-75 motion-safe:animate-drop motion-safe:transition-[translate,box-shadow] motion-safe:duration-450 motion-safe:ease-out-expo`}
             >
-              {appearance}: {name}
-            </button>
+              <input
+                type='radio'
+                name={groupId}
+                value={issue}
+                checked={issue === volume.issue}
+                onChange={() => selectVolume(issue)}
+                aria-label={`${name}, ${appearance}`}
+                className='sr-only'
+              />
+              <span aria-hidden className='pt-3.5 font-mono text-xs opacity-75'>
+                {pad(issue)}
+              </span>
+              <span
+                aria-hidden
+                className='flex-1 py-4.5 font-extrabold text-lg/tight [font-stretch:112%] [writing-mode:vertical-rl] lg:text-[1.375rem]'
+              >
+                {name}
+              </span>
+              <span
+                aria-hidden
+                className='pb-3 font-mono text-[11px] uppercase tracking-wider opacity-75 [writing-mode:vertical-rl]'
+              >
+                {appearance}
+              </span>
+              <span aria-hidden className='grid h-8.5 w-full grid-cols-5'>
+                {BAND.map((key) => (
+                  <span key={key} style={{ backgroundColor: palette[key] }} />
+                ))}
+              </span>
+            </label>
           ))}
+        </div>
       </div>
     </fieldset>
   );

@@ -52,7 +52,13 @@ export function VolumeProvider({
       {/* `contents` keeps layout untouched while every page element inherits the selection color. */}
       <div
         className='contents'
-        style={{ '--sel-page-bg': volume.selection.page } as CSSProperties}
+        style={
+          {
+            '--sel-page-bg': volume.selection.page,
+            '--accent': volume.accent.paper,
+            '--accent-ink': volume.accent.ink,
+          } as CSSProperties
+        }
       >
         {children}
       </div>

@@ -3,6 +3,8 @@
 @theme {
   --color-paper: #f7f6f1;
   --color-ink: #0b0b0b;
+  /* Hairlines and control frames on the ink install band. */
+  --color-graphite: #4a4944;
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -47,6 +49,10 @@
 @theme inline {
   --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-sfx: var(--font-dela-gothic), "Hiragino Sans", "Yu Gothic", sans-serif;
+  /* Set per volume by VolumeProvider: one tuned for paper, one for the ink band. */
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
 }
 
 @layer base {
@@ -79,35 +85,20 @@
   line-height: 0.95;
 }
 
+/* Screentone: the printed dot shading manga uses for mid-tones. */
 @utility halftone {
-  background-image: radial-gradient(var(--color-ink) 0.8px, transparent 1.2px);
-  background-size: 5px 5px;
+  background-image: radial-gradient(
+    color-mix(in srgb, var(--color-ink) 28%, transparent) 1.1px,
+    transparent 1.4px
+  );
+  background-size: 6px 6px;
 }
 
-/* Outlines every opaque child as one shape, so clip-path panels keep a manga border. */
-@utility ink-outline {
-  filter: drop-shadow(2px 0 0 var(--color-ink))
-    drop-shadow(-2px 0 0 var(--color-ink)) drop-shadow(0 2px 0 var(--color-ink))
-    drop-shadow(0 -2px 0 var(--color-ink));
-}
-
-/*
- * Slanted panel pairs. The `*-start` panel is pulled left by --slant so its
- * edge runs parallel to its neighbour's, keeping the gutter an even width.
- */
-@utility slash-end {
-  clip-path: polygon(0 0, 100% 0, calc(100% - var(--slant)) 100%, 0 100%);
-}
-@utility slash-start {
-  clip-path: polygon(var(--slant) 0, 100% 0, 100% 100%, 0 100%);
-  margin-inline-start: calc(var(--slant) * -1);
-}
-@utility backslash-end {
-  clip-path: polygon(0 0, calc(100% - var(--slant)) 0, 100% 100%, 0 100%);
-}
-@utility backslash-start {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, var(--slant) 100%);
-  margin-inline-start: calc(var(--slant) * -1);
+/* A manga panel: square, with a heavy ink frame. Panels sit on paper gutters. */
+@utility panel {
+  min-width: 0;
+  border: 3px solid var(--color-ink);
+  background-color: var(--color-paper);
 }
 
 /* Range input whose track is the color ramp itself; the thumb reads as an ink frame. */
