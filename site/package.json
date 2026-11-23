@@ -12,6 +12,7 @@
     "previews": "bun run build && node scripts/generate-previews.mjs"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "motion": "^14.9.1",
     "next": "16.4.5",
     "react": "19.3.1",

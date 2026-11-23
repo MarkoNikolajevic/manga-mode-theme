@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next';
 import { Archivo, Dela_Gothic_One, Geist_Mono } from 'next/font/google';
 import { MotionProvider } from '@/components/motion';
@@ -37,6 +38,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
     >
       <body className='font-sans'>
         <MotionProvider>{children}</MotionProvider>
+        <Analytics />
       </body>
     </html>
   );
